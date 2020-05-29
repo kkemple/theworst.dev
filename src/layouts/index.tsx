@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import "../styles/tailwind.css";
+
 import Logo from "../assets/logo.svg";
 
 export default function Layout(props) {
