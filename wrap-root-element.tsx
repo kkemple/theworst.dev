@@ -3,6 +3,8 @@ import { MDXProvider } from "@mdx-js/react";
 import { Code } from "./src/components/code";
 import { preToCodeBlock } from "mdx-utils";
 import "./src/styles/tailwind.css";
+import "tippy.js/dist/tippy.css";
+import "tippy.js/themes/light-border.css";
 
 // components is its own object outside of render so that the references to
 // components are stable

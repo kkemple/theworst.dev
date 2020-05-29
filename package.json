@@ -6,6 +6,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.5",
     "@mdx-js/react": "^1.6.5",
+    "@tippyjs/react": "^4.0.2",
     "@types/react-helmet": "^6.0.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.22.12",

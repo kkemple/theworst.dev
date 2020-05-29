@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, graphql } from "gatsby";
+import Tippy from "@tippyjs/react";
 
 import SEO from "../components/seo";
 
@@ -82,13 +83,24 @@ export default function Home(props) {
           } else if (node.__typename === "YoutubeVideo") {
             const title = node.title;
             return (
-              <div key={title} className="mb-3">
+              <div className="mb-3" key={title}>
                 <h4>
-                  <a
-                    href={`https://www.youtube.com/watch?v=${node.resourceId.videoId}`}
+                  <Tippy
+                    className=".bg-gray-800"
+                    theme="light-border"
+                    content={
+                      <>
+                        <h4 className="text-center font-thin">YouTube Video</h4>
+                        <img src={node.thumbnails.high.url} />
+                      </>
+                    }
                   >
-                    {title}
-                  </a>
+                    <a
+                      href={`https://www.youtube.com/watch?v=${node.resourceId.videoId}`}
+                    >
+                      {title}
+                    </a>
+                  </Tippy>
                 </h4>
               </div>
             );
@@ -129,6 +141,11 @@ export const pageQuery = graphql`
           title
           resourceId {
             videoId
+          }
+          thumbnails {
+            high {
+              url
+            }
           }
         }
       }
