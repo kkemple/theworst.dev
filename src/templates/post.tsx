@@ -31,7 +31,7 @@ function PostTemplate(props) {
             ) : (
               <span>
                 {"🌱 "}
-                <span style={{ fontStyle: "italic" }}>
+                <span style={{ marginLeft: 2, fontStyle: "italic" }}>
                   This post is still growing and likely to be updated
                 </span>
               </span>
