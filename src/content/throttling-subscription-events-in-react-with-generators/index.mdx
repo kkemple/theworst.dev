@@ -1,0 +1,231 @@
+---
+title: Throttling Subscription Events in React with Generators
+tags:
+  - async
+  - react
+  - queues
+---
+
+I recently came across a situation where I needed to throttle incoming subscription events and it ended up being quite an interesting problem to solve!
+
+In most situations you will want to make an update to your UI as soon as you recieve a new event from the server, however, this isn't always the case. What happens when what you do with each event when you need to ensure a particular action completes with the last event before you make any updates to your UI. An example of this is running an animation when you recieve an event, or showing a notification.
+
+In my particular usecase I needed to show an animation and display a follower name for 3 seconds before handling the next event from the server. Without some sort of mechanism to throttle the events, this wouldn't be easy to solve with only `useEffect`. If you don't believe me, check out [this thread on Twitter](https://twitter.com/i/status/1259217403927388160).
+
+After trying many implementations and having some pretty complex effects using lots of state and refs, I decided to give generators a try.
+
+> Another possible solution for this would be `Observables`.
+
+---
+
+## TL;DR
+
+I ended up using `@reapeaterjs/react-hooks` and I'm extremely happy with the outcome! Here is the resulting hook in full.
+
+```js
+import { gql, useApolloClient } from '@apollo/client'
+import { useValue, useRepeater } from '@repeaterjs/react-hooks'
+import { useEffect } from 'react'
+
+const FOLLOW_SUBSCRIPTION = gql`
+  subscription Follow {
+    follow
+  }
+`
+
+export default function useFollows() {
+  const client = useApolloClient()
+  const [follows, push, stop] = useRepeater()
+
+  useEffect(() => {
+    const unsubscribe = client
+      .subscribe({ query: FOLLOW_SUBSCRIPTION })
+      .subscribe({
+        next: ({ data }) => {
+          push(data.follow)
+        },
+      })
+
+    return () => {
+      unsubscribe()
+      stop()
+    }
+  }, [push, stop, client])
+
+  const value = useValue(async function*() {
+    for await (const follow of follows) {
+      yield follow
+      await new Promise(resolve => setTimeout(resolve, 3000))
+    }
+  })
+
+  return value
+}
+```
+
+## The Breakdown
+
+First I brought in the needed dependencies:
+
+```js {2}
+import { gql, useApolloClient } from '@apollo/client'
+import { useValue, useRepeater } from '@repeaterjs/react-hooks'
+import { useEffect } from 'react'
+
+...
+```
+
+Next I set up the repeater like so:
+
+```js {13}
+import { gql, useApolloClient } from '@apollo/client'
+import { useValue, useRepeater } from '@repeaterjs/react-hooks'
+import { useEffect } from 'react'
+
+const FOLLOW_SUBSCRIPTION = gql`
+  subscription Follow {
+    follow
+  }
+`
+
+export default function useFollows() {
+  const client = useApolloClient()
+  const [follows, push, stop] = useRepeater()
+
+...
+```
+
+This gives me a generator with promise-like behavior. It allows me to `push` items onto a stream and then close it off with `stop`. Those items can be read by calling `follows.next()` or by setting up an async loop that will run each time a new item is found like so:
+
+```js {18-21}
+import { gql, useApolloClient } from '@apollo/client'
+import { useValue, useRepeater } from '@repeaterjs/react-hooks'
+import { useEffect } from 'react'
+
+const FOLLOW_SUBSCRIPTION = gql`
+  subscription Follow {
+    follow
+  }
+`
+
+export default function useFollows() {
+  const client = useApolloClient()
+  const [follows, push, stop] = useRepeater()
+
+  ...
+
+  const value = useValue(async function*() {
+    for await (const follow of follows) {
+      yield follow
+      await new Promise(resolve => setTimeout(resolve, 3000))
+    }
+  })
+
+  return value
+}
+```
+
+Next I used the `useValue` hook so that the hook will update with the next follower:
+
+```js {17-22,24}
+import { gql, useApolloClient } from '@apollo/client'
+import { useValue, useRepeater } from '@repeaterjs/react-hooks'
+import { useEffect } from 'react'
+
+const FOLLOW_SUBSCRIPTION = gql`
+  subscription Follow {
+    follow
+  }
+`
+
+export default function useFollows() {
+  const client = useApolloClient()
+  const [follows, push, stop] = useRepeater()
+
+  ...
+
+  const value = useValue(async function*() {
+    for await (const follow of follows) {
+      yield follow
+      await new Promise(resolve => setTimeout(resolve, 3000))
+    }
+  })
+
+  return value
+}
+```
+
+Because we're inside of this async iterator, I can use a `Promise` with the `await` keyword to prevent the loop from iterating on the next item in the queue. The loop function won't run again until all async work in scope completes:
+
+```js {20}
+import { gql, useApolloClient } from '@apollo/client'
+import { useValue, useRepeater } from '@repeaterjs/react-hooks'
+import { useEffect } from 'react'
+
+const FOLLOW_SUBSCRIPTION = gql`
+  subscription Follow {
+    follow
+  }
+`
+
+export default function useFollows() {
+  const client = useApolloClient()
+  const [follows, push, stop] = useRepeater()
+
+  ...
+
+  const value = useValue(async function*() {
+    for await (const follow of follows) {
+      yield follow
+      await new Promise(resolve => setTimeout(resolve, 3000))
+    }
+  })
+
+  return value
+}
+```
+
+The last step was to wire up the repeater to the incoming subscription events:
+
+```js {15-28}
+import { gql, useApolloClient } from '@apollo/client'
+import { useValue, useRepeater } from '@repeaterjs/react-hooks'
+import { useEffect } from 'react'
+
+const FOLLOW_SUBSCRIPTION = gql`
+  subscription Follow {
+    follow
+  }
+`
+
+export default function useFollows() {
+  const client = useApolloClient()
+  const [follows, push, stop] = useRepeater()
+
+  useEffect(() => {
+    const unsubscribe = client
+      .subscribe({ query: FOLLOW_SUBSCRIPTION })
+      .subscribe({
+        next: ({ data }) => {
+          push(data.follow)
+        },
+      })
+
+    return () => {
+      unsubscribe()
+      stop()
+    }
+  }, [push, stop, client])
+
+  const value = useValue(async function*() {
+    for await (const follow of follows) {
+      yield follow
+      await new Promise(resolve => setTimeout(resolve, 3000))
+    }
+  })
+
+  return value
+}
+```
+
+And that's it! I now have a queue component that will throttle incoming follows and no matter how fast those events come in, this hook will only ever update with a new one every three seconds.
