@@ -8,7 +8,7 @@ export default function Layout(props) {
     <div className="p-8 w-auto">
       <header className="mx-auto max-w-screen-md flex justify-between items-center">
         <Link className="no-gradient" to="/">
-          <img className="w-40" src={Logo} />
+          <img style={{ width: 160 }} src={Logo} />
         </Link>
         <nav>
           <ul className="flex justify-end items-center list-none bg-transparent">

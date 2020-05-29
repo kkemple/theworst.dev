@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import Tippy from "@tippyjs/react";
 
 import SEO from "../components/seo";
+import YouTube from "../assets/youtube-logo.png";
 
 const shuffle = (arr) => {
   const newArr = arr.slice();
@@ -76,26 +77,31 @@ export default function Home(props) {
             return (
               <div key={node.fields.slug} className="mb-3">
                 <h4>
-                  <Link to={node.fields.slug}>{title}</Link>
+                  <Link className="no-gradient" to={node.fields.slug}>
+                    {title}
+                  </Link>
                 </h4>
               </div>
             );
           } else if (node.__typename === "YoutubeVideo") {
             const title = node.title;
             return (
-              <div className="mb-3" key={title}>
+              <div className="mb-3 flex items-center" key={title}>
+                <span className="youtube-icon">
+                  <img src={YouTube} />
+                </span>
                 <h4>
                   <Tippy
                     className=".bg-gray-800"
                     theme="light-border"
                     content={
                       <>
-                        <h4 className="text-center font-thin">YouTube Video</h4>
                         <img src={node.thumbnails.high.url} />
                       </>
                     }
                   >
                     <a
+                      className="no-gradient"
                       href={`https://www.youtube.com/watch?v=${node.resourceId.videoId}`}
                     >
                       {title}

@@ -152,3 +152,9 @@ input {
   outline-color: rgb(144, 243, 179);
   color: #c7d5e4;
 }
+
+.youtube-icon {
+  width: 20px !important;
+  margin-left: -28px;
+  margin-right: 8px;
+}
