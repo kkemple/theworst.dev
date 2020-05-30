@@ -6,12 +6,16 @@ import Logo from "../assets/logo.svg";
 export default function Layout(props) {
   return (
     <div className="p-8 w-auto">
-      <header className="mx-auto max-w-screen-md flex justify-between items-center">
+      <header className="mx-auto max-w-screen-md flex flex-col justify-center sm:justify-between sm:items-center">
         <Link className="no-gradient" to="/">
-          <img style={{ width: 160 }} src={Logo} />
+          <img
+            className="mx-auto"
+            style={{ width: 160, maxWidth: 160 }}
+            src={Logo}
+          />
         </Link>
-        <nav>
-          <ul className="flex justify-end items-center list-none bg-transparent">
+        <nav className="mt-2 sm-mt-0">
+          <ul className="flex sm:justify-end justify-center items-center list-none bg-transparent p-0">
             <li>
               <a href="https://twitter.com/kurtkemple">Twitter</a>
             </li>
@@ -29,7 +33,9 @@ export default function Layout(props) {
           </ul>
         </nav>
       </header>
-      <main className="mt-32 mx-auto max-w-screen-md">{props.children}</main>
+      <main className="mt-16 sm:mt-32 mx-auto max-w-screen-md">
+        {props.children}
+      </main>
     </div>
   );
 }

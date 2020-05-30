@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, graphql } from "gatsby";
 import Tippy from "@tippyjs/react";
+import { FiYoutube, FiFile } from "react-icons/fi";
 
 import SEO from "../components/seo";
-import YouTube from "../assets/youtube-logo.png";
 
 const shuffle = (arr) => {
   const newArr = arr.slice();
@@ -54,7 +54,9 @@ export default function Home(props) {
         ]}
         tags={["development", "advocacy", "mental health"]}
       />
-      <h1 className="text-4xl font-thin">Welcome to my digital garden! 🌻</h1>
+      <h1 className="text-4xl font-thin leading-tight mb-2">
+        Welcome to my digital garden! 🌻
+      </h1>
       <p className="max-w-3xl text-lg mt-0">
         <strong>Hey, I'm Kurt!</strong> I'm very passionate about{" "}
         <a href="https://graphql.org">GraphQL</a>, the{" "}
@@ -65,9 +67,9 @@ export default function Home(props) {
       </p>
       <div className="mt-16">
         <input
-          className="py-1 px-3 rounded-md mb-6 text-lg w-1/2"
+          className="py-1 px-3 rounded-md mb-6 text-lg w-full"
           value={filter}
-          type="search"
+          type="text"
           onChange={handleSearch}
           placeholder="Looking for something?"
         />
@@ -75,8 +77,14 @@ export default function Home(props) {
           if (node.__typename === "Mdx") {
             const title = node.frontmatter.title;
             return (
-              <div key={node.fields.slug} className="mb-3">
-                <h4>
+              <div
+                className="mb-3 flex items-center  hover:bg-dark-bg p-2 rounded"
+                key={title}
+              >
+                <span className="mr-2">
+                  <FiFile />
+                </span>
+                <h4 className="text-base">
                   <Link className="no-gradient" to={node.fields.slug}>
                     {title}
                   </Link>
@@ -86,17 +94,22 @@ export default function Home(props) {
           } else if (node.__typename === "YoutubeVideo") {
             const title = node.title;
             return (
-              <div className="mb-3 flex items-center" key={title}>
-                <span className="youtube-icon">
-                  <img src={YouTube} />
+              <div
+                className="mb-3 flex items-center  hover:bg-dark-bg p-2 rounded"
+                key={title}
+              >
+                <span className="mr-2">
+                  <FiYoutube />
                 </span>
-                <h4>
+                <h4 className="text-base">
                   <Tippy
-                    className=".bg-gray-800"
                     theme="light-border"
                     content={
                       <>
-                        <img src={node.thumbnails.high.url} />
+                        <img
+                          style={{ width: 200 }}
+                          src={node.thumbnails.high.url}
+                        />
                       </>
                     }
                   >
