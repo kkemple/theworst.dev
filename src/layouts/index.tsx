@@ -14,7 +14,7 @@ export default function Layout(props) {
             src={Logo}
           />
         </Link>
-        <nav className="mt-2 sm-mt-0">
+        <nav className="mt-4 sm-mt-0">
           <ul className="flex sm:justify-end justify-center items-center list-none bg-transparent p-0">
             <li>
               <a href="https://twitter.com/kurtkemple">Twitter</a>
