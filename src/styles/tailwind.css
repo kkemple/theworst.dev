@@ -153,12 +153,29 @@ input {
   color: #c7d5e4;
 }
 
-.youtube-icon {
-  width: 20px !important;
-  margin-left: -28px;
-  margin-right: 8px;
+.anchor.before svg {
+  stroke: "white";
 }
 
 .react-icons {
   vertical-align: middle;
+}
+
+#post-body h2,
+#post-body h3,
+#post-body h4,
+#post-body h4,
+#post-body h5 {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+#post-body h2 a,
+#post-body h3 a,
+#post-body h4 a,
+#post-body h4 a,
+#post-body h5 a {
+  font-size: 1.2rem;
+  margin-right: 4px;
 }
