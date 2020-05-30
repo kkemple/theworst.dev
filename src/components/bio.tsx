@@ -3,7 +3,6 @@ import React from "react";
 function Bio() {
   return (
     <div className="mt-2">
-      <hr />
       <p>
         <span
           style={{
