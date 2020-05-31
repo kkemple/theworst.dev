@@ -57,5 +57,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The Worst Dev`,
+        short_name: `The Worst Dev`,
+        start_url: `/`,
+        background_color: `#0f1e2f`,
+        theme_color: `#0f1e2f`,
+        display: `minimal-ui`,
+        icon: `static/favicon.ico`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };

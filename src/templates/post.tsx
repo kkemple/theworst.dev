@@ -21,7 +21,7 @@ function PostTemplate(props) {
           <div style={{ fontSize: 12, marginBottom: 40 }}>
             {post.frontmatter.bloomed ? (
               <span>
-                {"🌸"}
+                {"🌻"}
                 <span style={{ marginLeft: 2, fontStyle: "italic" }}>
                   This post has fully bloomed and is unlikely to change
                 </span>
