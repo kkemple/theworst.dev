@@ -104,6 +104,7 @@ export default function Home(props) {
                 <h4 className="text-base">
                   <Tippy
                     theme="light-border"
+                    arrow={false}
                     content={
                       <>
                         <img
