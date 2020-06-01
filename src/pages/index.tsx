@@ -82,7 +82,7 @@ export default function Home(props) {
         </li>
       </ul>
       <hr className="mb-12" />
-      <h1 className="text-4xl font-thin leading-tight mb-2">
+      {/* <h1 className="text-4xl font-thin leading-tight mb-2">
         Welcome to my digital garden! 🌻
       </h1>
       <p className="max-w-3xl text-lg mt-0">
@@ -92,7 +92,7 @@ export default function Home(props) {
         investing in community. When not working I can be found longboarding by
         the ocean or talking someone’s ear off about{" "}
         <a href="https://crossfit.com">CrossFit</a>.
-      </p>
+      </p> */}
       <div className="mt-16">
         <input
           className="py-1 px-3 rounded-md mb-6 text-lg w-full"
