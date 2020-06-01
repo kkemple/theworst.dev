@@ -58,12 +58,12 @@ export default function Home(props) {
         #BlackLivesMatter
       </h1>
       <p className="max-w-3xl text-lg mt-0">
-        Racism in America has been affecting Black people in our nation since it
-        has been a nation at all. Please spend the time you would have spent on
-        this site researching this issue and learning about the problem. Already
-        know it's an issue? Awesome, here are some resources to help you figure
-        out what you can do to help break down racism in America and fight for
-        equity for all.
+        Racism has been affecting Black people in our nation since it has been a
+        nation at all. Please spend the time you would have spent on this site
+        researching this issue and learning about the problem. Already know it's
+        an issue? Awesome, here are some resources to help you figure out what
+        you can do to help break down racism in America and fight for equity for
+        all.
       </p>
       <ul className="mb-4">
         <li>
