@@ -2,7 +2,7 @@ import React from "react";
 
 function Bio() {
   return (
-    <div className="mt-2">
+    <div className="mt-12">
       <p>
         <span
           style={{

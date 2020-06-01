@@ -1,12 +1,16 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { FiFile } from "react-icons/fi";
 
 import Bio from "../components/bio";
 import SEO from "../components/seo";
 
 function PostTemplate(props) {
   const post = props.data.mdx;
+  const related = props.data.related.edges;
+
+  console.log(related);
 
   return (
     <>
@@ -39,6 +43,26 @@ function PostTemplate(props) {
         <MDXRenderer>{post.body}</MDXRenderer>
         <Bio />
       </div>
+      {!!related.length && (
+        <div className="mt-12">
+          <h3>Related Content</h3>
+          {related.map(({ node }) => (
+            <div
+              className="mb-1 flex items-center  hover:bg-dark-bg p-2 rounded"
+              key={node.frontmatter.title}
+            >
+              <span className="mr-2">
+                <FiFile />
+              </span>
+              <h4 className="text-base">
+                <Link className="no-gradient" to={node.fields.slug}>
+                  {node.frontmatter.title}
+                </Link>
+              </h4>
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }
@@ -46,7 +70,7 @@ function PostTemplate(props) {
 export default PostTemplate;
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $tags: [String!]!, $id: String!) {
     site {
       siteMetadata {
         title
@@ -63,6 +87,20 @@ export const query = graphql`
       }
       body
       rawBody
+    }
+    related: allMdx(
+      filter: { id: { ne: $id }, frontmatter: { tags: { in: $tags } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
+        }
+      }
     }
   }
 `;
