@@ -78,6 +78,11 @@ export default function Home(props) {
           <a href="https://blacklivesmatters.carrd.co/#donate">Donate</a>
         </li>
         <li>
+          <a href="https://tatianamac.com/posts/white-guyde/">
+            White Guyde to the Galaxy - How to make meaningful change
+          </a>
+        </li>
+        <li>
           <a href="https://blacklivesmatters.carrd.co/#">More ways to help</a>
         </li>
       </ul>
