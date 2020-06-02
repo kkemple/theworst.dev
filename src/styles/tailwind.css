@@ -193,3 +193,13 @@ input {
     rgb(184, 243, 144)
   );
 }
+
+blockquote {
+  max-width: 100%;
+  font-size: 1rem;
+  font-style: italic;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding-left: 0.75em;
+  border-left: 0.1em solid rgb(144, 243, 179);
+}

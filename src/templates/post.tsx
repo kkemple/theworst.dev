@@ -26,14 +26,14 @@ function PostTemplate(props) {
             {post.frontmatter.bloomed ? (
               <span>
                 {"🌻"}
-                <span style={{ marginLeft: 2, fontStyle: "italic" }}>
+                <span style={{ marginLeft: 4, fontStyle: "italic" }}>
                   This post has fully bloomed and is unlikely to change
                 </span>
               </span>
             ) : (
               <span>
                 {"🌱"}
-                <span style={{ marginLeft: 2, fontStyle: "italic" }}>
+                <span style={{ marginLeft: 4, fontStyle: "italic" }}>
                   This post is still growing and likely to be updated
                 </span>
               </span>
