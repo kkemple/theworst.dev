@@ -49,12 +49,15 @@ p {
   margin: 16px 0;
 }
 
-a {
+a,
+summary {
+  display: inline;
   position: relative;
   cursor: pointer;
 }
 
-a::after {
+a::after,
+summary::after {
   content: "";
   position: absolute;
   bottom: -3px;
