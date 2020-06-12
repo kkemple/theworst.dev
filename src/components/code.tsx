@@ -41,7 +41,7 @@ export const Code = ({ codeString, language, ...props }) => {
     const summary = getSummary(props.metastring);
     return (
       <details>
-        <summary>{summary || "Details"}</summary>
+        <summary>{summary || "See Example"}</summary>
 
         <Highlight
           {...defaultProps}
