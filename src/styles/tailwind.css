@@ -203,3 +203,7 @@ blockquote {
   padding-left: 0.75em;
   border-left: 0.1em solid rgb(144, 243, 179);
 }
+
+details {
+  margin-bottom: 16px;
+}

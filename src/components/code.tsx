@@ -15,6 +15,16 @@ const calculateLinesToHighlight = (meta) => {
   }
 };
 
+const getSummary = (meta) => {
+  const RE = /{summary:\s?([\d,\w,\s]+)}/;
+  if (RE.test(meta)) {
+    const summary = RE.exec(meta)[1];
+    return summary;
+  } else {
+    return false;
+  }
+};
+
 export const Code = ({ codeString, language, ...props }) => {
   // const components = useMDXScope()
 
@@ -28,32 +38,37 @@ export const Code = ({ codeString, language, ...props }) => {
     );
   } else {
     const shouldHighlightLine = calculateLinesToHighlight(props.metastring);
+    const summary = getSummary(props.metastring);
     return (
-      <Highlight
-        {...defaultProps}
-        code={codeString}
-        language={language}
-        theme={theme}
-      >
-        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
-            {tokens.map((line, i) => {
-              const lineProps = getLineProps({ line, key: i });
-              if (shouldHighlightLine(i)) {
-                lineProps.className = `${lineProps.className} highlight-line`;
-              }
+      <details>
+        <summary>{summary || "Details"}</summary>
 
-              return (
-                <div key={i} {...lineProps}>
-                  {line.map((token, key) => (
-                    <span {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              );
-            })}
-          </pre>
-        )}
-      </Highlight>
+        <Highlight
+          {...defaultProps}
+          code={codeString}
+          language={language}
+          theme={theme}
+        >
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <pre className={className} style={style}>
+              {tokens.map((line, i) => {
+                const lineProps = getLineProps({ line, key: i });
+                if (shouldHighlightLine(i)) {
+                  lineProps.className = `${lineProps.className} highlight-line`;
+                }
+
+                return (
+                  <div key={i} {...lineProps}>
+                    {line.map((token, key) => (
+                      <span {...getTokenProps({ token, key })} />
+                    ))}
+                  </div>
+                );
+              })}
+            </pre>
+          )}
+        </Highlight>
+      </details>
     );
   }
 };

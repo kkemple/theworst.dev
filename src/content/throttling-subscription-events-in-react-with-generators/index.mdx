@@ -22,52 +22,52 @@ After trying many implementations and having some pretty complex effects using l
 
 I ended up using `@reapeaterjs/react-hooks` and I'm extremely happy with the outcome! Here is the resulting hook in full.
 
-```js
-import { gql, useApolloClient } from '@apollo/client'
-import { useValue, useRepeater } from '@repeaterjs/react-hooks'
-import { useEffect } from 'react'
+```js {summary: Full Code Example}
+import { gql, useApolloClient } from "@apollo/client";
+import { useValue, useRepeater } from "@repeaterjs/react-hooks";
+import { useEffect } from "react";
 
-const FOLLOW_SUBSCRIPTION = gql`
-  subscription Follow {
-    follow
-  }
-`
+const FOLLOW_SUBSCRIPTION = gql`subscription Follow { follow }`;
 
 export default function useFollows() {
-  const client = useApolloClient()
-  const [follows, push, stop] = useRepeater()
+  const client = useApolloClient();
+  const [follows, push, stop] = useRepeater();
 
   useEffect(() => {
     const unsubscribe = client
       .subscribe({ query: FOLLOW_SUBSCRIPTION })
       .subscribe({
         next: ({ data }) => {
-          push(data.follow)
+          push(data.follow);
         },
-      })
+      });
 
     return () => {
-      unsubscribe()
-      stop()
-    }
-  }, [push, stop, client])
+      unsubscribe();
+      stop();
+    };
 
-  const value = useValue(async function*() {
+  }, [push, stop, client]);
+
+  const value = useValue(async function\* () {
     for await (const follow of follows) {
-      yield follow
-      await new Promise(resolve => setTimeout(resolve, 3000))
+      yield follow;
+      await new Promise((resolve) => setTimeout(resolve, 3000));
     }
-  })
+  });
 
-  return value
+  return value;
 }
+
 ```
+
+---
 
 ## The Breakdown
 
 First I brought in the needed dependencies:
 
-```js {2}
+```js {2} {summary: Setting Up Dependencies}
 import { gql, useApolloClient } from '@apollo/client'
 import { useValue, useRepeater } from '@repeaterjs/react-hooks'
 import { useEffect } from 'react'
@@ -77,7 +77,7 @@ import { useEffect } from 'react'
 
 Next I set up the repeater like so:
 
-```js {13}
+```js {13} {summary: Setting Up a Repeater}
 import { gql, useApolloClient } from '@apollo/client'
 import { useValue, useRepeater } from '@repeaterjs/react-hooks'
 import { useEffect } from 'react'
@@ -97,7 +97,7 @@ export default function useFollows() {
 
 This gives me a generator with promise-like behavior. It allows me to `push` items onto a stream and then close it off with `stop`. Those items can be read by calling `follows.next()` or by setting up an async loop that will run each time a new item is found like so:
 
-```js {18-21}
+```js {18-21} {summary: Setting Up the Async Loop}
 import { gql, useApolloClient } from '@apollo/client'
 import { useValue, useRepeater } from '@repeaterjs/react-hooks'
 import { useEffect } from 'react'
@@ -127,7 +127,7 @@ export default function useFollows() {
 
 Next I used the `useValue` hook so that the hook will update with the next follower:
 
-```js {17-22,24}
+```js {17-22,24} {summary: Implement useValue RepeaterJS Hook}
 import { gql, useApolloClient } from '@apollo/client'
 import { useValue, useRepeater } from '@repeaterjs/react-hooks'
 import { useEffect } from 'react'
@@ -157,7 +157,7 @@ export default function useFollows() {
 
 Because we're inside of this async iterator, I can use a `Promise` with the `await` keyword to prevent the loop from iterating on the next item in the queue. The loop function won't run again until all async work in scope completes:
 
-```js {20}
+```js {20} {summary: Pausing the Loop with a Promise}
 import { gql, useApolloClient } from '@apollo/client'
 import { useValue, useRepeater } from '@repeaterjs/react-hooks'
 import { useEffect } from 'react'
@@ -187,44 +187,44 @@ export default function useFollows() {
 
 The last step was to wire up the repeater to the incoming subscription events:
 
-```js {15-28}
-import { gql, useApolloClient } from '@apollo/client'
-import { useValue, useRepeater } from '@repeaterjs/react-hooks'
-import { useEffect } from 'react'
+```js {15-28} {summary: Connect the Repeater to Subscription Events}
+import { gql, useApolloClient } from "@apollo/client";
+import { useValue, useRepeater } from "@repeaterjs/react-hooks";
+import { useEffect } from "react";
 
 const FOLLOW_SUBSCRIPTION = gql`
   subscription Follow {
     follow
   }
-`
+`;
 
 export default function useFollows() {
-  const client = useApolloClient()
-  const [follows, push, stop] = useRepeater()
+  const client = useApolloClient();
+  const [follows, push, stop] = useRepeater();
 
   useEffect(() => {
     const unsubscribe = client
       .subscribe({ query: FOLLOW_SUBSCRIPTION })
       .subscribe({
         next: ({ data }) => {
-          push(data.follow)
+          push(data.follow);
         },
-      })
+      });
 
     return () => {
-      unsubscribe()
-      stop()
-    }
-  }, [push, stop, client])
+      unsubscribe();
+      stop();
+    };
+  }, [push, stop, client]);
 
-  const value = useValue(async function*() {
+  const value = useValue(async function* () {
     for await (const follow of follows) {
-      yield follow
-      await new Promise(resolve => setTimeout(resolve, 3000))
+      yield follow;
+      await new Promise((resolve) => setTimeout(resolve, 3000));
     }
-  })
+  });
 
-  return value
+  return value;
 }
 ```
 
