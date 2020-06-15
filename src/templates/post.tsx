@@ -10,8 +10,6 @@ function PostTemplate(props) {
   const post = props.data.mdx;
   const related = props.data.related.edges;
 
-  console.log(related);
-
   return (
     <>
       <SEO
