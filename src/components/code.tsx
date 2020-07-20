@@ -27,6 +27,7 @@ const getSummary = (meta) => {
 
 export const Code = ({ codeString, language, ...props }) => {
   // const components = useMDXScope()
+  const shouldHighlightLine = calculateLinesToHighlight(props.metastring);
 
   if (props["react-live"]) {
     return (
@@ -36,8 +37,7 @@ export const Code = ({ codeString, language, ...props }) => {
         <LivePreview />
       </LiveProvider>
     );
-  } else {
-    const shouldHighlightLine = calculateLinesToHighlight(props.metastring);
+  } else if (props["summary"]) {
     const summary = getSummary(props.metastring);
     return (
       <details>
@@ -69,6 +69,34 @@ export const Code = ({ codeString, language, ...props }) => {
           )}
         </Highlight>
       </details>
+    );
+  } else {
+    return (
+      <Highlight
+        {...defaultProps}
+        code={codeString}
+        language={language}
+        theme={theme}
+      >
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => {
+              const lineProps = getLineProps({ line, key: i });
+              if (shouldHighlightLine(i)) {
+                lineProps.className = `${lineProps.className} highlight-line`;
+              }
+
+              return (
+                <div key={i} {...lineProps}>
+                  {line.map((token, key) => (
+                    <span {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              );
+            })}
+          </pre>
+        )}
+      </Highlight>
     );
   }
 };
