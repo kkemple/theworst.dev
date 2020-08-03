@@ -211,9 +211,11 @@ async (event, steps) => {
 };
 ```
 
-> Going throught the highlighted bits of code, I first convert the avatar URLs for guests to base64 for use in Cloudinary, then parse out the show name and title so I know which template to use, then apply the proper avatar layout based on the number of guests (up to 5), and finally piece it all together into a cloudinary URL that will be the completed social media card. 🤯
+> Going through the highlighted bits of code, I first convert the avatar URLs for guests to base64 for use in Cloudinary, then parse out the show name and title so I know which template to use, then apply the proper avatar layout based on the number of guests (up to 5), and finally piece it all together into a cloudinary URL that will be the completed social media card. 🤯
 
-Once that is all done, the last step is to send myself a message in Slack with the tweet contents and social media image URL so that I can tweet about the stream. The reason this last part isn't automated anymore is that Twitter doesn't let you `@` folks over the API anymore so I copy/paste the info from Slack into Twitter which only takes a few seconds.
+Once that is all done, the last step is to send myself a message in Slack with the tweet contents and social media image URL so that I can tweet about the stream.
+
+> The reason this last part isn't automated anymore is that Twitter doesn't let you `@` folks over the API anymore so I copy/paste the info from Slack into Twitter which only takes a few seconds.
 
 The result is a Slack message to myself that looks like this:
 
