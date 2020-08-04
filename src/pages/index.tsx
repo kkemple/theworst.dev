@@ -15,7 +15,7 @@ const shuffle = (arr) => {
 };
 
 const CurationGroup = ({ title, nodes }) => (
-  <div className="curation-group-container w-1/2 m-3">
+  <div className="curation-group-container md:w-1/2 m-3">
     <div className="curation-group p-3">
       <h3 className="font-light">{title}</h3>
       <ul className="curation-list mt-2">
@@ -141,7 +141,7 @@ export default function Home(props) {
           These curated groups of posts are hand selected to give you quick
           access to some common topics. 100% organic, non-GMO. 👨‍🌾
         </p>
-        <div className="flex -mx-2">
+        <div className="md:flex -mx-2">
           <CurationGroup
             title="Livestreaming"
             nodes={[...livestreamingPosts, ...livestreamingVideos]}
