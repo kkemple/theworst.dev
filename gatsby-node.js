@@ -93,11 +93,17 @@ exports.sourceNodes = async ({ actions }) => {
   const playlist = "PLIdaz4KCHMlcH0VLrr1UTGLIIdEneheki";
 
   const videos = await ypi(process.env.YOUTUBE_API_KEY, playlist);
+  const curationMap = {
+    "Using CSS Gradient Backgrounds in Streamlabs OBS": "livestreaming",
+    "Using Clipping Masks to Get Gradient Text in OBS": "livestreaming",
+  };
 
   quickTipsNode.children = videos.map((video) => {
     const id = `youtubeVideo-${video.resourceId.videoId}`;
+    const curationGroup = curationMap[video.title];
     makeNode({
       id,
+      curationGroup,
       title: video.title,
       description: video.description,
       thumbnails: video.thumbnails,

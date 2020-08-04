@@ -210,3 +210,30 @@ blockquote {
 details {
   margin-bottom: 16px;
 }
+
+.curation-group-container {
+  background: linear-gradient(
+    90deg,
+    rgb(144, 243, 179),
+    rgb(144, 233, 243),
+    rgb(144, 159, 243),
+    rgb(204, 144, 243),
+    rgb(243, 144, 209),
+    rgb(243, 154, 144),
+    rgb(243, 229, 144),
+    rgb(184, 243, 144)
+  );
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.curation-group {
+  background-color: #0f1e2f;
+  border-radius: 3px;
+  height: 100%;
+}
+
+.curation-list {
+  padding: 0;
+  background-color: transparent;
+}

@@ -14,12 +14,83 @@ const shuffle = (arr) => {
   return newArr;
 };
 
+const CurationGroup = ({ title, nodes }) => (
+  <div className="curation-group-container w-1/2 m-3">
+    <div className="curation-group p-3">
+      <h3 className="font-light">{title}</h3>
+      <ul className="curation-list mt-2">
+        {nodes.map(({ node }) => renderNode(node))}
+      </ul>
+    </div>
+  </div>
+);
+
+const renderNode = (node) => {
+  if (node.__typename === "Mdx") {
+    const title = node.frontmatter.title;
+    return (
+      <div
+        className="mb-3 flex items-center  hover:bg-dark-bg p-2 rounded"
+        key={title}
+      >
+        <span className="mr-2">
+          <FiFile />
+        </span>
+        <h4 className="text-base">
+          <Link className="no-gradient" to={node.fields.slug}>
+            {title}
+          </Link>
+        </h4>
+      </div>
+    );
+  } else if (node.__typename === "YoutubeVideo") {
+    const title = node.title;
+    return (
+      <div
+        className="mb-3 flex items-center  hover:bg-dark-bg p-2 rounded"
+        key={title}
+      >
+        <span className="mr-2">
+          <FiYoutube />
+        </span>
+        <h4 className="text-base">
+          <Tippy
+            theme="light-border"
+            arrow={false}
+            content={
+              <>
+                <img style={{ width: 200 }} src={node.thumbnails.high.url} />
+              </>
+            }
+          >
+            <a
+              className="no-gradient"
+              href={`https://www.youtube.com/watch?v=${node.resourceId.videoId}`}
+            >
+              {title}
+            </a>
+          </Tippy>
+        </h4>
+      </div>
+    );
+  }
+};
+
 export default function Home(props) {
   const { data } = props;
   const posts = data.allMdx.edges;
   const videos = data.allYoutubeVideo.edges;
+  const livestreamingPosts = data.curatedLivestreamMdx.edges;
+  const mentalHealthPosts = data.curatedMentalHealthMdx.edges;
+  const livestreamingVideos = data.curatedLivestreamVideos.edges;
   const [shuffled, setShuffled] = useState([]);
   const [filter, setFilter] = useState("");
+
+  console.log({
+    livestreamingPosts,
+    livestreamingVideos,
+    mentalHealthPosts,
+  });
 
   useEffect(() => {
     setShuffled(shuffle([...posts, ...videos]));
@@ -55,49 +126,29 @@ export default function Home(props) {
         tags={["development", "advocacy", "mental health"]}
       />
       <h1 className="text-4xl font-thin leading-tight mb-2">
-        #BlackLivesMatter
-      </h1>
-      <p className="max-w-3xl text-lg mt-0">
-        Racism has been affecting Black people in our nation since it has been a
-        nation at all. Please spend the time you would have spent on this site
-        researching this issue and learning about the problem. Already know it's
-        an issue? Awesome, here are some resources to help you figure out what
-        you can do to help break down racism in America and fight for equity for
-        all.
-      </p>
-      <ul className="mb-4">
-        <li>
-          <a href="https://blacklivesmatters.carrd.co/#petitions">
-            Sign Petitions
-          </a>
-        </li>
-        <li>
-          <a href="https://blacklivesmatters.carrd.co/#text">Text or Call</a>
-        </li>
-        <li>
-          <a href="https://blacklivesmatters.carrd.co/#donate">Donate</a>
-        </li>
-        <li>
-          <a href="https://tatianamac.com/posts/white-guyde/">
-            White Guyde to the Galaxy - How to make meaningful change
-          </a>
-        </li>
-        <li>
-          <a href="https://blacklivesmatters.carrd.co/#">More ways to help</a>
-        </li>
-      </ul>
-      <hr className="mb-12" />
-      {/* <h1 className="text-4xl font-thin leading-tight mb-2">
         Welcome to my digital garden! 🌻
       </h1>
-      <p className="max-w-3xl text-lg mt-0">
+      <p className="max-w-2xl text-xl mt-0">
         <strong>Hey, I'm Kurt!</strong> I'm very passionate about{" "}
         <a href="https://graphql.org">GraphQL</a>, the{" "}
-        <a href="https://jamstack.org">JAMstack</a>, mental health, fitness, and
-        investing in community. When not working I can be found longboarding by
-        the ocean or talking someone’s ear off about{" "}
-        <a href="https://crossfit.com">CrossFit</a>.
-      </p> */}
+        <a href="https://jamstack.org">JAMstack</a>, livestreaming, mental
+        health, fitness, and investing in community.
+      </p>
+      <hr className="mb-16" />
+      <div>
+        <h2 className="font-thin mb-0">Kurt's Curations</h2>
+        <p className="max-w-xl mt-1">
+          These curated groups of posts are hand selected to give you quick
+          access to some common topics. 100% organic, non-GMO. 👨‍🌾
+        </p>
+        <div className="flex -mx-2">
+          <CurationGroup
+            title="Livestreaming"
+            nodes={[...livestreamingPosts, ...livestreamingVideos]}
+          />
+          <CurationGroup title="Mental Health" nodes={mentalHealthPosts} />
+        </div>
+      </div>
       <div className="mt-16">
         <input
           className="py-1 px-3 rounded-md mb-6 text-lg w-full"
@@ -106,59 +157,7 @@ export default function Home(props) {
           onChange={handleSearch}
           placeholder="Looking for something?"
         />
-        {results.map(({ node }) => {
-          if (node.__typename === "Mdx") {
-            const title = node.frontmatter.title;
-            return (
-              <div
-                className="mb-3 flex items-center  hover:bg-dark-bg p-2 rounded"
-                key={title}
-              >
-                <span className="mr-2">
-                  <FiFile />
-                </span>
-                <h4 className="text-base">
-                  <Link className="no-gradient" to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h4>
-              </div>
-            );
-          } else if (node.__typename === "YoutubeVideo") {
-            const title = node.title;
-            return (
-              <div
-                className="mb-3 flex items-center  hover:bg-dark-bg p-2 rounded"
-                key={title}
-              >
-                <span className="mr-2">
-                  <FiYoutube />
-                </span>
-                <h4 className="text-base">
-                  <Tippy
-                    theme="light-border"
-                    arrow={false}
-                    content={
-                      <>
-                        <img
-                          style={{ width: 200 }}
-                          src={node.thumbnails.high.url}
-                        />
-                      </>
-                    }
-                  >
-                    <a
-                      className="no-gradient"
-                      href={`https://www.youtube.com/watch?v=${node.resourceId.videoId}`}
-                    >
-                      {title}
-                    </a>
-                  </Tippy>
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {results.map(({ node }) => renderNode(node))}
       </div>
     </>
   );
@@ -171,6 +170,57 @@ export const pageQuery = graphql`
         title
       }
     }
+    curatedLivestreamMdx: allMdx(
+      filter: { frontmatter: { curationGroup: { eq: "livestreaming" } } }
+    ) {
+      edges {
+        node {
+          __typename
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+    curatedLivestreamVideos: allYoutubeVideo(
+      filter: { curationGroup: { eq: "livestreaming" } }
+    ) {
+      edges {
+        node {
+          __typename
+          description
+          title
+          resourceId {
+            videoId
+          }
+          thumbnails {
+            high {
+              url
+            }
+          }
+        }
+      }
+    }
+    curatedMentalHealthMdx: allMdx(
+      filter: { frontmatter: { curationGroup: { eq: "mental health" } } }
+    ) {
+      edges {
+        node {
+          __typename
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
     allMdx {
       edges {
         node {
@@ -181,7 +231,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            bloomed
           }
         }
       }
