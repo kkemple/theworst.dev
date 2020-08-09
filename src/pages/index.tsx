@@ -86,12 +86,6 @@ export default function Home(props) {
   const [shuffled, setShuffled] = useState([]);
   const [filter, setFilter] = useState("");
 
-  console.log({
-    livestreamingPosts,
-    livestreamingVideos,
-    mentalHealthPosts,
-  });
-
   useEffect(() => {
     setShuffled(shuffle([...posts, ...videos]));
   }, [posts, videos]);
@@ -136,7 +130,7 @@ export default function Home(props) {
       </p>
       <hr className="mb-16" />
       <div>
-        <h2 className="font-thin mb-0">Kurt's Curations</h2>
+        <h2 className="font-thin mb-0">The Worst Curations</h2>
         <p className="max-w-xl mt-1">
           These curated groups of posts are hand selected to give you quick
           access to some common topics. 100% organic, non-GMO. 👨‍🌾
