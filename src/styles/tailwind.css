@@ -46,7 +46,7 @@ hr {
 }
 
 p {
-  margin: 16px 0;
+  margin: 8px 0 24px;
 }
 
 a,
@@ -171,7 +171,22 @@ input {
 #post-body h5 {
   display: flex;
   align-items: center;
+}
+
+#post-body h2 {
+  margin-top: 32px;
+}
+
+#post-body h3 {
+  margin-top: 24px;
+}
+
+#post-body h4 {
   margin-top: 16px;
+}
+
+#post-body h5 {
+  margin-top: 12px;
 }
 
 #post-body h2 a,
