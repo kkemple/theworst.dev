@@ -19,6 +19,7 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,19 +35,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
-              wrapperStyle: (fluidResult) =>
-                `flex:${Math.round(fluidResult.aspectRatio, 2)};`,
+              maxWidth: 768,
+              // linkImagesToOriginal: false,
             },
           },
           {
             resolve: `gatsby-remark-copy-linked-files`,
           },
-
-          {
-            resolve: `gatsby-remark-smartypants`,
-          },
-
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -57,8 +52,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

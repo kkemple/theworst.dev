@@ -90,7 +90,6 @@ a.no-gradient::after {
 }
 
 p {
-  white-space: pre-wrap;
   -webkit-hanging-punctuation: none;
   hanging-punctuation: none;
 }
@@ -101,6 +100,7 @@ ul {
   padding: 8px 16px;
   list-style-type: disc;
   padding-left: 32px;
+  margin-bottom: 16px;
 }
 
 li {
@@ -251,4 +251,16 @@ details {
 .curation-list {
   padding: 0;
   background-color: transparent;
+}
+
+.gatsby-resp-image-image {
+  height: auto !important;
+}
+
+.gatsby-resp-image-background {
+  padding-bottom: 55.5% !important;
+}
+
+.gatsby-resp-image-background-image {
+  display: inline-block !important;
 }
