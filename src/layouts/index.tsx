@@ -30,6 +30,9 @@ export default function Layout(props) {
             <li className="ml-3">
               <a href="https://instagram.com/kurtkemple">Instagram</a>
             </li>
+            <li className="ml-3">
+              <a href="/discord">Discord</a>
+            </li>
           </ul>
         </nav>
       </header>
