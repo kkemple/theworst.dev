@@ -17,7 +17,7 @@ export default function Layout(props) {
         <nav className="mt-4 sm-mt-0">
           <ul className="flex sm:justify-end justify-center items-center list-none bg-transparent p-0">
             <li>
-              <a href="https://twitter.com/kurtkemple">Twitter</a>
+              <a href="https://twitter.com/theworstdev">Twitter</a>
             </li>
             <li className="ml-3">
               <a href="https://twitch.tv/theworstdev">Twitch</a>
