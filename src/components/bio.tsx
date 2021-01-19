@@ -15,7 +15,7 @@ function Bio() {
           Virginia Beach, VA.
         </span>
 
-        <a href="https://twitter.com/kurtkemple">
+        <a href="https://twitter.com/theworstdev">
           You should follow him on Twitter
         </a>
       </p>
