@@ -49,7 +49,7 @@ export default function useFollows() {
 
   }, [push, stop, client]);
 
-  const value = useValue(async function\* () {
+  const value = useValue(async function* () {
     for await (const follow of follows) {
       yield follow;
       await new Promise((resolve) => setTimeout(resolve, 3000));
