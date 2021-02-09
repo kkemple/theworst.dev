@@ -82,9 +82,9 @@ export async function getStaticProps() {
   const posts = shuffle(
     postsData.map((postData) => {
       return {
-        title: postData.module.title,
+        title: postData.module.meta.title,
         slug: postData.link.replace(".mdx", ""),
-        description: postData.module.meta?.description,
+        description: postData.module.meta.description,
       };
     })
   );
