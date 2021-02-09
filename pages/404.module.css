@@ -1,0 +1,8 @@
+.container {
+  margin-left: auto;
+  margin: auto;
+  margin-top: 64px;
+  max-width: 720px;
+  padding: 24px;
+  padding-bottom: 64px;
+}
