@@ -65,4 +65,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    position: relative;
+  }
+
+  .navAndToggle {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .nav {
+    margin-top: 0;
+  }
 }

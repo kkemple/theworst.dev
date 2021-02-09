@@ -1,9 +1,10 @@
 .post {
   max-width: 720px;
   margin: 0 auto;
-  padding: 48px 0;
+  padding: 48px 24px;
 }
 
 .post img {
-  max-width: 100%;
+  max-width: auto;
+  width: 100%;
 }

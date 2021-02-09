@@ -7,3 +7,7 @@
   padding-bottom: 64px;
   text-align: center;
 }
+
+.container img {
+  max-width: 100%;
+}
