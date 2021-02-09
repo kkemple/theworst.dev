@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Billboard from "@components/Billboard";
 import Link from "next/link";
 import styles from "./content.module.css";
 
@@ -75,7 +74,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      posts: posts.filter((post) => post.title !== "Code of Conduct"),
     },
   };
 }
