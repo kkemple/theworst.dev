@@ -1,6 +1,7 @@
 import ProfilePics from "@components/ProfilePics";
 import Bio from "@components/Bio";
 import Link from "next/link";
+import Head from "next/head";
 
 import styles from "./resources.module.css";
 
