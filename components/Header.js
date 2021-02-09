@@ -30,14 +30,16 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <DarkModeToggle
-          size={60}
-          speed={2}
-          checked={darkModeActive}
-          onChange={(isDarkMode) =>
-            isDarkMode ? switchToDarkMode() : switchToLightMode()
-          }
-        />
+        <div className={styles.toggle}>
+          <DarkModeToggle
+            size={60}
+            speed={2}
+            checked={darkModeActive}
+            onChange={(isDarkMode) =>
+              isDarkMode ? switchToDarkMode() : switchToLightMode()
+            }
+          />
+        </div>
       </div>
     </section>
   );

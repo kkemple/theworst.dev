@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
-
+  padding: 0;
   text-transform: uppercase;
   margin-right: 16px;
 }
@@ -68,6 +68,12 @@
   flex-wrap: wrap;
 }
 
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 720px) {
   .header {
     flex-direction: column;
@@ -79,10 +85,16 @@
 
   .navAndToggle {
     justify-content: center;
-    align-items: flex-start;
   }
 
   .nav {
     margin-top: 0;
+    flex-wrap: wrap;
+  }
+
+  .toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
   }
 }

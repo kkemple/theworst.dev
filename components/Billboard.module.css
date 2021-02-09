@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 24px;
 }
 
 .title {
