@@ -90,6 +90,12 @@
   .nav {
     margin-top: 0;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav li {
+    margin-bottom: 8px;
   }
 
   .toggle {
