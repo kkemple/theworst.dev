@@ -12,7 +12,7 @@ export default function Layout({ darkModeActive, children }) {
   return (
     <div className={`${darkModeActive && "dark"} app`}>
       <Head>
-        <title>The Worst Dev | Home</title>
+        <title>The Worst Dev</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
         <meta name="og:title" content={title} />
