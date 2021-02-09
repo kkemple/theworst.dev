@@ -1,8 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./content.module.css";
+import { buildCloudinaryURL } from "@utils/cloudinary";
+import Head from "next/head";
 
 export default function Garden({ posts }) {
+  const title =
+    "Software Development, Developer Relations, Mental Health, and More...";
+  const description =
+    "This is where I write about about everything software sevelopment, developer relations, mental health, and more. I hope you find something that relates to you!";
+
   const [filter, setFilter] = useState("");
 
   const handleSearch = (event) => {
@@ -14,30 +21,43 @@ export default function Garden({ posts }) {
   });
 
   return (
-    <div>
-      <main className={styles.container}>
-        <div className={styles.search}>
-          <input
-            className={styles.filter}
-            value={filter}
-            type="text"
-            onChange={handleSearch}
-            placeholder="Looking for something?"
-          />
-        </div>
-        <hr className={styles.divider} />
-        {results.map((post) => (
-          <div className={styles.postCard}>
-            <Link key={post.slug} href={post.slug}>
-              <a className={styles.link}>
-                <h5>{post.title}</h5>
-                <p>{post.description}</p>
-              </a>
-            </Link>
+    <>
+      <Head>
+        <meta name="description" content={description} />
+        <meta name="og:title" content={title} />
+        <meta name="og:description" content={description} />
+        <meta name="og:type" content="website" />
+        <meta name="og:image" content={`${buildCloudinaryURL(title)}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@theworstdev" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+      </Head>
+      <div>
+        <main className={styles.container}>
+          <div className={styles.search}>
+            <input
+              className={styles.filter}
+              value={filter}
+              type="text"
+              onChange={handleSearch}
+              placeholder="Looking for something?"
+            />
           </div>
-        ))}
-      </main>
-    </div>
+          <hr className={styles.divider} />
+          {results.map((post) => (
+            <div className={styles.postCard}>
+              <Link key={post.slug} href={post.slug}>
+                <a className={styles.link}>
+                  <h5>{post.title}</h5>
+                  <p>{post.description}</p>
+                </a>
+              </Link>
+            </div>
+          ))}
+        </main>
+      </div>
+    </>
   );
 }
 
@@ -62,7 +82,7 @@ export async function getStaticProps() {
   const posts = shuffle(
     postsData.map((postData) => {
       return {
-        title: postData.module.meta.title,
+        title: postData.module.title,
         slug: postData.link.replace(".mdx", ""),
         description: postData.module.meta?.description,
       };
