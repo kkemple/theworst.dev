@@ -1,0 +1,69 @@
+.container {
+  margin-left: auto;
+  margin: auto;
+  margin-top: 64px;
+  max-width: 720px;
+  padding: 24px;
+  padding-bottom: 64px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.divider {
+  margin-bottom: 80px;
+}
+
+.postCard {
+  padding: 24px;
+  background: var(--card-background);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--text-shadow-color);
+  margin-bottom: 32px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.postCard:hover {
+  transform: rotate(-1.3deg);
+  box-shadow: 0 2px 4px var(--text-shadow-color);
+}
+
+.postCard a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.postCard h5 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.postCard p {
+  color: var(--text-color);
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
+.filter {
+  padding: 12px;
+  margin-bottom: 48px;
+  border-radius: 4px;
+  color: var(--link);
+  box-shadow: 2px 2px 0 var(--text-shadow-color);
+  border: none;
+  font-size: 1rem;
+  border: 4px solid transparent;
+  width: 60%;
+  background: var(--card-background);
+}
+
+.filter:focus {
+  outline: none;
+  border-color: var(--link);
+}
+
+.filter::placeholder {
+  color: var(--link);
+  font-size: 1rem;
+}

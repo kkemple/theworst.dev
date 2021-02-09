@@ -1,0 +1,73 @@
+.container {
+  margin-left: auto;
+  margin: auto;
+  margin-top: 64px;
+  max-width: 720px;
+  padding: 24px;
+  padding-bottom: 64px;
+}
+
+.callout {
+  margin-top: 64px;
+  margin-bottom: 8px;
+}
+
+.bio {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.blurb {
+  margin-bottom: 48px;
+  font-size: 0.9rem;
+}
+
+.socials {
+  margin-bottom: 32px;
+}
+
+.postCard {
+  padding: 24px;
+  background: var(--card-background);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--text-shadow-color);
+  margin-bottom: 64px;
+  transition: transform 0.1s;
+}
+
+.postCard:hover {
+  transform: rotate(-1.3deg);
+  box-shadow: 0 2px 4px var(--text-shadow-color);
+}
+
+.no_hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.postCard a {
+  text-decoration: none;
+}
+
+.postCard h5 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.postCard p {
+  color: var(--text-color);
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
+.divider {
+  margin-bottom: 80px;
+}
+
+.iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+}

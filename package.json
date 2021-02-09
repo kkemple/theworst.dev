@@ -1,0 +1,23 @@
+{
+  "name": "next-netlify-starter",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@mapbox/rehype-prism": "^0.5.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^10.0.6",
+    "next": "10.0.6",
+    "next-dark-mode": "^2.3.2",
+    "react": "17.0.1",
+    "react-dark-mode-toggle": "^0.0.10",
+    "react-dom": "17.0.1",
+    "typeface-inter": "^3.15.1",
+    "use-sound": "^2.0.1"
+  }
+}

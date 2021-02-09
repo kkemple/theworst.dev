@@ -1,0 +1,135 @@
+html,
+body {
+  font-family: inter;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  transition: background-color 2s;
+  --header-height: 75px;
+  --small-text: 0.75rem;
+  --transparent-bg: rgba(242, 114, 173, 0.4);
+}
+
+h1 {
+  font-size: 3.052rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 0 var(--text-shadow-color);
+}
+
+h2 {
+  font-size: 2.441rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 0 var(--text-shadow-color);
+}
+
+h3 {
+  font-size: 1.953rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 var(--text-shadow-color);
+}
+
+h4 {
+  font-size: 1.563rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 var(--text-shadow-color);
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  color: #f272ad;
+}
+
+p a,
+.content ul a {
+  cursor: pointer;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-image 0.3s;
+  background-image: linear-gradient(
+    0deg,
+    rgba(242, 114, 173, 0.7) 0,
+    rgba(242, 114, 173, 0.7) 30%,
+    transparent 40%,
+    transparent
+  );
+}
+
+p a:hover,
+p a:active,
+.content ul a:hover,
+.content ul a:active {
+  font-weight: 600;
+  background-image: linear-gradient(
+    0deg,
+    rgba(242, 114, 173, 1) 0,
+    rgba(242, 114, 173, 1) 30%,
+    transparent 40%,
+    transparent
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+blockquote {
+  background-color: var(--transparent-bg);
+  border-left: 4px solid var(--link);
+  padding: 16px;
+  margin: 0;
+  text-shadow: 1px 1px 0 var(--text-shadow-color);
+  border-radius: 0 3px 3px 0;
+}
+
+code {
+  font-size: 16px;
+  background-color: rgba(242, 114, 173, 0.4);
+  font-weight: 500;
+  color: var(--text-color);
+  text-shadow: 1px 1px 0 var(--text-shadow-color);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+hr {
+  height: 20px;
+  background-image: url(/shuriken.svg);
+  background-repeat: round;
+  background-size: contain;
+  border: none;
+}
+
+.app {
+  --background: #faf4f8;
+  --card-background: white;
+  --link: #f272ad;
+  --text-color: rgba(0, 0, 0, 0.87);
+  --text-shadow-color: rgba(128, 6, 63, 0.2);
+  transition: background-color 0.3s;
+  background-color: var(--background);
+  background-image: url("/hidden-leaf-village-symbol.png");
+  background-size: 20%;
+  color: var(--text-color);
+  min-height: 100vh;
+  padding-top: var(--header-height);
+}
+
+.app.dark {
+  /* --background: #12152f; */
+  --background: #0b0d1c;
+  --card-background: #2c335f;
+  --text-color: #f7fafc;
+  --text-shadow-color: rgba(0, 0, 0, 0.4);
+  --transparent-bg: rgba(255, 255, 255, 0.1);
+}

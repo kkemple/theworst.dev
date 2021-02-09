@@ -1,0 +1,11 @@
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.socials img {
+  width: 30px;
+  margin-right: 16px;
+  transition: transform 0.2s;
+}

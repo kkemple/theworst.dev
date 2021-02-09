@@ -1,0 +1,29 @@
+.container {
+  background-image: url(/hidden-leaf-village.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16/5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  color: #f7fafc;
+  text-align: center;
+  max-width: 720px;
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.4;
+}

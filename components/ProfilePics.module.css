@@ -1,0 +1,30 @@
+.container {
+  width: 200px;
+  min-width: 200px;
+  flex: 1;
+  margin-right: 48px;
+}
+
+.active {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.thumbnails img {
+  width: 60px;
+}
+
+.explainer {
+  font-size: 0.6rem;
+  text-align: center;
+  display: block;
+  margin-top: 4px;
+  font-weight: 600;
+}

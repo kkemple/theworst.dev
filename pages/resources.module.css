@@ -1,0 +1,22 @@
+.container {
+  padding: 24px;
+  width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+}
+
+.speakerKit {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 48px;
+}
+
+.divider {
+  margin-bottom: 80px;
+}
+
+.links li {
+  margin-bottom: 16px;
+}

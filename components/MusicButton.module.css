@@ -1,0 +1,18 @@
+.container {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.image {
+  height: 30px;
+  margin-right: 8px;
+}

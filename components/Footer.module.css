@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 24px 64px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow-color);
+  font-weight: 400;
+  margin-top: 24px;
+  transition: transform 0.2s;
+}
+
+.link:hover {
+  transform: rotate(-3deg) scale(1.01);
+}
