@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./content.module.css";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 import Head from "next/head";
+import ContentCard from "@components/ContentCard";
 
 export default function Garden({ posts }) {
   const title = "Kurt Kemple's Digital Garden";
@@ -45,13 +46,13 @@ export default function Garden({ posts }) {
           </div>
           <hr className={styles.divider} />
           {results.map((post) => (
-            <div className={styles.postCard}>
-              <Link key={post.slug} href={post.slug}>
-                <a className={styles.link}>
-                  <h5>{post.title}</h5>
-                  <p>{post.description}</p>
-                </a>
-              </Link>
+            <div className={styles.card}>
+              <ContentCard
+                key={post.slug}
+                url={post.slug}
+                title={post.title}
+                description={post.description}
+              />
             </div>
           ))}
         </main>

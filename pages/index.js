@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./index.module.css";
 import SocialIcons from "@components/SocialIcons";
+import ContentCard from "@components/ContentCard";
 
 export default function Home() {
   return (
@@ -24,20 +25,15 @@ export default function Home() {
         </p>
         <hr className={styles.indexDivider} />
         <h3>If you only read one post, you should read this one</h3>
-        <div className={styles.postCard}>
-          <Link href="im-an-impostor">
-            <a>
-              <h5>I'm an Impostor - Incarceration and Living a Lie</h5>
-              <p>
-                Every day, I walk around telling little lies so I can project
-                this false image of myself. I would like to tell you this is a
-                story about how I feel like I don't know enough, and then I
-                realized that people don't know shit either, but this isn't that
-                story.
-              </p>
-            </a>
-          </Link>
-        </div>
+        <ContentCard
+          url="/im-an-impostor"
+          title="I'm an Impostor - Incarceration and Living a Lie"
+          description="Every day, I walk around telling little lies so I can project
+          this false image of myself. I would like to tell you this is a
+          story about how I feel like I don't know enough, and then I
+          realized that people don't know shit either, but this isn't that
+          story."
+        />
         <hr className={styles.divider} />
         <h3>Some of my recent appearances</h3>
         <div className={`${styles.postCard} ${styles.no_hover}`}>

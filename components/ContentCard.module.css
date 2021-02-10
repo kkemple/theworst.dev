@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+}
+
+.kakashi {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  transition: transform 0.4s;
+  transform: rotate(-50deg);
+}
+
+.content {
+  padding: 24px;
+  background: var(--card-background);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--text-shadow-color);
+  z-index: 2;
+  position: relative;
+}
+
+.container:hover .kakashi {
+  transform: rotate(-50deg) translateY(-45px) translateX(-45px);
+}
+
+.content a {
+  text-decoration: none;
+}
+
+.content h5 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.content p {
+  color: var(--text-color);
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
