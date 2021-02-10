@@ -32,6 +32,7 @@
 @media (max-width: 720px) {
   .container {
     margin-bottom: 48px;
+    margin-right: 0;
   }
 
   .explainer {
