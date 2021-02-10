@@ -38,3 +38,13 @@
   margin-bottom: 0;
   font-size: 0.8rem;
 }
+
+@media (max-width: 720px) {
+  .kakashi {
+    width: 75px;
+  }
+
+  .container:hover .kakashi {
+    transform: rotate(-50deg) translateY(-30px) translateX(-30px);
+  }
+}
