@@ -71,3 +71,9 @@
   aspect-ratio: 16/9;
   border: none;
 }
+
+@media (max-width: 720px) {
+  .container {
+    margin-top: 32px;
+  }
+}

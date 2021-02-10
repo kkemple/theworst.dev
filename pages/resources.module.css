@@ -1,6 +1,7 @@
 .container {
   padding: 24px;
-  width: 720px;
+  max-width: 720px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 64px;
@@ -19,4 +20,16 @@
 
 .links li {
   margin-bottom: 16px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    margin-top: 32px;
+  }
+
+  .speakerKit {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }

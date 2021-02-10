@@ -67,3 +67,9 @@
   color: var(--link);
   font-size: 1rem;
 }
+
+@media (max-width: 720px) {
+  .container {
+    margin-top: 32px;
+  }
+}

@@ -5,3 +5,13 @@
 .bio {
   font-size: 0.8rem;
 }
+
+@media (max-width: 720px) {
+  .container {
+    margin-top: 0;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+}

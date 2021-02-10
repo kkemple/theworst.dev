@@ -28,3 +28,13 @@
   margin-top: 4px;
   font-weight: 600;
 }
+
+@media (max-width: 720px) {
+  .container {
+    margin-bottom: 48px;
+  }
+
+  .explainer {
+    font-size: 0.8rem;
+  }
+}

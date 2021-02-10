@@ -11,3 +11,9 @@
 .container img {
   max-width: 100%;
 }
+
+@media (max-width: 720px) {
+  .container {
+    margin-top: 32px;
+  }
+}
