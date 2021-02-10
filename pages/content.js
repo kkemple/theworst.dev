@@ -5,8 +5,7 @@ import { buildCloudinaryURL } from "@utils/cloudinary";
 import Head from "next/head";
 
 export default function Garden({ posts }) {
-  const title =
-    "Software Development, Developer Relations, Mental Health, and More...";
+  const title = "Kurt Kemple's Digital Garden";
   const description =
     "This is where I write about about everything software sevelopment, developer relations, mental health, and more. I hope you find something that relates to you!";
 

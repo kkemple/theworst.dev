@@ -7,9 +7,9 @@ import { buildCloudinaryURL } from "@utils/cloudinary";
 import styles from "./resources.module.css";
 
 export default function Resources() {
-  const title = "Headshots, bios, and links to things in my eco-system.";
+  const title = "Resources for Speaking Engagements and Links";
   const description =
-    "Your one stop shop for all things needed for me to appear as a guest on your stream/podcast/conf/etc";
+    "Your one stop shop for all things needed for me to appear as a guest on your stream - podcast - conf - etc";
 
   return (
     <>
