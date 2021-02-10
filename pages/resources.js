@@ -52,6 +52,11 @@ export default function Resources() {
               </Link>
             </li>
             <li>
+              <Link href="https://fullstack.health/">
+                <a>Fullstack Health podcast</a>
+              </Link>
+            </li>
+            <li>
               <Link href="https://twitch.tv/theworstdev">
                 <a>The Worst Dev Stream</a>
               </Link>

@@ -16,10 +16,11 @@ export default function Home() {
         <p className={styles.blurb}>
           Thanks for dropping by! Here's a little bit about what kind of content
           you can expect from me. I care deeply about{" "}
-          <Link href="">prison reform</Link> and helping the formerly
-          incarcerated. I also talk about <Link href="">mental health</Link>,
-          drug addiction, and neurodiversity. Oh, and once in awhile I write
-          about developer advocacy and software development!
+          <Link href="https://www.themarshallproject.org/">prison reform</Link>{" "}
+          and helping the formerly incarcerated. I also talk about{" "}
+          <Link href="https://fullstack.health/">mental health</Link>, drug
+          addiction, and neurodiversity. Oh, and once in awhile I write about
+          developer advocacy and software development!
         </p>
         <hr className={styles.indexDivider} />
         <h3>If you only read one post, you should read this one</h3>
