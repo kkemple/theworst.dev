@@ -38,7 +38,7 @@ export default function Home() {
         <hr className={styles.divider} />
         <h3>Some of my recent appearances</h3>
         <div className={`${styles.postCard} ${styles.no_hover}`}>
-          <h5>#causeascene Podcast</h5>
+          <h5>#AntiracistEconomist Podcast</h5>
           <Link href="https://hashtagcauseascene.com/podcast/kurt-kemple/">
             <a>
               <img
