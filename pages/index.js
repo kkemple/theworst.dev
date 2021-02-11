@@ -38,10 +38,6 @@ export default function Home() {
         <hr className={styles.divider} />
         <h3>Some of my recent appearances</h3>
         <div className={`${styles.postCard} ${styles.no_hover}`}>
-          <h5>Antiracist Economist Podcast</h5>
-          <YouTube youTubeId="4fq8QlpEMec" />
-        </div>
-        <div className={`${styles.postCard} ${styles.no_hover}`}>
           <h5>Learn with Jason x freeCodeCamp Interview</h5>
           <YouTube youTubeId="4fq8QlpEMec" />
         </div>
