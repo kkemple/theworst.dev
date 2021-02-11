@@ -1829,6 +1829,11 @@ mdurl@^1.0.0:
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
+mdx-embed@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/mdx-embed/-/mdx-embed-0.0.18.tgz#09fa988b8f52d78f790d74c9a5f2f1528e71002f"
+  integrity sha512-ItQE8r7205OMqm4aLVyvp4VUvQNzGxa5aO41TXOVXHcM8IaYSLgYYr9h9oAdTUxuLMFzJCgGto/IOwJ+GiaPFg==
+
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { YouTube, SoundCloud } from "mdx-embed";
 import styles from "./index.module.css";
 import SocialIcons from "@components/SocialIcons";
 import ContentCard from "@components/ContentCard";
@@ -37,19 +38,16 @@ export default function Home() {
         <hr className={styles.divider} />
         <h3>Some of my recent appearances</h3>
         <div className={`${styles.postCard} ${styles.no_hover}`}>
+          <h5>Antiracist Economist Podcast</h5>
+          <YouTube youTubeId="4fq8QlpEMec" />
+        </div>
+        <div className={`${styles.postCard} ${styles.no_hover}`}>
           <h5>Learn with Jason x freeCodeCamp Interview</h5>
-          <iframe
-            className={styles.iframe}
-            src="https://www.youtube.com/embed/4fq8QlpEMec"
-            allowfullscreen
-          ></iframe>
+          <YouTube youTubeId="4fq8QlpEMec" />
         </div>
         <div className={`${styles.postCard} ${styles.no_hover}`}>
           <h5>Landing in Tech Podcast</h5>
-          <iframe
-            className={styles.iframe}
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/948787954&color=%23243c44&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-          ></iframe>
+          <SoundCloud soundCloudLink="tracks/948787954" color="f272ad" />
         </div>
       </main>
     </div>
