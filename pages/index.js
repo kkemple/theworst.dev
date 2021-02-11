@@ -38,6 +38,22 @@ export default function Home() {
         <hr className={styles.divider} />
         <h3>Some of my recent appearances</h3>
         <div className={`${styles.postCard} ${styles.no_hover}`}>
+          <h5>#causeascene Podcast</h5>
+          <Link href="https://hashtagcauseascene.com/podcast/kurt-kemple/">
+            <a>
+              <img
+                width="100%"
+                src="/guiding-principles.jpg"
+                alt="Tech is Not Neutral, Nor is it Apolitical
+                      Intention without Strategy is Chaos
+                      Lack of Inclusion is a Risk/Crisis Management Issue
+                      ….and lastly and most importantly
+                      Prioritize the Most Vulnerable"
+              />
+            </a>
+          </Link>
+        </div>
+        <div className={`${styles.postCard} ${styles.no_hover}`}>
           <h5>Learn with Jason x freeCodeCamp Interview</h5>
           <YouTube youTubeId="4fq8QlpEMec" />
         </div>
