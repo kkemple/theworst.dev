@@ -1,0 +1,19 @@
+type Query {
+  hello: String!
+}
+
+type ChatMessage {
+  displayName: String!
+  message: String!
+  color: String
+  emotes: [[String!]!]
+}
+
+type BanMessage {
+  user: String!
+}
+
+type Subscription {
+  chat: ChatMessage!
+  ban: BanMessage!
+}
