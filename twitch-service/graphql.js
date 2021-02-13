@@ -11,14 +11,6 @@ const createResolvers = (pubsub) => {
     Query: {
       hello: () => "hi",
     },
-    Subscription: {
-      chat: {
-        subscribe: () => pubsub.asyncIterator([CHAT_MESSAGE]),
-      },
-      ban: {
-        subscribe: () => pubsub.asyncIterator([BAN]),
-      },
-    },
   };
 };
 

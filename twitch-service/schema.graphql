@@ -12,8 +12,3 @@ type ChatMessage {
 type BanMessage {
   user: String!
 }
-
-type Subscription {
-  chat: ChatMessage!
-  ban: BanMessage!
-}
