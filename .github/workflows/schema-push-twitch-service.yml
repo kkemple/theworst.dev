@@ -8,11 +8,7 @@ on:
   push:
     branches: [noragrets]
     paths:
-      - 'twitch-service/*'
-
-env:
-  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN_TWITCH_SERVICE }}
-  APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
+      - "twitch-service/*"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,13 +22,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell
-      - uses: superfly/flyctl-actions@1.1
-          with:
-            args: "deploy"
+      - uses: superfly/flyctl-actions@master
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN_TWITCH_SERVICE }}
+        with:
+          args: "deploy"
 
       # Runs a set of commands using the runners shell
       - name: Push schema to registry
+        env:
+          APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
         run: |
           npx rover subgraph push the-worst-dev@current \
             --name=twitch \
