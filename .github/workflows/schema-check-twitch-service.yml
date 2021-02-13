@@ -1,0 +1,25 @@
+name: Schema Check
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  check_schema:
+    name: check schema
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check Against Studio Schema
+        uses: iansu/apollo-schema-check-action@v1
+        with:
+          title: Check Against Studio Schema
+          graph: the-worst-dev
+          variant: current
+          serviceName: twitch
+          localSchemaFile: "schema.graphql"
+          validationPeriod: P2W
+          key: ${{ secrets.APOLLO_KEY }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
