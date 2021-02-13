@@ -7,7 +7,7 @@
     "@apollo/federation": "^0.21.0",
     "apollo-server": "^2.21.0",
     "apollo-server-express": "^2.13.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "date-fns": "^2.13.0",
     "date-fns-tz": "^1.0.10",
