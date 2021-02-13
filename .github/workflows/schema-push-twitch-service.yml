@@ -36,6 +36,6 @@ jobs:
         env:
           APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
         run: |
-          npx rover subgraph push  the-worst-dev-z1n1vn@current \
+          npx rover subgraph push the-worst-dev-z1n1vn@current \
             --name=twitch \
             --schema=./schema.graphql
