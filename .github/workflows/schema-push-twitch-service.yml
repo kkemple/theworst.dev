@@ -46,5 +46,5 @@ jobs:
         run: |
           rover subgraph push the-worst-dev-z1n1vn@current \
             --name=twitch \
-            --schema=./schema.graphql
+            --schema=./schema.graphql \
             --routing-url=${{ secrets.TWITCH_SERVICE_URL }}
