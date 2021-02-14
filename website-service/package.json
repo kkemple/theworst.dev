@@ -15,10 +15,11 @@
     "apollo-server": "^2.21.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.5.0",
+    "prisma": "^2.16.1",
     "pusher": "^4.0.2"
   },
   "scripts": {
-    "start": "npx prisma generate && node -r dotenv/config index.js",
-    "dev": "npx prisma generate && nodemon -r dotenv/config index.js"
+    "start": "node -r dotenv/config index.js",
+    "dev": "nodemon -r dotenv/config index.js"
   }
 }
