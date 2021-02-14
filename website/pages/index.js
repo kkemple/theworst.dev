@@ -8,12 +8,20 @@ export default function Home() {
   return (
     <div>
       <main className={styles.container}>
-        <h1 className={styles.callout}>Hey, I'm Kurt.</h1>
-        <h4 className={styles.bio}>
-          developer, content creator, devrel manager & formerly incarcerated
-        </h4>
-        <div className={styles.socials}>
-          <SocialIcons />
+        <div className={styles.intro}>
+          <div className={styles.introContent}>
+            <h1 className={styles.callout}>Hey, I'm Kurt.</h1>
+            <h4 className={styles.bio}>
+              developer, content creator, devrel manager & formerly incarcerated
+            </h4>
+            <div className={styles.socials}>
+              <SocialIcons />
+            </div>
+          </div>
+          <img
+            src="/avatar-small.png"
+            alt="Illustrated avatar by @catcarbn on Twitter"
+          />
         </div>
         <p className={styles.blurb}>
           Thanks for dropping by! Here's a little bit about what kind of content

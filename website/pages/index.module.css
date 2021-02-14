@@ -8,7 +8,6 @@
 }
 
 .callout {
-  margin-top: 64px;
   margin-bottom: 8px;
 }
 
@@ -72,8 +71,32 @@
   border: none;
 }
 
+.intro {
+  display: flex;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.intro > img {
+  width: 200px;
+  border-radius: 50%;
+  margin-left: 32px;
+}
+
 @media (max-width: 720px) {
   .container {
     margin-top: 32px;
+  }
+
+  .intro {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .intro > img {
+    width: 150px;
+    margin-left: 0;
   }
 }
