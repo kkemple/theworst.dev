@@ -18,10 +18,15 @@ export default function Home() {
               <SocialIcons />
             </div>
           </div>
-          <img
-            src="/avatar-small.png"
-            alt="Illustrated avatar by @catcarbn on Twitter"
-          />
+          <Link href="https://www.buymeacoffee.com/catcarbn">
+            <a title="Avatar by @catcarbn, https://www.buymeacoffee.com/catcarbn">
+              <img
+                className={styles.avatar}
+                src="/avatar-small.png"
+                alt="Illustrated avatar by @catcarbn on Twitter"
+              />
+            </a>
+          </Link>
         </div>
         <p className={styles.blurb}>
           Thanks for dropping by! Here's a little bit about what kind of content
