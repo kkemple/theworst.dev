@@ -7,17 +7,25 @@ directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
 directive @_live(events: [PublishableEvent!]!) on QUERY
 
 extend type Query {
-  likeCountForPost(slug: String!): Int!
-  likesForPost(slug: String!): [PostLike!]!
-  recentLikes: [PostLike!]!
+  post(slug: String!): Post!
+  topPosts: [Post!]!
+  likes: [Like!]!
 }
 
 extend type Mutation {
-  likePost(slug: String!, count: Int!): PostLike! @_publish(event: POST_LIKE)
+  likePost(slug: String!, count: Int!): Like! @_publish(event: POST_LIKE)
 }
 
-type PostLike {
+type Like {
   id: ID!
   slug: String!
   count: Int!
+  post: Post
+}
+
+type Post {
+  id: ID!
+  slug: String!
+  count: Int!
+  likes: [Like!]!
 }

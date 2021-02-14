@@ -1,6 +1,7 @@
 const { ApolloServer, SchemaDirectiveVisitor } = require("apollo-server");
 const { buildFederatedSchema } = require("@apollo/federation");
 const Pusher = require("pusher");
+const { PrismaClient } = require("@prisma/client");
 
 const { typeDefs, resolvers } = require("./graphql");
 const PublishDirective = require("./PublishDirective");
@@ -21,10 +22,13 @@ const pusher = new Pusher({
   useTLS: true,
 });
 
+// set up prisma for db interactions
+const prisma = new PrismaClient();
+
 // create the Apollo server and disable subscriptions
 const server = new ApolloServer({
   schema,
-  context: { pusher },
+  context: { pusher, prisma },
   subscriptions: false,
 });
 
