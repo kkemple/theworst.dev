@@ -4,36 +4,46 @@ const {
   SchemaDirectiveVisitor,
 } = require("apollo-server-express");
 const { buildFederatedSchema } = require("@apollo/federation");
-const { createServer } = require("http");
+const Pusher = require("pusher");
 
-const { typeDefs, createResolvers } = require("./graphql");
+const { typeDefs, resolvers } = require("./graphql");
 const { createChatClient } = require("./chat");
 const { createWebhooks } = require("./webhooks");
 const PublishDirective = require("./PublishDirective");
 
-const PORT = 4000;
+// build the federated schema
+const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
 
-async function main() {
-  const app = express();
-  const resolvers = createResolvers();
+// load the custom publish directive for realtime data
+const directives = { _publish: PublishDirective };
+SchemaDirectiveVisitor.visitSchemaDirectives(schema, directives);
 
-  const schema = buildFederatedSchema([{ typeDefs, resolvers }]);
-  const directives = { _publish: PublishDirective };
-  SchemaDirectiveVisitor.visitSchemaDirectives(schema, directives);
+// create the Apollo server and disable subscriptions
+const server = new ApolloServer({
+  schema,
+  subscriptions: false,
+});
 
-  const server = new ApolloServer({
-    schema,
-    subscriptions: false,
-  });
-  server.applyMiddleware({ app });
+// we need access to the server to add routes for twitch webhooks
+const app = express();
+server.applyMiddleware({ app });
 
-  createChatClient();
-  // createWebhooks(app);
+// set up pusher for realtime events
+const pusher = new Pusher({
+  appId: process.env.PUSHER_APP_ID,
+  key: process.env.PUSHER_KEY,
+  secret: process.env.PUSHER_SECRET,
+  cluster: process.env.PUSHER_CLUSTER,
+  useTLS: true,
+});
 
-  const ws = createServer(app);
-  ws.listen(PORT, async () => {
-    console.log(`Server is now running on http://localhost:${PORT}`);
-  });
-}
+// set up tmi.js and register events
+createChatClient(pusher);
 
-main();
+// set up twitch webhooks for events we can't capture in tmi.js
+createWebhooks(app, pusher);
+
+// start up the server
+app.listen(4000, async () => {
+  console.log(`Server is now running on http://localhost:4000`);
+});

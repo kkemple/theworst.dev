@@ -1,5 +1,39 @@
-type Query {
-  hello: String!
+enum PublishableEvent {
+  FOLLOW
+  SUBSCRIBE
+  RAID
+  BAN
+  CHAT_MESSAGE
+  CHANNEL
+}
+
+directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
+
+directive @_live(events: [PublishableEvent!]!) on QUERY
+
+extend type Query {
+  bans: [BanMessage!]!
+  channel: Channel!
+  chatMessages: [ChatMessage!]!
+  follows: [FollowMessage!]!
+  raids: [RaidMessage!]!
+  subs: [SubscriptionMessage!]!
+}
+
+type BanMessage {
+  displayName: String!
+}
+
+type Channel {
+  id: ID!
+  category: String!
+  followers: Int!
+  isLive: Boolean!
+  name: String!
+  streamStartedAt: String
+  title: String!
+  viewerCount: Int
+  views: Int!
 }
 
 type ChatMessage {
@@ -9,6 +43,17 @@ type ChatMessage {
   emotes: [[String!]!]
 }
 
-type BanMessage {
-  user: String!
+type FollowMessage {
+  displayName: String!
+}
+
+type RaidMessage {
+  displayName: String!
+  viewers: Int!
+}
+
+type SubscriptionMessage {
+  displayName: String!
+  gifterDisplayName: String
+  isGift: Boolean!
 }

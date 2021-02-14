@@ -2,8 +2,9 @@ const tmi = require("tmi.js");
 
 const CHAT_MESSAGE = "CHAT_MESSAGE";
 const BAN = "BAN";
+const RAID = "RAID";
 
-const createChatClient = () => {
+const createChatClient = (pusher) => {
   const client = new tmi.Client({
     connection: {
       secure: true,
@@ -19,7 +20,14 @@ const createChatClient = () => {
   client.connect();
 
   client.on("ban", (_, username) => {
-    // pubsub.publish(BAN, { user: username });
+    pusher.trigger(process.env.PUSHER_CHANNEL, BAN, { displayName: username });
+  });
+
+  client.on("raided", (_, username, viewers) => {
+    pusher.trigger(process.env.PUSHER_CHANNEL, RAID, {
+      displayName: username,
+      viewers,
+    });
   });
 
   client.on("message", (_, tags, message, self) => {
@@ -42,14 +50,12 @@ const createChatClient = () => {
       }, []);
     }
 
-    const response = {
+    pusher.trigger(process.env.PUSHER_CHANNEL, CHAT_MESSAGE, {
       emotes,
       message,
       displayName: tags["display-name"],
       color: tags["color"],
-    };
-
-    // pubsub.publish(CHAT_MESSAGE, { chat: response });
+    });
   });
 };
 

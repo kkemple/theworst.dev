@@ -3,12 +3,9 @@ const bodyParser = require("body-parser");
 
 const FOLLOW = "FOLLOW";
 const SUBSCRIBE = "SUBSCRIBE";
+const CHANNEL = "CHANNEL";
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-const createWebhooks = (app) => {
+const createWebhooks = (app, pusher) => {
   const jsonParser = bodyParser.json();
 
   app.get("/webhooks/follows", async (req, res) => {
@@ -17,7 +14,7 @@ const createWebhooks = (app) => {
 
   app.post("/webhooks/follows", jsonParser, async (req, res) => {
     const follow = req.body.data[0].from_name;
-    // pubsub.publish(FOLLOW, { follow });
+    pusher.trigger(process.env.PUSHER_CHANNEL, FOLLOW, { displayName: follow });
     res.status(200).end();
   });
 
@@ -28,11 +25,27 @@ const createWebhooks = (app) => {
 
   app.post("/webhooks/subscriptions", jsonParser, async (req, res) => {
     const eventData = req.body.data[0].event_data;
-    // pubsub.publish(SUBSCRIBE, {
-    //   isGift: eventData.is_gift,
-    //   userName: eventData.user_name,
-    //   gifterName: eventData.gifter_name,
-    // });
+    pusher.trigger(process.env.PUSHER_CHANNEL, SUBSCRIBE, {
+      isGift: eventData.is_gift,
+      displayName: eventData.user_name,
+      gifterDisplayName: eventData.gifter_name,
+    });
+    res.status(200).end();
+  });
+
+  app.get("/webhooks/streams", async (req, res) => {
+    console.log("in webhook challenge");
+    res.status(200).send(req.query["hub.challenge"]);
+  });
+
+  app.post("/webhooks/streams", jsonParser, async (req, res) => {
+    const eventData = req.body.data[0];
+
+    pusher.trigger(process.env.PUSHER_CHANNEL, CHANNEL, {
+      isLive: eventData?.type === "live",
+      viewerCount: eventData.viewer_count,
+      startTime: eventData.started_at,
+    });
     res.status(200).end();
   });
 
