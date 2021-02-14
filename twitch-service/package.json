@@ -15,9 +15,11 @@
     "express": "^4.17.1",
     "graphql": "^15.0.0",
     "graphql-subscriptions": "^1.1.0",
-    "nodemon": "^2.0.3",
     "subscriptions-transport-ws": "^0.9.16",
     "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   },
   "scripts": {
     "start": "node -r dotenv/config index.js",
