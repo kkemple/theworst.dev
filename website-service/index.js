@@ -1,7 +1,7 @@
 const { ApolloServer, SchemaDirectiveVisitor } = require("apollo-server");
 const { buildFederatedSchema } = require("@apollo/federation");
 const Pusher = require("pusher");
-const { PrismaClient } = require("./prisma/client");
+const { PrismaClient } = require("@prisma/client");
 
 const { typeDefs, resolvers } = require("./graphql");
 const PublishDirective = require("./PublishDirective");
