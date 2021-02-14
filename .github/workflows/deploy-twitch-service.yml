@@ -28,7 +28,7 @@ jobs:
         uses: superfly/flyctl-actions@master
         env:
           FLY_PROJECT_PATH: ./twitch-service
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN_TWITCH_SERVICE }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         with:
           args: "deploy"
 
