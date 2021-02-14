@@ -33,17 +33,6 @@
   border-radius: 4px;
   box-shadow: 2px 2px 0 var(--text-shadow-color);
   margin-bottom: 64px;
-  transition: transform 0.1s;
-}
-
-.postCard:hover {
-  transform: rotate(-1.3deg);
-  box-shadow: 0 2px 4px var(--text-shadow-color);
-}
-
-.no_hover {
-  transform: none !important;
-  box-shadow: none !important;
 }
 
 .postCard a {
