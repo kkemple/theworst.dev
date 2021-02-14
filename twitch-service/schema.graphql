@@ -1,4 +1,4 @@
-extend enum PublishableEvent {
+enum PublishableEvent {
   FOLLOW
   SUBSCRIBE
   RAID
