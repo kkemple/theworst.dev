@@ -1,0 +1,23 @@
+extend enum PublishableEvent {
+  POST_LIKE
+}
+
+directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
+
+directive @_live(events: [PublishableEvent!]!) on QUERY
+
+extend type Query {
+  likeCountForPost(slug: String!): Int!
+  likesForPost(slug: String!): [PostLike!]!
+  recentLikes: [PostLike!]!
+}
+
+extend type Mutation {
+  likePost(slug: String!, count: Int!): PostLike! @_publish(event: POST_LIKE)
+}
+
+type PostLike {
+  id: ID!
+  slug: String!
+  count: Int!
+}
