@@ -32,19 +32,13 @@ jobs:
         with:
           args: "deploy"
 
-      - name: Install Rover CLI
-        run: |
-          curl -sSL https://raw.githubusercontent.com/apollographql/rover/v0.0.1-rc.6/installers/binstall/scripts/nix/install.sh | VERSION=v0.0.1-rc.6 sh
-          # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#adding-a-system-path
-          echo "$HOME/.rover/bin" >> $GITHUB_PATH
-
       # Runs a set of commands using the runners shell
       - name: Push schema to registry
         working-directory: ./website-service
         env:
           APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
         run: |
-          rover subgraph push the-worst-dev-z1n1vn@current \
+          npx -p @apollo/rover rover subgraph push the-worst-dev-z1n1vn@current \
             --name=website \
             --schema=./schema.graphql \
             --routing-url=${{ secrets.WEBSITE_SERVICE_URL }}

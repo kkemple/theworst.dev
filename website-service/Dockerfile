@@ -8,6 +8,8 @@ COPY prisma ./prisma/
 
 # Install app dependencies
 RUN npm install
+
+# Build prisma client
 RUN npm run build:client
 
 COPY . .
