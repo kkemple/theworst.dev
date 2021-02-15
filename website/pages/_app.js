@@ -2,9 +2,8 @@ import "typeface-inter";
 import "@styles/globals.css";
 import "@styles/code-theme.css";
 
-import { useEffect } from "react";
-import { ApolloProvider } from "@apollo/client";
 import withDarkMode from "next-dark-mode";
+import { ApolloProvider } from "@apollo/client";
 import Layout from "@components/Layout";
 import { client } from "@utils/graphql";
 
