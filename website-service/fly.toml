@@ -2,9 +2,6 @@
 
 app = "twd-website-service"
 
-[build]
-  builtin = "node"
-
 kill_signal = "SIGINT"
 kill_timeout = 5
 
