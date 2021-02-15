@@ -2,8 +2,22 @@ import Head from "next/head";
 import Billboard from "@components/Billboard";
 import styles from "./BlogPost.module.css";
 import { buildCloudinaryURL } from "@utils/cloudinary";
+import { useQuery, gql } from "@apollo/client";
+
+const POST_QUERY = gql`
+  query Post($slug: String!) {
+    post(slug: $slug) {
+      count
+    }
+  }
+`;
 
 export default function BlogPost({ meta, children }) {
+  const { data, loading, error } = useQuery(POST_QUERY, {
+    variables: { slug: global.location?.pathname },
+  });
+
+  console.log({ data, loading, error });
   return (
     <>
       <Head>

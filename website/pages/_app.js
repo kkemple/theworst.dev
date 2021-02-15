@@ -2,9 +2,11 @@ import "typeface-inter";
 import "@styles/globals.css";
 import "@styles/code-theme.css";
 
+import { useEffect } from "react";
+import { ApolloProvider } from "@apollo/client";
 import withDarkMode from "next-dark-mode";
 import Layout from "@components/Layout";
-import { useEffect } from "react";
+import { client } from "@utils/graphql";
 
 function Application({ Component, pageProps, darkMode }) {
   const { darkModeActive } = darkMode;
@@ -25,9 +27,11 @@ function Application({ Component, pageProps, darkMode }) {
   }, []);
 
   return (
-    <Layout darkModeActive={darkModeActive} {...pageProps}>
-      <Component {...pageProps} />
-    </Layout>
+    <ApolloProvider client={client}>
+      <Layout darkModeActive={darkModeActive} {...pageProps}>
+        <Component {...pageProps} />
+      </Layout>
+    </ApolloProvider>
   );
 }
 

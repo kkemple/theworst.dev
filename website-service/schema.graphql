@@ -7,7 +7,7 @@ directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
 directive @_live(events: [PublishableEvent!]!) on QUERY
 
 extend type Query {
-  post(slug: String!): Post!
+  post(slug: String!): Post
   topPosts: [Post!]!
   likes: [Like!]!
 }
