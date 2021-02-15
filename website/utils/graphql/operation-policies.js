@@ -1,10 +1,20 @@
 const operationPolicies = {
   Post: {
     events: {
-      POST_LIKE(_, data) {
-        const { id, slug, count } = data;
+      POST_LIKE(cache, data) {
+        const id = cache.identify({
+          __typename: "Post",
+          id: data.id,
+        });
 
-        console.log({ id, slug, count });
+        cache.modify({
+          id,
+          fields: {
+            count() {
+              return data.count;
+            },
+          },
+        });
       },
     },
   },

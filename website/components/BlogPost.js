@@ -7,6 +7,7 @@ import { useQuery, gql } from "@apollo/client";
 const POST_QUERY = gql`
   query Post($slug: String!) @_live(events: [POST_LIKE]) {
     post(slug: $slug) {
+      id
       count
     }
   }
