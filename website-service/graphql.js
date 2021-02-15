@@ -41,23 +41,23 @@ const resolvers = {
   },
   Mutation: {
     likePost: async (_, { slug, count }, { prisma }) => {
-      let post = await prisma.post.findUnique({
+      const post = await prisma.post.findUnique({
         where: { slug },
       });
 
       if (!post) {
-        await prisma.post.create({
-          data: { slug, count },
+        return prisma.post.create({
+          data: { slug, count, likes: { create: [{ slug, count }] } },
         });
       } else {
-        await prisma.post.update({
+        return prisma.post.update({
           where: { slug },
-          data: { count: post.count + count },
+          data: {
+            count: post.count + count,
+            likes: { create: [{ slug, count }] },
+          },
         });
       }
-
-      const like = await prisma.like.create({ data: { slug, count } });
-      return like;
     },
   },
   Post: {

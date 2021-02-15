@@ -19,4 +19,6 @@ const httpLink = new HttpLink({
 export const client = new ApolloClient({
   link: liveLink.concat(httpLink),
   cache: new InMemoryCache(),
+  connectToDevTools: process.env.NODE_ENV === "development",
+  name: "website",
 });

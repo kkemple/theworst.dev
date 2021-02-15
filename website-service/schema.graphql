@@ -13,7 +13,7 @@ extend type Query {
 }
 
 extend type Mutation {
-  likePost(slug: String!, count: Int!): Like! @_publish(event: POST_LIKE)
+  likePost(slug: String!, count: Int!): Post! @_publish(event: POST_LIKE)
 }
 
 type Like {
