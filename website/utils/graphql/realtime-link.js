@@ -36,7 +36,7 @@ class RealtimeLink extends ApolloLink {
 
           // if an update function has been defined for event type, call it
           if (policy) {
-            policy(cache, data);
+            policy(cache, data, query);
           } else {
             console.warn(
               `No policy available for the ${operationName} operation for the ${eventName} event`

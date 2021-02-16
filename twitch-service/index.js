@@ -3,6 +3,7 @@ const {
   ApolloServer,
   SchemaDirectiveVisitor,
 } = require("apollo-server-express");
+const { ApolloServerPluginInlineTrace } = require("apollo-server-core");
 const { buildFederatedSchema } = require("@apollo/federation");
 const Pusher = require("pusher");
 
@@ -32,6 +33,7 @@ const server = new ApolloServer({
   schema,
   context: { pusher },
   subscriptions: false,
+  plugins: [ApolloServerPluginInlineTrace()],
 });
 
 // we need access to the server to add routes for twitch webhooks

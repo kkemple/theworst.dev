@@ -12,7 +12,7 @@ const pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY, {
 // subscribe to the proper pusher channel
 const channel = pusher.subscribe(process.env.NEXT_PUBLIC_PUSHER_CHANNEL);
 
-// create our
+// create our link that will handle realtime updates via the @_live directive
 const realtimeLink = new RealtimeLink(channel, operationPolicies);
 
 // Create terminating HTTP link

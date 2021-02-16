@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Billboard from "@components/Billboard";
+import PostLikes from "@components/PostLikes";
 import styles from "./BlogPost.module.css";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 import { useQuery, gql } from "@apollo/client";
@@ -9,6 +10,7 @@ const POST_QUERY = gql`
     post(slug: $slug) {
       id
       count
+      slug
     }
   }
 `;
@@ -34,6 +36,7 @@ export default function BlogPost({ meta, children }) {
         <meta name="twitter:description" content={meta.description} />
       </Head>
       <Billboard title={meta.title} />
+      {/* <PostLikes count={data?.post?.count} /> */}
       <article className={styles.post}>{children}</article>
     </>
   );

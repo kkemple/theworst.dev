@@ -46,7 +46,7 @@ export default function Garden({ posts }) {
           </div>
           <hr className={styles.divider} />
           {results.map((post) => (
-            <div className={styles.card}>
+            <div key={post.slug} className={styles.card}>
               <ContentCard
                 key={post.slug}
                 url={post.slug}
