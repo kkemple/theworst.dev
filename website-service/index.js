@@ -1,5 +1,4 @@
 const { ApolloServer, SchemaDirectiveVisitor } = require("apollo-server");
-const { ApolloServerPluginInlineTrace } = require("apollo-server-core");
 const { buildFederatedSchema } = require("@apollo/federation");
 const Pusher = require("pusher");
 const { PrismaClient } = require("@prisma/client");
@@ -31,7 +30,6 @@ const server = new ApolloServer({
   schema,
   context: { pusher, prisma },
   subscriptions: false,
-  plugins: [ApolloServerPluginInlineTrace()],
 });
 
 // start up the server
