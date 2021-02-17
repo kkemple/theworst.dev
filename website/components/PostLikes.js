@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { useMutation, useQuery, gql } from "@apollo/client";
-import { useStickyState } from "@utils/hooks";
+import { useStickyState, useRandomInterval } from "@utils/hooks";
 import useSound from "use-sound";
 import styles from "./PostLikes.module.css";
 
@@ -42,38 +42,6 @@ const generateHeart = (color = DEFAULT_COLOR) => {
       zIndex: 2,
     },
   };
-};
-
-const useRandomInterval = (callback, minDelay, maxDelay) => {
-  const timeoutId = useRef(null);
-  const savedCallback = useRef(callback);
-
-  useEffect(() => {
-    savedCallback.current = callback;
-  });
-
-  useEffect(() => {
-    let isEnabled =
-      typeof minDelay === "number" && typeof maxDelay === "number";
-
-    if (isEnabled) {
-      const handleTick = () => {
-        const nextTickAt = random(minDelay, maxDelay);
-        timeoutId.current = window.setTimeout(() => {
-          savedCallback.current();
-          handleTick();
-        }, nextTickAt);
-      };
-      handleTick();
-    }
-    return () => window.clearTimeout(timeoutId.current);
-  }, [minDelay, maxDelay]);
-
-  const cancel = useCallback(function () {
-    window.clearTimeout(timeoutId.current);
-  }, []);
-
-  return cancel;
 };
 
 function Heart({ color, size, style }) {
