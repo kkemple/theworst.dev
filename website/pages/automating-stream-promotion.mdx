@@ -1,13 +1,7 @@
-import BlogPost from "@components/BlogPost";
-
-export const meta = {
-  title: "Automating Promotion for Livestreams",
-  tags: ["streaming", "process", "automation"],
-  description:
-    "Currently, I stream for Apollo GraphQL anywhere from 3-5 times a week. This may not seem like a lot, but when you take into account all the work that needs to happen outside of the actual stream, you can quickly see how it might start to eat up all of your time.",
-};
-
-export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+---
+  title: Automating Promotion for Livestreams
+  description: Currently, I stream for Apollo GraphQL anywhere from 3-5 times a week. This may not seem like a lot, but when you take into account all the work that needs to happen outside of the actual stream, you can quickly see how it might start to eat up all of your time.
+---
 
 Currently, I stream for Apollo GraphQL anywhere from 3-5 times a week. This may not seem like a lot, but when you take into account all the work that needs to happen outside of the actual stream, you can quickly see how it might start to eat up all of your time.
 
@@ -94,7 +88,7 @@ Building the social media images is a two step process.
 
 The first step is to fetch the avatars for any streamers mentioned in the event description from Twitter. The code looks like this:
 
-```js {5}
+```js
 async (event, steps, auths) => {
   const axios = require("axios");
   const oauthSignerUri = auths.twitter.oauth_signer_uri;
@@ -139,7 +133,7 @@ This is a "step" in Pipedream and you combine steps to make a "workflow". So the
 
 Once I have the Twitter users I can then create the social media card using Cloudinary. I have templates uploaded for each of our "shows" and based off of the event title, I can figure out which show I'm currently working with. Check out the code below for an example:
 
-```js {17-22,24,43,66-70}
+```js
 async (event, steps) => {
   const showConfig = {
     missionBriefing: {

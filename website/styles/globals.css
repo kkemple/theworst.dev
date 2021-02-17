@@ -9,6 +9,7 @@ body {
   --header-height: 75px;
   --small-text: 0.75rem;
   --transparent-bg: rgba(242, 114, 173, 0.4);
+  scroll-padding-top: calc(var(--header-height) + 8px);
 }
 
 h1 {
@@ -143,35 +144,6 @@ hr {
 }
 
 @media (max-width: 720px) {
-  /* h1 {
-    font-size: 3.052rem;
-    font-weight: 800;
-    text-shadow: 2px 2px 0 var(--text-shadow-color);
-  }
-
-  h2 {
-    font-size: 2.441rem;
-    font-weight: 600;
-    text-shadow: 2px 2px 0 var(--text-shadow-color);
-  }
-
-  h3 {
-    font-size: 1.953rem;
-    font-weight: 600;
-    text-shadow: 1px 1px 0 var(--text-shadow-color);
-  }
-
-  h4 {
-    font-size: 1.563rem;
-    font-weight: 600;
-    text-shadow: 1px 1px 0 var(--text-shadow-color);
-  }
-
-  h5 {
-    font-size: 1.25rem;
-    font-weight: 800;
-  } */
-
   html,
   body {
     font-size: 15px;
@@ -179,5 +151,11 @@ hr {
 
   .app {
     padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }

@@ -1,0 +1,20 @@
+.post {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.post img {
+  max-width: auto;
+  width: 100%;
+}
+
+.post h1 a,
+.post h2 a,
+.post h3 a,
+.post h4 a,
+.post h5 a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--link);
+}

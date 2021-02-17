@@ -1,5 +1,5 @@
 extend enum PublishableEvent {
-  POST_LIKE
+  POST_UPDATED
 }
 
 directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
@@ -13,7 +13,7 @@ extend type Query {
 }
 
 extend type Mutation {
-  likePost(slug: String!, count: Int!): Post! @_publish(event: POST_LIKE)
+  likePost(slug: String!, count: Int!): Post! @_publish(event: POST_UPDATED)
 }
 
 type Like {

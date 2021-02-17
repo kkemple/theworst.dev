@@ -1,9 +1,12 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { useState } from "react";
-import Link from "next/link";
-import styles from "./content.module.css";
-import { buildCloudinaryURL } from "@utils/cloudinary";
 import Head from "next/head";
 import ContentCard from "@components/ContentCard";
+import { buildCloudinaryURL } from "@utils/cloudinary";
+import { postFilePaths, POSTS_PATH } from "@utils/mdx";
+import styles from "./content.module.css";
 
 export default function Garden({ posts }) {
   const title = "Kurt Kemple's Digital Garden";
@@ -71,20 +74,23 @@ export async function getStaticProps() {
     return newArr;
   };
 
-  function importAll(r) {
-    return r.keys().map((fileName) => ({
-      link: fileName.substr(1).replace(/\/index\.mdx$/, ""),
-      module: r(fileName),
-    }));
-  }
+  const postsData = postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
+    const { content, data } = matter(source);
 
-  const postsData = importAll(require.context(".", true, /\.mdx$/));
+    return {
+      content,
+      data,
+      filePath,
+    };
+  });
+
   const posts = shuffle(
-    postsData.map((postData) => {
+    postsData.map((post) => {
       return {
-        title: postData.module.meta.title,
-        slug: postData.link.replace(".mdx", ""),
-        description: postData.module.meta.description,
+        title: post.data.title,
+        slug: post.filePath.replace(/\.mdx?$/, ""),
+        description: post.data.description,
       };
     })
   );
