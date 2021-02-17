@@ -14,7 +14,7 @@ const LIKE_POST_MUTATION = gql`
 `;
 
 const POST_QUERY = gql`
-  query Post($slug: String!) @_live(events: [POST_LIKE]) {
+  query Post($slug: String!) @_live(events: [POST_UPDATED]) {
     post(slug: $slug) {
       id
       count

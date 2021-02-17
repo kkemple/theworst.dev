@@ -10,15 +10,13 @@ import remarkAutoLinkHeadings from "remark-autolink-headings";
 
 import Head from "next/head";
 import Billboard from "@components/Billboard";
-import PostLikes from "@components/PostLikes";
+// import PostLikes from "@components/PostLikes";
+// import ClientOnly from "@components/ClientOnly";
 import styles from "./BlogPost.module.css";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
-import ClientOnly from "@components/ClientOnly";
-
 export default function BlogPost({ source, frontMatter, headings }) {
-  console.log({ headings });
-  const content = hydrate(source, {});
+  const content = hydrate(source);
   return (
     <>
       <Head>
@@ -37,9 +35,9 @@ export default function BlogPost({ source, frontMatter, headings }) {
         <meta name="twitter:description" content={frontMatter.description} />
       </Head>
       <Billboard title={frontMatter.title} />
-      <ClientOnly>
+      {/* <ClientOnly>
         <PostLikes />
-      </ClientOnly>
+      </ClientOnly> */}
       <article className={styles.post}>{content}</article>
     </>
   );
