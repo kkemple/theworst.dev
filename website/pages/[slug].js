@@ -10,13 +10,18 @@ import remarkAutoLinkHeadings from "remark-autolink-headings";
 
 import Head from "next/head";
 import Billboard from "@components/Billboard";
-// import PostLikes from "@components/PostLikes";
-// import ClientOnly from "@components/ClientOnly";
+import { Tweet } from "mdx-embed";
+import PostLikes from "@components/PostLikes";
+import ClientOnly from "@components/ClientOnly";
 import styles from "./BlogPost.module.css";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
+const components = {
+  Tweet,
+};
+
 export default function BlogPost({ source, frontMatter, headings }) {
-  const content = hydrate(source);
+  const content = hydrate(source, { components });
   return (
     <>
       <Head>
@@ -35,9 +40,11 @@ export default function BlogPost({ source, frontMatter, headings }) {
         <meta name="twitter:description" content={frontMatter.description} />
       </Head>
       <Billboard title={frontMatter.title} />
-      {/* <ClientOnly>
-        <PostLikes />
-      </ClientOnly> */}
+      <div className={styles.likeButton}>
+        <ClientOnly>
+          <PostLikes />
+        </ClientOnly>
+      </div>
       <article className={styles.post}>{content}</article>
     </>
   );
@@ -51,6 +58,7 @@ export const getStaticProps = async ({ params }) => {
   const headings = await getHeadings(content);
 
   const mdxSource = await renderToString(content, {
+    components,
     mdxOptions: {
       remarkPlugins: [
         remarkSlug,

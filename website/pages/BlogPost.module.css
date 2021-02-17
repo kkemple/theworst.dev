@@ -18,3 +18,9 @@
   cursor: pointer;
   color: var(--link);
 }
+
+.likeButton {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+}
