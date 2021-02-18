@@ -50,6 +50,25 @@ h5 {
   color: #f272ad;
 }
 
+.content p {
+  line-height: 1.4rem;
+}
+
+.content p,
+.content blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content li {
+  margin-bottom: 8px;
+}
+
 .content hr {
   margin-top: 48px;
   margin-bottom: 48px;
@@ -103,6 +122,15 @@ blockquote {
   line-height: 2.3rem;
   width: 100%;
   max-width: 500px;
+}
+
+.content blockquote p {
+  line-height: 2.1rem;
+}
+
+blockquote a,
+blockquote a:hover {
+  font-weight: 800;
 }
 
 code {
