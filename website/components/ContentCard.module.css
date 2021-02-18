@@ -18,10 +18,21 @@
   box-shadow: 2px 2px 0 var(--text-shadow-color);
   z-index: 2;
   position: relative;
+  border: 2px solid transparent;
 }
 
 .container:hover .kakashi {
   transform: rotate(-50deg) translateY(-45px) translateX(-45px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kakashi {
+    display: none;
+    transition: none;
+  }
+  .content:hover {
+    border: 2px solid var(--link);
+  }
 }
 
 .content a {

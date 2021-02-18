@@ -50,33 +50,33 @@ h5 {
   color: #f272ad;
 }
 
-.content p {
+article p {
   line-height: 1.4rem;
 }
 
-.content p,
-.content blockquote {
+article p,
+article blockquote {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content li {
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article li {
   margin-bottom: 1rem;
 }
 
-.content hr {
+article hr {
   margin-top: 48px;
   margin-bottom: 48px;
 }
 
 p a,
-.content ul a,
-.content ol a {
+article ul a,
+article ol a {
   cursor: pointer;
   color: var(--text-color);
   text-decoration: none;
@@ -93,10 +93,10 @@ p a,
 
 p a:hover,
 p a:active,
-.content ul a:hover,
-.content ul a:active,
-.content ol a:hover,
-.content ol a:active {
+article ul a:hover,
+article ul a:active,
+article ol a:hover,
+article ol a:active {
   font-weight: 600;
   background-image: linear-gradient(
     0deg,
@@ -124,7 +124,7 @@ blockquote {
   max-width: 500px;
 }
 
-.content blockquote p {
+article blockquote p {
   line-height: 2.1rem;
 }
 

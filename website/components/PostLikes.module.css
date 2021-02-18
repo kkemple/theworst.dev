@@ -1,3 +1,9 @@
+.postLike {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .heart {
   position: absolute;
   pointer-events: none;
@@ -12,13 +18,15 @@
 
 .contentContainer {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   font-weight: bold;
 }
 
 .count {
   font-weight: 800;
   color: var(--link);
+  z-index: 2;
+  position: relative;
 }
 
 .countContainer {
@@ -40,6 +48,10 @@
 
 .button:focus {
   outline-color: var(--link);
+}
+
+.button:disabled {
+  opacity: 0.6;
 }
 
 .svg path {

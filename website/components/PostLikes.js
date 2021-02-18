@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useMutation, useQuery, gql } from "@apollo/client";
-import { useStickyState, useRandomInterval } from "@utils/hooks";
+import {
+  useStickyState,
+  useRandomInterval,
+  usePrefersReducedMotion,
+} from "@utils/hooks";
 import useSound from "use-sound";
 import styles from "./PostLikes.module.css";
 
@@ -39,7 +43,7 @@ const generateHeart = (color = DEFAULT_COLOR) => {
       top: random(0, 100) + "%",
       left: random(0, 100) + "%",
       // Float sparkles above sibling content
-      zIndex: 2,
+      zIndex: random(1, 5),
     },
   };
 };
@@ -65,6 +69,7 @@ function Heart({ color, size, style }) {
 
 function Hearts({ children }) {
   const [hearts, setHearts] = useState([]);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useRandomInterval(
     () => {
@@ -85,8 +90,8 @@ function Hearts({ children }) {
       // Make it so!
       setHearts(nextHearts);
     },
-    100,
-    800
+    prefersReducedMotion ? null : 500,
+    prefersReducedMotion ? null : 800
   );
 
   return (
@@ -162,20 +167,24 @@ export default function PostLikes() {
   }, [count]);
 
   const currentCount = (count || 0) + likes;
+  const userLikesCount = previousLikes + likes;
 
   return (
-    <>
+    <div className={styles.postLike}>
       <Hearts>
         <div className={styles.countContainer}>
           <span className={styles.count}>
             {currentCount > 0 ? currentCount : ""}
           </span>
         </div>
-
-        <button className={styles.button} onClick={handleClick}>
-          show love
-        </button>
       </Hearts>
-    </>
+      <button
+        disabled={userLikesCount === 10}
+        className={styles.button}
+        onClick={handleClick}
+      >
+        show love
+      </button>
+    </div>
   );
 }
