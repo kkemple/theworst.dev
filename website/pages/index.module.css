@@ -21,6 +21,7 @@
 .blurb {
   margin-bottom: 48px;
   font-size: 0.9rem;
+  line-height: 1.2rem;
 }
 
 .socials {
@@ -32,7 +33,7 @@
   background: var(--card-background);
   border-radius: 4px;
   box-shadow: 2px 2px 0 var(--text-shadow-color);
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .postCard a {
