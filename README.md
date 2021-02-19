@@ -21,3 +21,5 @@ The backing services are deployed to [fly.io](https://fly.io) from GitHub Action
 - **twitch-service**: This is a GraphQL API that broadcasts events related to my personal Twitch stream (may update to include Apollo stream).
 - **gateway**: this is the `apollo-gateway` which is the entry point for my federated graph.
 - **.github**: this is the github workflows for registering and deploying the backing GraphQL APIs and the Gateway.
+
+You can follow along with me as I build this out [by subscribing to this thread on Twitter](https://twitter.com/theworstdev/status/1360251575617400835).
