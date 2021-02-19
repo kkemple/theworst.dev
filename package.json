@@ -19,5 +19,8 @@
   "homepage": "https://github.com/kkemple/theworst.dev#readme",
   "devDependencies": {
     "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "fuse.js": "^6.4.6"
   }
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./ContentCard.module.css";
+import styles from "@styles/ContentCard.module.css";
 import useSound from "use-sound";
 
 export default function ContentCard({ url, title, description }) {
@@ -15,11 +15,7 @@ export default function ContentCard({ url, title, description }) {
           </a>
         </Link>
       </div>
-      <img
-        className={styles.kakashi}
-        src="/kakashi.png"
-        alt="Kakashi from Naruto peeking out"
-      />
+      <img className={styles.kakashi} src="/kakashi.png" alt="" />
     </div>
   );
 }

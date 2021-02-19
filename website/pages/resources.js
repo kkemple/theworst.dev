@@ -4,7 +4,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
-import styles from "./resources.module.css";
+import styles from "@styles/resources.module.css";
 
 export default function Resources() {
   const title = "Resources for Speaking Engagements and Links";

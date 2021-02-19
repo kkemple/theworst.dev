@@ -1,7 +1,7 @@
 import Link from "next/link";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useDarkMode } from "next-dark-mode";
-import styles from "./Header.module.css";
+import styles from "@styles/Header.module.css";
 
 export default function Header() {
   const { darkModeActive, switchToDarkMode, switchToLightMode } = useDarkMode();

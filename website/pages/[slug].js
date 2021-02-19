@@ -13,7 +13,7 @@ import Billboard from "@components/Billboard";
 import { Tweet } from "mdx-embed";
 import PostLikes from "@components/PostLikes";
 import ClientOnly from "@components/ClientOnly";
-import styles from "./BlogPost.module.css";
+import styles from "@styles/BlogPost.module.css";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
 const components = {

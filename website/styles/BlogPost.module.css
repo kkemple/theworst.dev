@@ -5,8 +5,10 @@
 }
 
 .post img {
-  max-width: auto;
-  width: 100%;
+  max-width: 100%;
+  min-width: 200px;
+  margin: 0 auto;
+  display: block;
 }
 
 .post h1 a,

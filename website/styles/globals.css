@@ -175,6 +175,16 @@ hr {
   --transparent-bg: rgba(255, 255, 255, 0.1);
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 @media (max-width: 720px) {
   html,
   body {

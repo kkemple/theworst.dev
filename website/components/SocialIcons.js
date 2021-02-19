@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./SocialIcons.module.css";
+import styles from "@styles/SocialIcons.module.css";
 
 export default function SocialIcons() {
   return (

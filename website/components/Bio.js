@@ -1,4 +1,4 @@
-import styles from "./Bio.module.css";
+import styles from "@styles/Bio.module.css";
 
 export default function Bio() {
   return (

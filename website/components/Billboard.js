@@ -1,4 +1,4 @@
-import styles from "./Billboard.module.css";
+import styles from "@styles/Billboard.module.css";
 
 export default function Billboard({ title }) {
   return (

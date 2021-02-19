@@ -1,4 +1,4 @@
-import styles from "./ProfilePics.module.css";
+import styles from "@styles/ProfilePics.module.css";
 
 export default function ProfilePics() {
   return (

@@ -1,27 +1,48 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
+import Fuse from "fuse.js";
 import ContentCard from "@components/ContentCard";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 import { postFilePaths, POSTS_PATH } from "@utils/mdx";
-import styles from "./content.module.css";
+import styles from "@styles/content.module.css";
 
 export default function Garden({ posts }) {
   const title = "Kurt Kemple's Digital Garden";
   const description =
     "This is where I write about about everything software sevelopment, developer relations, mental health, and more. I hope you find something that relates to you!";
 
+  const fuse = new Fuse(posts, {
+    keys: ["title", "content"],
+    isCaseSensitive: false,
+    includeScore: true,
+    ignoreLocation: true,
+    threshold: 0.1,
+  });
+
   const [filter, setFilter] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState(posts);
 
   const handleSearch = (event) => {
     setFilter(event.target.value);
   };
 
-  const results = posts.filter((post) => {
-    return post.title.toLowerCase().includes(filter.toLowerCase());
-  });
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (filter.length) {
+        const search = fuse.search(filter);
+
+        const results = search.map((result) => result.item);
+        setFilteredPosts(results);
+      } else {
+        setFilteredPosts(posts);
+      }
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [filter, setFilteredPosts]);
 
   return (
     <>
@@ -46,9 +67,18 @@ export default function Garden({ posts }) {
               onChange={handleSearch}
               placeholder="Looking for something?"
             />
+            <div className={styles.results} aria-live="polite">
+              {filter.length ? (
+                <span>
+                  {filteredPosts.length
+                    ? `${filteredPosts.length} results`
+                    : "no results"}
+                </span>
+              ) : null}
+            </div>
           </div>
           <hr className={styles.divider} />
-          {results.map((post) => (
+          {filteredPosts.map((post) => (
             <div key={post.slug} className={styles.card}>
               <ContentCard
                 key={post.slug}
@@ -91,6 +121,7 @@ export async function getStaticProps() {
         title: post.data.title,
         slug: post.filePath.replace(/\.mdx?$/, ""),
         description: post.data.description,
+        content: post.content,
       };
     })
   );

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import useSound from "use-sound";
-import styles from "./MusicButton.module.css";
+import styles from "@styles/MusicButton.module.css";
 
 export default function MusicButton() {
   const [isPlaying, setIsPlaying] = useState(false);

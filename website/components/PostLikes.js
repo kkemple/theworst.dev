@@ -6,7 +6,7 @@ import {
   usePrefersReducedMotion,
 } from "@utils/hooks";
 import useSound from "use-sound";
-import styles from "./PostLikes.module.css";
+import styles from "@styles/PostLikes.module.css";
 
 const LIKE_POST_MUTATION = gql`
   mutation LikePost($slug: String!, $count: Int!) {
@@ -58,6 +58,7 @@ function Heart({ color, size, style }) {
       viewBox={`0 0 100 100`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
     >
       <path
         fill={color}
@@ -105,7 +106,7 @@ function Hearts({ children }) {
           className={styles.svg}
         />
       ))}
-      <strong className={styles.contentContainer}>{children}</strong>
+      <span className={styles.contentContainer}>{children}</span>
     </span>
   );
 }

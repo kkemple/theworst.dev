@@ -58,11 +58,11 @@ We can’t wait to have you on our stream!
 The Apollo DevRel Team
 ```
 
-> This event should also start 15 min before the actual stream start time, and end 15 min after the stream end time. This gives me time to get guests on a Skype call, get them loaded into the stream scenes, and allows us a few minutes to conversate before going live which I have found makes it a little less intimidating for first-time streamers.
+This event should also start 15 min before the actual stream start time, and end 15 min after the stream end time. This gives me time to get guests on a Skype call, get them loaded into the stream scenes, and allows us a few minutes to conversate before going live which I have found makes it a little less intimidating for first-time streamers.
 
 Once everything is confirmed, I create another calendar event, this time on the public events calendar for Apollo with the proper start and end time for the steam. I add a description of the stream and include Twitter handles for myself and the guests in that description.
 
-> The description on the public event is used for all of the automation in promoting the stream. More on this in a bit!
+**The description on the public event is used for all of the automation in promoting the stream. More on this in a bit!**
 
 ![stream calendar example](./stream-calendar-example.png)
 
@@ -80,7 +80,7 @@ The first thing I did was to set up Zapier workflows that would trigger at the s
 
 The only thing these workflows do is pass the event info to a Pipedream workflow so that I can parse the event data and build the tweet content and social media image url for [Cloudinary](https://cloudinary.com).
 
-> Cloudinary is an asset managemetn platform that has some really powerful features for creating dynamic images.
+> Cloudinary is an asset management platform that has some really powerful features for creating dynamic images.
 
 ## Building Social Media Images
 
@@ -127,7 +127,7 @@ async (event, steps, auths) => {
 };
 ```
 
-> If you look at the highlighted line in the code example above, you can see how I use a regex to grab the Twitter handles of the stream guests.
+**If you look at the highlighted line in the code example above, you can see how I use a regex to grab the Twitter handles of the stream guests.**
 
 This is a "step" in Pipedream and you combine steps to make a "workflow". So the incoming webhook from Zapier is caught and then that info is used to get the info needed to create the image as well as the tweet content.
 
@@ -209,11 +209,11 @@ async (event, steps) => {
 };
 ```
 
-> Going through the highlighted bits of code, I first convert the avatar URLs for guests to base64 for use in Cloudinary, then parse out the show name and title so I know which template to use, then apply the proper avatar layout based on the number of guests (up to 5), and finally piece it all together into a Cloudinary URL that will be the completed social media card. 🤯
+Going through the highlighted bits of code, I first convert the avatar URLs for guests to base64 for use in Cloudinary, then parse out the show name and title so I know which template to use. After that I apply the proper avatar layout based on the number of guests (up to 5). Finally, I piece it all together into a Cloudinary URL that will be the completed social media card. 🤯
 
 Once that is all done, the last step is to send myself a message in Slack with the tweet contents and social media image URL so that I can tweet about the stream.
 
-> The reason this last part isn't automated anymore is that Twitter doesn't let you `@` folks over the API anymore so I copy/paste the info from Slack into Twitter which only takes a few seconds.
+**The reason this last part isn't automated anymore is that Twitter doesn't let you `@mention` folks over the API anymore so I copy/paste the info from Slack into Twitter which only takes a few seconds.**
 
 The result is a Slack message to myself that looks like this:
 
