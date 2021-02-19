@@ -17,7 +17,6 @@ export default function Garden({ posts }) {
   const fuse = new Fuse(posts, {
     keys: ["title", "content"],
     isCaseSensitive: false,
-    includeScore: true,
     ignoreLocation: true,
     threshold: 0.1,
   });
@@ -119,7 +118,7 @@ export async function getStaticProps() {
     postsData.map((post) => {
       return {
         title: post.data.title,
-        slug: post.filePath.replace(/\.mdx?$/, ""),
+        slug: `/${post.filePath.replace(/\.mdx?$/, "")}`,
         description: post.data.description,
         content: post.content,
       };

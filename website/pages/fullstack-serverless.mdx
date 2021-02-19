@@ -1,10 +1,6 @@
 ---
 title: Fullstack Serverless and Modern App Development
-bloomed: true
-tags:
-  - fullstack
-  - serverless
-  - architecture
+description: In recent years there have been huge shifts in both back-end and front-end development. As clients become more and more stateful, the services backing them become slimmer and stateless. The complexity of managing all of these tiny services and functions is being abstracted away, allowing those without devops skills to take advantage of serverless technologies.
 ---
 
 ## The Development Landscape Is Ever Changing
@@ -25,33 +21,38 @@ At the end of the day we want to create value quickly. Hopefully not at the expe
 
 How can leverage the benefits of serverless without having to manage that new complexity ourselves? Well, generally as a given technology evolves, it goes through a shift in complexity. While serverless itself consists of lambda functions, topic configuration, and event management, there have been some higher level abstractions built on top of it that make it actually quite friendly to those who may consider themselves front-end or product developers.
 
-This in turn brought about a bunch of [serviceful serverless](https://medium.com/@dabit3/full-stack-development-in-the-era-of-serverless-computing-c1e49bba8580) products which take advantage of the scalability of serverless, but abstract it away behind a meaningful product that solves a particular problem domain. Nader Dabit lists some great examples of serviceful services in the post I linked earlier in the paragraph. In his article he says:
+This in turn brought about a bunch of [serviceful serverless](https://medium.com/@dabit3/full-stack-development-in-the-era-of-serverless-computing-c1e49bba8580) products which take advantage of the scalability of serverless, but abstract it away behind a meaningful product that solves a particular problem domain. Nader Dabit lists some great examples of serviceful services in the post I linked earlier in the paragraph. In his article he lists a few examples of serviceful services:
 
-> A few examples of serviceful services include **Auth0 / Amazon Cognito** (managed authentication), **Algolia** (managed search), **Contentful** (content infrastructure), **AWS AppSync / Cloud Firestore** (managed API services), **Amazon Lex / Rekognition / Textract** (machine learning services), and **Cloudinary** (managed image & video hosting service). - _Nader Dabit, Full-Stack Development in the Era of Serverless Computing_
+- Auth0 / Amazon Cognito
+- Algolia
+- Contentful
+- AWS AppSync / Cloud Firestore
+- Amazon Lex / Rekognition / Textract
+- Cloudinary
 
 ## UI Toolkits and Frameworks
 
 On the front-end we've also seen a large increase in complexity, borrowing from Nader Dabit again, he explains what has changed, making things so much more complex:
 
-> Because of the rise of SPAs, more complex data concerns, multiple device targets and increased expectations of user experience, client-side development has gotten more complex over the past decade or so. - _Nader Dabit, Full-Stack Development in the Era of Serverless Computing_
+**"Because of the rise of SPAs, more complex data concerns, multiple device targets and increased expectations of user experience, client-side development has gotten more complex over the past decade or so."**
 
 However, with this complexity came some really amazing tooling and frameworks. These abstractions make it easier to manage the new complexity, allowing developers to focus on creating value. The best part is, we don't have to do it at the expense of things like accessibility and security. We get this baked right into the solutions.
 
 It's pretty fair to say that these tools are providing focus. They allow you to deal strictly with business problems and handle all the technical problems for you. This rings of the same changes on the back-end and the evolution of serverless computing.
 
-Frameworks like [Expo](https://expo.io/), [Ionic](https://ionicframework.com/), [Gatsby](https://www.gatsbyjs.org/), and [Meteor](https://www.meteor.com/) are making it possible to build production ready, quality apps, based on their building blocks.
+Frameworks like [Expo](https://expo.io/), [Ionic](https://ionicframework.com/), [Gatsby](https://www.gatsbyjs.org/), [Next.js](https://nextjs.com), and [Meteor](https://www.meteor.com/) are making it possible to build production ready, quality apps, based on their building blocks.
 
 ## The Best of Both Worlds
 
-What we're seeing now is platforms that encompass the best of both worlds. Providing solutions for the entire development life cycle of an application. Making it much easier to build fully fledged applications that can scale without question and costs less than building out your own serverless infrastructure and tooling. Solutions like [Firebase](), [Netlify](), [Zeit](), and [AWS Amplify]() provide full-stack features such as toolkits and APIs, data storage, file storage, and build and deployment services. I refer to these types of platforms as `Full-stack Serverless`. They provide feature sets that generally span from the command line tooling to back-end services, and everything in between.
+What we're seeing now is platforms that encompass the best of both worlds. Providing solutions for the entire development life cycle of an application. Making it much easier to build fully fledged applications that can scale without question and costs less than building out your own serverless infrastructure and tooling. Solutions like [Firebase](https://firebase.google.com/), [Netlify](https://netlify.com), [Vercel](https://vercel.com), and [AWS Amplify](https://docs.amplify.aws/) provide full-stack features such as toolkits and APIs, data storage, file storage, and build and deployment services. I refer to these types of platforms as `Full-stack Serverless`. They provide feature sets that generally span from the command line tooling to back-end services, and everything in between.
 
 I recently ran a [poll on Twitter](https://twitter.com/kurtkemple/status/1109126793938767872) where I asked, "When architecting a new application, what do you consider to be the most crucial concern when choosing solutions?"
 
-![picture of twitter poll](./twitter-poll.png)
+<Tweet align="center" tweetLink="kurtkemple/status/1109126793938767872" />
 
 What wasn't very surprising is that most people voted for "Maintenance and Longevity" with "Creating Value Quickly" coming in at second. It's not surprising to see maintenance and longevity at the top because when you are responsible for your own server or making sure your application is secure and performant, there is a lot of extra technical problem code. Code that solves technology problems and not business problems.
 
-This is why I feel the future is one in which we don't handle maintenance and longevity of services or applications because we offset that burden to serviceful services. Doing so let's you focus on building product which leads to creating value quickly.
+> This is why I feel the future is one in which we don't handle maintenance and longevity of services or applications because we offset that burden to serviceful services. Doing so let's you focus on building product which leads to creating value quickly.
 
 In the poll developer experience came in right behind delivering value, which is interesting because I feel that in order for solutions to operate in this space, developer experience is everything. A lot of people fear vendor lock in... unless what they are using provides such a pleasant developer experience that they trust you get what they need and are in fact concerned with their success.
 
