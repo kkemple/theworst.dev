@@ -55,6 +55,10 @@
   margin-bottom: 80px;
 }
 
+.dividerContentCard {
+  margin-top: 48px;
+}
+
 .iframe {
   width: 100%;
   aspect-ratio: 16/9;
