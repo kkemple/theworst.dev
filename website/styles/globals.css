@@ -157,6 +157,7 @@ hr {
   --link: #f272ad;
   --text-color: rgba(0, 0, 0, 0.87);
   --text-shadow-color: rgba(128, 6, 63, 0.2);
+  --content-billboard-bg-image: url(/hidden-leaf-village-day.gif);
   transition: background-color 0.3s;
   background-color: var(--background);
   background-image: url("/hidden-leaf-village-symbol.png");
@@ -173,6 +174,7 @@ hr {
   --text-color: #f7fafc;
   --text-shadow-color: rgba(0, 0, 0, 0.4);
   --transparent-bg: rgba(255, 255, 255, 0.1);
+  --content-billboard-bg-image: url(/hidden-leaf-village-night.gif);
 }
 
 .visually-hidden {

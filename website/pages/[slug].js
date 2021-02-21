@@ -22,6 +22,7 @@ const components = {
 
 export default function BlogPost({ source, frontMatter, headings }) {
   const content = hydrate(source, { components });
+
   return (
     <>
       <Head>

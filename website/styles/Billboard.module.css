@@ -1,5 +1,5 @@
 .container {
-  background-image: url(/hidden-leaf-village.jpg);
+  background-image: var(--content-billboard-bg-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
