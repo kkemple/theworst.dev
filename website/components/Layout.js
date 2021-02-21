@@ -28,6 +28,8 @@ export default function Layout({ darkModeActive, children }) {
         <meta name="twitter:creator" content="@theworstdev" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <link rel="prefetch" href="/hidden-leaf-village-day.gif" />
+        <link rel="prefetch" href="/hidden-leaf-village-night.gif" />
       </Head>
       <Header />
       <div className="content">{children}</div>
