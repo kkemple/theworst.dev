@@ -7,6 +7,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import rehypePrism from "@mapbox/rehype-prism";
 import remarkSlug from "remark-slug";
 import remarkAutoLinkHeadings from "remark-autolink-headings";
+import ConvertKit from "convertkit-react";
 
 import Head from "next/head";
 import Billboard from "@components/Billboard";
@@ -47,6 +48,17 @@ export default function BlogPost({ source, frontMatter, headings }) {
         </ClientOnly>
       </div>
       <article className={styles.post}>{content}</article>
+      <hr className={styles.pageDivider} />
+      <div className={styles.newsletter}>
+        <h2>Don't Miss Out</h2>
+        <p>
+          Thanks for reading <strong>"{frontMatter.title}"</strong>! Be sure to
+          sign up for my newsletter to be the first to receive my newest
+          content, interesting things I discover, and get actionable insights
+          right to your inbox!
+        </p>
+        <ConvertKit formId="7216afc9c1" />
+      </div>
     </>
   );
 }
