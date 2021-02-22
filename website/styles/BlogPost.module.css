@@ -26,3 +26,64 @@
   bottom: 80px;
   right: 16px;
 }
+
+.newsletter {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.newsletter input {
+  padding: 12px;
+  margin-bottom: 0;
+  border-radius: 4px;
+  color: var(--link);
+  box-shadow: 2px 2px 0 var(--text-shadow-color);
+  font-size: 1rem;
+  border: 4px solid transparent;
+  background: var(--card-background);
+  margin-right: 16px;
+}
+
+.newsletter input:focus {
+  outline: none;
+  border-color: var(--link);
+}
+
+.newsletter input::placeholder {
+  color: var(--link);
+  font-size: 1rem;
+}
+
+.newsletter button {
+  border-radius: 4px;
+  border: 4px solid transparent;
+  background-color: var(--link);
+  font-size: 1rem;
+  padding: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.pageDivider {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .newsletter form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .newsletter input {
+    margin-bottom: 16px;
+    width: auto;
+  }
+
+  .pageDivider {
+    margin: 0 24px;
+  }
+}
