@@ -42,12 +42,12 @@ export default function BlogPost({ source, frontMatter, headings }) {
         <meta name="twitter:description" content={frontMatter.description} />
       </Head>
       <Billboard title={frontMatter.title} />
+      <article className={styles.post}>{content}</article>
       <div className={styles.likeButton}>
         <ClientOnly>
           <PostLikes />
         </ClientOnly>
       </div>
-      <article className={styles.post}>{content}</article>
       <hr className={styles.pageDivider} />
       <div className={styles.newsletter}>
         <h2>Don't Miss Out</h2>

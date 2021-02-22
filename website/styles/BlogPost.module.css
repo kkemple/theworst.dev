@@ -86,4 +86,12 @@
   .pageDivider {
     margin: 0 24px;
   }
+
+  .likeButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+  }
 }
