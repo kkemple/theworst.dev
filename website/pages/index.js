@@ -40,13 +40,9 @@ export default function Home() {
         <hr className={styles.indexDivider} />
         <h3>If you only read one post, you should read this one</h3>
         <ContentCard
-          url="/im-an-impostor"
-          title="I'm an Impostor - Incarceration and Living a Lie"
-          description="Every day, I walk around telling little lies so I can project
-          this false image of myself. I would like to tell you this is a
-          story about how I feel like I don't know enough, and then I
-          realized that people don't know shit either, but this isn't that
-          story."
+          url="/social-media-is-failing-us"
+          title="Social Media is Failing Us"
+          description="Social media platforms are sacrificing usability and safety to maximize profits from engagement, also known as engagement profiteering. Engagement profiteering is a type of business model that social media companies use to generate revenue."
         />
         <hr className={`${styles.divider} ${styles.dividerContentCard}`} />
         <h3>Some of my recent appearances</h3>
