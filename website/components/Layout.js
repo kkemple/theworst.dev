@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Header from "@components/Header";
 import MusicButton from "@components/MusicButton";
-import Footer from "./Footer";
+import Footer from "@components/Footer";
+import ClientOnly from "@components/ClientOnly";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
 export default function Layout({ darkModeActive, children }) {
@@ -33,7 +34,9 @@ export default function Layout({ darkModeActive, children }) {
       </Head>
       <Header />
       <div className="content">{children}</div>
-      <MusicButton />
+      <ClientOnly>
+        <MusicButton />
+      </ClientOnly>
       <Footer />
     </div>
   );

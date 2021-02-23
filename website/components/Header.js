@@ -7,7 +7,7 @@ export default function Header() {
   const { darkModeActive, switchToDarkMode, switchToLightMode } = useDarkMode();
 
   return (
-    <section role="header" className={styles.header}>
+    <header className={styles.header}>
       <Link href="/">
         <a className={styles.logoLink}>
           <img src="/logo.png" alt="The Worst Dev" className={styles.logo} />
@@ -41,6 +41,6 @@ export default function Header() {
           />
         </div>
       </div>
-    </section>
+    </header>
   );
 }
