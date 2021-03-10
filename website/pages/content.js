@@ -77,16 +77,19 @@ export default function Garden({ posts }) {
             </div>
           </div>
           <hr className={styles.divider} />
-          {filteredPosts.map((post) => (
-            <div key={post.slug} className={styles.card}>
-              <ContentCard
-                key={post.slug}
-                url={post.slug}
-                title={post.title}
-                description={post.description}
-              />
-            </div>
-          ))}
+          <div className={styles.content}>
+            {filteredPosts.map((post) => (
+              <div key={post.slug} className={styles.card}>
+                <ContentCard
+                  style="outline"
+                  key={post.slug}
+                  url={post.slug}
+                  title={post.title}
+                  description={post.description}
+                />
+              </div>
+            ))}
+          </div>
         </main>
       </div>
     </>

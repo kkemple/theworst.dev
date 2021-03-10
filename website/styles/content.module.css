@@ -2,7 +2,7 @@
   margin-left: auto;
   margin: auto;
   margin-top: 64px;
-  max-width: 720px;
+  /* max-width: 720px; */
   padding: 24px;
   padding-bottom: 64px;
 }
@@ -17,7 +17,7 @@
 
 .filter {
   padding: 12px;
-  margin-bottom: 0;
+  margin: 0;
   border-radius: 4px;
   color: var(--link);
   box-shadow: 2px 2px 0 var(--text-shadow-color);
@@ -25,18 +25,25 @@
   font-size: 1rem;
   border: 4px solid transparent;
   width: 60%;
+  max-width: 400px;
   background: var(--card-background);
 }
 
 .search {
   display: flex;
   align-items: center;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
 }
 
 .results {
   margin-left: 16px;
   font-weight: 600;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
 }
 
 .filter:focus {
@@ -56,5 +63,9 @@
 @media (max-width: 720px) {
   .container {
     margin-top: 32px;
+  }
+
+  .card {
+    margin-bottom: 8px;
   }
 }

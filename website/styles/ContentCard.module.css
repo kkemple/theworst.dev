@@ -21,6 +21,20 @@
   border: 2px solid transparent;
 }
 
+.container.outline {
+  height: 100%;
+}
+
+.outline .content {
+  background-color: transparent;
+  box-shadow: none;
+  height: inherit;
+}
+
+.outline .content:hover {
+  border: 2px solid var(--link);
+}
+
 .container:hover .kakashi {
   transform: rotate(-50deg) translateY(-45px) translateX(-45px);
 }
