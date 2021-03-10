@@ -12,7 +12,7 @@ import styles from "@styles/content.module.css";
 export default function Garden({ posts }) {
   const title = "Kurt Kemple's Digital Garden";
   const description =
-    "This is where I write about about everything software sevelopment, developer relations, mental health, and more. I hope you find something that relates to you!";
+    "This is where I write about about everything software development, developer relations, mental health, and more. I hope you find something that relates to you!";
 
   const fuse = new Fuse(posts, {
     keys: ["title", "content"],
