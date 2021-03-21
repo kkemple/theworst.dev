@@ -58,7 +58,7 @@ export default function BlogPost({ source, frontMatter, headings }) {
           content, interesting things I discover, and get actionable insights
           right to your inbox!
         </p>
-        <ConvertKit formId="2021531" />
+        <ConvertKit formId={2021531} />
       </div>
     </>
   );
