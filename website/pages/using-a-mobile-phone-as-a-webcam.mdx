@@ -1,0 +1,84 @@
+---
+  title: Using a Mobile Phone as a Webcam
+  description: Here is a non-exhaustive list of the hardware, software, tools, etc I use for work and play.
+---
+
+## Do I need a fancy camera to make quality video content or live stream?
+
+Absolutely not. I can't stress this enough. In my humble opinion mic quality will always outweigh video quality so if you have to pick a place to invest, my advice is to do it on audio first. With that said, you can get really good video quality by using your mobile phone! Mobile phone cameras these days are really impressive and the picture quality is definitely good enough to produce top notch videos.
+
+![picture of me giving the peace sign](./peace-sign.png)
+
+## Setting Up for iOS
+
+If you're on an iPhone I have great news for you, there is an app that can help you do this and it makes the setup a lot easier. You can install the EpocCam app on your phone and plug it into your computer and you're done. 🎉 🔥 🙌
+
+> I recommend you keep reading because in the Android section we'll learn how to use OBS (Open Broadcast Software) to accomplish this and it's a really great too that can help you take your video production to the next level or to save the money of purchasing EpocCam.
+
+## Setting Up for Android
+
+The first step is to [install OBS (Open Broadcast Software)](https://obsproject.com/) on your computer. Once its installed open it up and you should see something like this:
+
+![screen grab of a fresh obs install](./fresh-obs-install.png)
+
+> We're only going to cover what is needed for using your phone as a webcam, so there are a lot of parts we won't get to, also I have a few extra plugins installed so my layout might be slightly different than yours, but the parts that matter will be the same!
+
+The way OBS works is it uses "Scenes" and "Sources" to create a layout that can be broadcasted to either a streaming platform, a local recording, or in this case, a virtual camera.
+
+There will already be a default Scene for you. Scenes are the equivalent to a layout in React, it's the wrapping view with all the components in it. Sources are like React components, we add sources to a scene to build out a complete view.
+
+In the sources panel, click the "+" button and choose "Browser" for the source.
+
+![screen grab of source options when choosing a new source in OBS](./source-options.png)
+
+> You might be wondering why we didn't choose "Video Capture Device" instead. The reason is because since we want to use our mobile phone we're going to use a free online tool called obs.ninja to create a WebRTC feed of our mobile phone camera and pipe it into this Browser source.
+
+Give the source a name like "Mobile Camera", hit the create button, and leave the dialog for the Browser source settings open for now, we'll come back to it in a minute!
+
+Next, open up [obs.ninja](https://obs.ninja) in your web browser of choice. You'll be greeted by the following screen:
+
+![screen grab of obs.ninja home page](./obs-ninja.png)
+
+Click on the "Create a Room" button and you'll be presented with the room settings screen.
+
+![screen grab of obs.ninja create room page](./obs-ninja-create-room.png)
+
+OBS Ninja (OBSN) rooms are open to everyone, as such it's important that you pick a name for your room that is pretty unique and I recommend adding a password to make sure no one accidentally joins your room. (The room name and password are hashed to create a unique room name behind the scenes)
+
+> For the preferred video codec, choose VP9 as it does the best at handling issues in video transfer and should keep you looking good. 💅
+
+**You can leave the checkboxes unchecked.**
+
+Okay, once you've entered your room name and password, enter the control center by pressing the blue button.
+
+![screen grab of obs.ninja control room page](./obs-ninja-control-room.png)
+
+We're getting so close now! The next step is take the link in the "Invite a Guest" section and open it on your mobile device (make sure to choose the most optimal camera). Once you join the room you should see something like this:
+
+![screen grab of obs.ninja control room with guest](./obs-ninja-control-room-with-guest.png)
+
+Your camera feed is now ready to be used in OBS! 👏
+
+> A quick note, I recommend clicking on the "mute guest" button in the control center for your camera so that you don't get your phone's audio playing back to you.
+
+Alright, the next step is to copy the "Solo Link" at the bottom of the mobile video box in OBSN:
+
+![screen grab of obs.ninja control room with guest showing the solo link button](./obs-ninja-control-room-copy-solo-link.png)
+
+Now jump back into OBS and use that link in the Browser settings dialog in place of the existing one. Set the width to 1920 and the height to 1080 and press the "OK" button, you should now see yourself in OBS!
+
+![screen grab of obs with the browser source loaded](./obs-browser-source.png)
+
+Click the little lock icon for the Mobile Cam source to make sure you don't accidentally move it. Next, press the "Start Virtual Camera" button in OBS.
+
+You now have a webcam source you can use in pretty much all video chat apps! 🙌 🥳 .👏 .🥰 .✨ .🎉
+
+To test it out, open one of these apps and look for OBS Virtual Camera.
+
+![screen grab google meet with a virtual cam loaded](./google-meet-with-virtual-camera.png)
+
+And that's it! You're ready to look your best for video calls, or to record that video you've been wanting to do for awhile now.
+
+> Want to learn more about setting up OBS scenes? Check out this YouTube video! 👇
+
+<YouTube youTubeId="Sd8hx8Li4tc" />
