@@ -5,6 +5,7 @@ enum PublishableEvent {
   BAN
   CHAT_MESSAGE
   CHANNEL_UPDATED
+  POST_UPDATED
 }
 
 directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION

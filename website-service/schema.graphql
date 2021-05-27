@@ -1,4 +1,10 @@
-extend enum PublishableEvent {
+enum PublishableEvent {
+  FOLLOW
+  SUBSCRIBE
+  RAID
+  BAN
+  CHAT_MESSAGE
+  CHANNEL_UPDATED
   POST_UPDATED
 }
 
