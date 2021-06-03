@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r esm -r dotenv/config index.js",
-    "dev": "nodemon -r esm -r dotenv/config index.js",
+    "start": "node -r esm -r dotenv/config -r isomorphic-fetch index.js",
+    "dev": "nodemon -r esm -r dotenv/config -r isomorphic-fetch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +16,9 @@
     "apollo-server": "^2.25.0",
     "dotenv": "^10.0.0",
     "esm": "^3.2.25",
-    "graphql": "^15.5.0"
+    "graphql": "^15.5.0",
+    "isomorphic-fetch": "^3.0.0",
+    "shopify-buy": "^2.11.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
