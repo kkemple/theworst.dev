@@ -38,7 +38,7 @@ jobs:
         env:
           APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
         run: |
-          npx -p @apollo/rover rover subgraph push the-worst-dev-z1n1vn@current \
+          npx -p @apollo/rover rover subgraph publish the-worst-dev-z1n1vn@current \
             --name=twitch \
             --schema=./schema.graphql \
             --routing-url=${{ secrets.TWITCH_SERVICE_URL }}
