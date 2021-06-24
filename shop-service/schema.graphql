@@ -1,0 +1,22 @@
+enum PublishableEvent {
+  FOLLOW
+  SUBSCRIBE
+  RAID
+  BAN
+  CHAT_MESSAGE
+  CHANNEL_UPDATED
+  POST_UPDATED
+}
+
+directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
+
+directive @_live(events: [PublishableEvent!]!) on QUERY
+
+extend type Query {
+  products: [Product!]!
+}
+
+type Product {
+  id: ID!
+  title: String!
+}

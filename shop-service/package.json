@@ -1,0 +1,26 @@
+{
+  "name": "shop-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm -r dotenv/config -r isomorphic-fetch index.js",
+    "dev": "nodemon -r esm -r dotenv/config -r isomorphic-fetch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kurt Kemple",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/federation": "^0.25.1",
+    "apollo-server": "^2.25.0",
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
+    "graphql": "^15.5.0",
+    "isomorphic-fetch": "^3.0.0",
+    "shopify-buy": "^2.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
