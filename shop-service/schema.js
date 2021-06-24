@@ -1,31 +1,8 @@
 import { gql } from "apollo-server";
 import { buildFederatedSchema } from "@apollo/federation";
+import fs from "fs";
 
-// create typedefs
-const typeDefs = gql`
-  enum PublishableEvent {
-    FOLLOW
-    SUBSCRIBE
-    RAID
-    BAN
-    CHAT_MESSAGE
-    CHANNEL_UPDATED
-    POST_UPDATED
-  }
-
-  directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
-
-  directive @_live(events: [PublishableEvent!]!) on QUERY
-
-  extend type Query {
-    products: [Product!]!
-  }
-
-  type Product {
-    id: ID!
-    title: String!
-  }
-`;
+const typeDefs = fs.readFileSync("./schema.graphql", "utf8").toString();
 
 // create resolvers
 const resolvers = {
@@ -36,6 +13,8 @@ const resolvers = {
 
 // federated schema
 export const schema = buildFederatedSchema({
-  typeDefs,
+  typeDefs: gql`
+    ${typeDefs}
+  `,
   resolvers,
 });
