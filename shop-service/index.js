@@ -1,6 +1,6 @@
 import { ApolloServer } from "apollo-server";
 import Client from "shopify-buy";
-import { schema } from "./schema";
+import { schema } from "./graphql";
 
 const client = Client.buildClient({
   domain: process.env.DOMAIN,
