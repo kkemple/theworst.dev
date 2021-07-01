@@ -3,9 +3,11 @@ const { ApolloServer } = require("apollo-server");
 
 /* Apollo */
 
+console.log("LOOK AT ME!!!!", process.env.NODE_ENV);
+
 const config =
   process.env.NODE_ENV === "production"
-    ? undefined
+    ? {}
     : {
         serviceList: [
           { name: "twitch", url: "http://localhost:4000/graphql" },
