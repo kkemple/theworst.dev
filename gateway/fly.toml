@@ -30,3 +30,6 @@ kill_timeout = 5
     port = "6969"
     restart_limit = 5
     timeout = "2s"
+
+[env]
+  NODE_ENV = "production"
