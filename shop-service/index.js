@@ -3,7 +3,7 @@ import Client from "shopify-buy";
 import { schema } from "./graphql";
 
 const client = Client.buildClient({
-  domain: process.env.DOMAIN,
+  domain: "horny-on-main.myshopify.com",
   storefrontAccessToken: process.env.STOREFRONT_ACCESS_TOKEN,
 });
 
