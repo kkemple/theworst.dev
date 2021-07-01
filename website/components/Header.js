@@ -23,7 +23,7 @@ export default function Header() {
               <Link href="/resources">Resources</Link>
             </li>
             <li>
-              <Link href="https://hornyonmain.shop">Shop</Link>
+              <Link href="/shop">Shop</Link>
             </li>
             <li>
               <Link href="https://theworst.dev/subscribe">Newsletter</Link>
