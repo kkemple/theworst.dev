@@ -3,8 +3,6 @@ const { ApolloServer } = require("apollo-server");
 
 /* Apollo */
 
-console.log("LOOK AT ME!!!!", process.env.NODE_ENV);
-
 const config =
   process.env.NODE_ENV === "production"
     ? {}
