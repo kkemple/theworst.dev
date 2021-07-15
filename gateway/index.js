@@ -8,8 +8,8 @@ const config =
     ? {}
     : {
         serviceList: [
-          { name: "twitch", url: "http://localhost:4000/graphql" },
-          { name: "website", url: "http://localhost:4001" },
+          { name: "twitch", url: "https://twd-twitch-service.fly.dev/graphql" },
+          { name: "website", url: "https://twd-website-service.fly.dev/" },
           { name: "shop", url: "http://localhost:6767" },
         ],
       };

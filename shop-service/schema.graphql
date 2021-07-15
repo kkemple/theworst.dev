@@ -16,7 +16,16 @@ extend type Query {
   products: [Product!]!
 }
 
+type Image {
+  id: ID!
+  src: String!
+  altText: String
+}
+
 type Product {
   id: ID!
   title: String!
+  description: String!
+  images: [Image!]!
+  prices: [Float!]!
 }

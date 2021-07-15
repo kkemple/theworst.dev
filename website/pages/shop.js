@@ -2,6 +2,8 @@ import React from "react";
 import { gql } from "@apollo/client";
 
 import Head from "next/head";
+import styles from "@styles/content.module.css";
+import ContentCard from "@components/ContentCard";
 
 import { client } from "@utils/graphql";
 import { buildCloudinaryURL } from "@utils/cloudinary";
@@ -22,14 +24,24 @@ export default function Shop({ products }) {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
       </Head>
-      <div>
-        <h1>Shop</h1>
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              <h3>{product.title}</h3>
-            </li>
-          ))}
+      <div className={styles.container}>
+        <ul className={styles.content}>
+          {products.map((product) => {
+            const lowestPrice = Math.min(...product.prices);
+            const priceText = `$${lowestPrice.toFixed(2)}`;
+            return (
+              <ContentCard
+                style="outline"
+                key={product.id}
+                url={`/shop/product/${product.id}`}
+                title={product.title}
+                image={product.images[0]}
+                description={
+                  product.prices.length > 1 ? `From ${priceText}` : priceText
+                }
+              />
+            );
+          })}
         </ul>
       </div>
     </>
@@ -41,6 +53,12 @@ const LIST_PRODUCTS = gql`
     products {
       id
       title
+      description
+      prices
+      images {
+        src
+        altText
+      }
     }
   }
 `;
