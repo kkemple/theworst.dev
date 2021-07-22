@@ -1,0 +1,43 @@
+.container {
+  margin-left: auto;
+  margin: auto;
+  margin-top: 64px;
+  max-width: 960px;
+  padding-bottom: 64px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 1fr 1fr */
+  grid-gap: 32px;
+  align-items: flex-start;
+}
+
+.image {
+  --image-margin: 4px;
+}
+
+.image > img {
+  display: block;
+  max-width: 100%;
+}
+
+.image .thumbnails {
+  display: grid;
+  margin-top: var(--image-margin);
+  grid-gap: var(--image-margin);
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+}
+
+.image .thumbnails button {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.image .thumbnails img {
+  width: 100%;
+}
+
+.metadata h1 {
+  margin-top: 0;
+}

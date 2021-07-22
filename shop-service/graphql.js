@@ -7,9 +7,13 @@ const typeDefs = fs.readFileSync("./schema.graphql", "utf8").toString();
 // create resolvers
 const resolvers = {
   Query: {
-    products: async (_, __, { client }) => {
-      const products = await client.product.fetchAll();
-      return products;
+    products: (_, __, { client }) => client.product.fetchAll(),
+    product: async (_, { id }, { client }) => {
+      const product = await client.product.fetch(id);
+
+      console.log(product);
+
+      return product;
     },
   },
   Product: {

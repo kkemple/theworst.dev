@@ -49,7 +49,7 @@ export default function Shop({ products }) {
 }
 
 const LIST_PRODUCTS = gql`
-  query ListProducts {
+  query ListProductsForShop {
     products {
       id
       title

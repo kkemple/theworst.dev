@@ -14,6 +14,7 @@ directive @_live(events: [PublishableEvent!]!) on QUERY
 
 extend type Query {
   products: [Product!]!
+  product(id: ID!): Product
 }
 
 type Image {
@@ -26,6 +27,7 @@ type Product {
   id: ID!
   title: String!
   description: String!
+  descriptionHtml: String!
   images: [Image!]!
   prices: [Float!]!
 }

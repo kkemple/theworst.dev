@@ -16,6 +16,7 @@
     "fuse.js": "^6.4.6",
     "graphql": "^15.5.0",
     "gray-matter": "^4.0.2",
+    "interweave": "^12.8.0",
     "mdx-embed": "^0.0.18",
     "next": "10.0.6",
     "next-dark-mode": "^2.3.2",
