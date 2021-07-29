@@ -17,6 +17,15 @@ extend type Query {
   product(id: ID!): Product
 }
 
+extend type Mutation {
+  createCheckout(checkoutInput: CheckoutInput!): String!
+}
+
+input CheckoutInput {
+  quantity: Int!
+  variantId: ID!
+}
+
 type Image {
   id: ID!
   src: String!
@@ -29,5 +38,12 @@ type Product {
   description: String!
   descriptionHtml: String!
   images: [Image!]!
-  prices: [Float!]!
+  variants: [Variant!]!
+}
+
+type Variant {
+  id: ID!
+  title: String!
+  price: Float!
+  available: Boolean!
 }

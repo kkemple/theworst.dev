@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { gql } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
 import { Markup } from "interweave";
 
 import Head from "next/head";
@@ -8,13 +8,31 @@ import styles from "@styles/product.module.css";
 import { client } from "@utils/graphql";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
+const CREATE_CHECKOUT = gql`
+  mutation CreateCheckout($checkoutInput: CheckoutInput!) {
+    createCheckout(checkoutInput: $checkoutInput)
+  }
+`;
+
 export default function Shop({ product }) {
   const title = "Check out The Worst Shop";
   const description = "The best worst shop on the web";
 
+  const [quantity, setQuantity] = useState(1);
   const [imageIndex, setImageIndex] = useState(0);
+  const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
 
-  console.log(product.descriptionHtml);
+  const [createCheckout, { loading, error }] = useMutation(CREATE_CHECKOUT, {
+    onCompleted: (data) => {
+      window.location.href = data.createCheckout;
+    },
+    variables: {
+      checkoutInput: {
+        quantity,
+        variantId: selectedVariant.id,
+      },
+    },
+  });
 
   return (
     <>
@@ -44,7 +62,49 @@ export default function Shop({ product }) {
         </div>
         <div className={styles.metadata}>
           <h1>{product.title}</h1>
+          <h3>{`$${selectedVariant.price.toFixed(2)}`}</h3>
+          <div>
+            {product.variants.length > 1 && (
+              <select
+                value={selectedVariant.id}
+                onChange={(event) =>
+                  setSelectedVariant(
+                    product.variants.find(
+                      (variant) => variant.id === event.target.value
+                    )
+                  )
+                }
+              >
+                {product.variants.map((variant) => (
+                  <option
+                    key={variant.id}
+                    value={variant.id}
+                    disabled={!variant.available}
+                  >
+                    {variant.title}
+                  </option>
+                ))}
+              </select>
+            )}
+            <input
+              type="number"
+              min="1"
+              value={quantity}
+              onChange={(event) => setQuantity(event.target.valueAsNumber)}
+              onBlur={(event) => {
+                const { valueAsNumber } = event.target;
+                if (valueAsNumber % 1) {
+                  setQuantity(Math.floor(valueAsNumber));
+                }
+              }}
+            />
+          </div>
           <Markup content={product.descriptionHtml} />
+          {/* TODO: style these */}
+          {error && <div>{error.message}</div>}
+          <button disabled={loading} onClick={createCheckout}>
+            Buy now
+          </button>
         </div>
       </div>
     </>
@@ -57,7 +117,12 @@ const GET_PRODUCT = gql`
       id
       title
       descriptionHtml
-      prices
+      variants {
+        id
+        title
+        price
+        available
+      }
       images {
         id
         src

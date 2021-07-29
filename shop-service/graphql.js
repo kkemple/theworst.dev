@@ -8,17 +8,28 @@ const typeDefs = fs.readFileSync("./schema.graphql", "utf8").toString();
 const resolvers = {
   Query: {
     products: (_, __, { client }) => client.product.fetchAll(),
-    product: async (_, { id }, { client }) => {
-      const product = await client.product.fetch(id);
-
-      console.log(product);
-
-      return product;
-    },
+    product: async (_, { id }, { client }) => client.product.fetch(id),
   },
-  Product: {
-    prices: (product) =>
-      product.variants.map((variant) => Number(variant.price)),
+  Variant: {
+    price: (variant) => Number(variant.price),
+  },
+  Mutation: {
+    createCheckout: async (
+      _,
+      { checkoutInput: { variantId, quantity } },
+      { client }
+    ) => {
+      const checkout = await client.checkout.create();
+
+      await client.checkout.addLineItems(checkout.id, [
+        {
+          variantId,
+          quantity,
+        },
+      ]);
+
+      return checkout.webUrl;
+    },
   },
 };
 

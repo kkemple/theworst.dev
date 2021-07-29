@@ -27,7 +27,8 @@ export default function Shop({ products }) {
       <div className={styles.container}>
         <ul className={styles.content}>
           {products.map((product) => {
-            const lowestPrice = Math.min(...product.prices);
+            const prices = product.variants.map((variant) => variant.price);
+            const lowestPrice = Math.min(...prices);
             const priceText = `$${lowestPrice.toFixed(2)}`;
             return (
               <ContentCard
@@ -37,7 +38,7 @@ export default function Shop({ products }) {
                 title={product.title}
                 image={product.images[0]}
                 description={
-                  product.prices.length > 1 ? `From ${priceText}` : priceText
+                  prices.length > 1 ? `From ${priceText}` : priceText
                 }
               />
             );
@@ -54,7 +55,9 @@ const LIST_PRODUCTS = gql`
       id
       title
       description
-      prices
+      variants {
+        price
+      }
       images {
         src
         altText
