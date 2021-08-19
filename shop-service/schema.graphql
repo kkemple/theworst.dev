@@ -1,7 +1,6 @@
 enum PublishableEvent {
   FOLLOW
   SUBSCRIBE
-  RAID
   BAN
   CHAT_MESSAGE
   CHANNEL_UPDATED
@@ -12,7 +11,7 @@ directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
 
 directive @_live(events: [PublishableEvent!]!) on QUERY
 
-type Query {
+extend type Query {
   products: [Product!]!
   product(id: ID!): Product
 }
