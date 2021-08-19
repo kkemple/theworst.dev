@@ -12,7 +12,7 @@ directive @_publish(event: PublishableEvent!) on FIELD_DEFINITION
 
 directive @_live(events: [PublishableEvent!]!) on QUERY
 
-extend type Query {
+type Query {
   products: [Product!]!
   product(id: ID!): Product
 }
