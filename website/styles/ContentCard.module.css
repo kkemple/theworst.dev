@@ -54,14 +54,20 @@
 }
 
 .content h5 {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 1rem;
 }
 
 .content p {
+  margin: 8px 0 0;
   color: var(--text-color);
-  margin-bottom: 0;
   font-size: 0.8rem;
+}
+
+.content img {
+  max-width: 100%;
+  margin-bottom: 8px;
+  border-radius: 4px;
 }
 
 @media (max-width: 720px) {

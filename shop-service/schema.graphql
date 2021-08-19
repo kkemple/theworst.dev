@@ -14,9 +14,36 @@ directive @_live(events: [PublishableEvent!]!) on QUERY
 
 extend type Query {
   products: [Product!]!
+  product(id: ID!): Product
+}
+
+extend type Mutation {
+  createCheckout(checkoutInput: CheckoutInput!): String!
+}
+
+input CheckoutInput {
+  quantity: Int!
+  variantId: ID!
+}
+
+type Image {
+  id: ID!
+  src: String!
+  altText: String
 }
 
 type Product {
   id: ID!
   title: String!
+  description: String!
+  descriptionHtml: String!
+  images: [Image!]!
+  variants: [Variant!]!
+}
+
+type Variant {
+  id: ID!
+  title: String!
+  price: Float!
+  available: Boolean!
 }
