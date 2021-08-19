@@ -1715,6 +1715,14 @@ convert-source-map@1.7.0, convert-source-map@^1.7.0:
   dependencies:
     safe-buffer "~5.1.1"
 
+convertkit-react@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/convertkit-react/-/convertkit-react-1.5.0.tgz#d4840a0d86445cc41650bb3880d71d8aa3af6589"
+  integrity sha512-i3/0/J671QZAsSKHr/BHKESkvuSd/jOK/TfgPOPoF5BFipVS82SKhnw+xmdfunUUWPpMrkaN0F4f5VnBy0FfNg==
+  dependencies:
+    prop-types "^15.7.2"
+    react "^17.0.1"
+
 cookie@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.1.tgz#afd713fe26ebd21ba95ceb61f9a8116e50a537d1"
@@ -3369,6 +3377,14 @@ react@17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
   integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+react@^17.0.1:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

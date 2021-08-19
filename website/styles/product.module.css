@@ -41,3 +41,49 @@
 .metadata h1 {
   margin-top: 0;
 }
+
+.markup {
+  margin: 24px 0;
+}
+
+.shopInput {
+  padding: 12px;
+  margin-bottom: 0;
+  border-radius: 4px;
+  color: var(--link);
+  box-shadow: 2px 2px 0 var(--text-shadow-color);
+  font-size: 1rem;
+  border: 4px solid transparent;
+  background: var(--card-background);
+  margin-right: 16px;
+}
+
+.shopInput:focus {
+  outline: none;
+  border-color: var(--link);
+}
+
+.shopInput::placeholder {
+  color: var(--link);
+  font-size: 1rem;
+}
+
+.buyButton {
+  border-radius: 4px;
+  border: 4px solid transparent;
+  background-color: var(--link);
+  font-size: 1rem;
+  padding: 12px;
+  color: white;
+  cursor: pointer;
+  transition: transform ease 0.3s;
+}
+
+.buyButton[disabled] {
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.buyButton:not([disabled]):hover {
+  background-color: #ed4091;
+}

@@ -66,6 +66,7 @@ export default function Shop({ product }) {
           <div>
             {product.variants.length > 1 && (
               <select
+                className={styles.shopInput}
                 value={selectedVariant.id}
                 onChange={(event) =>
                   setSelectedVariant(
@@ -87,6 +88,7 @@ export default function Shop({ product }) {
               </select>
             )}
             <input
+              className={styles.shopInput}
               type="number"
               min="1"
               value={quantity}
@@ -99,11 +101,17 @@ export default function Shop({ product }) {
               }}
             />
           </div>
-          <Markup content={product.descriptionHtml} />
+          <div className={styles.markup}>
+            <Markup content={product.descriptionHtml} />
+          </div>
           {/* TODO: style these */}
           {error && <div>{error.message}</div>}
-          <button disabled={loading} onClick={createCheckout}>
-            Buy now
+          <button
+            className={styles.buyButton}
+            disabled={loading}
+            onClick={createCheckout}
+          >
+            {loading ? "Checking out..." : "Buy now"}
           </button>
         </div>
       </div>

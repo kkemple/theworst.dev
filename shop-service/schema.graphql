@@ -1,6 +1,7 @@
 enum PublishableEvent {
   FOLLOW
   SUBSCRIBE
+  RAID
   BAN
   CHAT_MESSAGE
   CHANNEL_UPDATED
