@@ -22,8 +22,9 @@ const components = {
   YouTube,
 };
 
-export default function BlogPost({ source, frontMatter, headings }) {
+export default function BlogPost({ source, frontMatter }) {
   const content = hydrate(source, { components });
+  const cloudinaryUrl = buildCloudinaryURL(frontMatter.title);
 
   return (
     <>
@@ -35,7 +36,9 @@ export default function BlogPost({ source, frontMatter, headings }) {
         <meta name="og:type" content="website" />
         <meta
           name="og:image"
-          content={`${buildCloudinaryURL(frontMatter.title)}`}
+          content={`${
+            frontMatter.ogImage ? frontMatter.ogImage : cloudinaryUrl
+          }`}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@theworstdev" />
