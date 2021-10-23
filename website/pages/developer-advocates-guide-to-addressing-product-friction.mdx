@@ -1,0 +1,103 @@
+---
+title: The Developer Advocate's Guide to Addressing Product Friction
+description: Over the last three months, we've been developing a framework at Apollo called DX Audits to help us identify, document, report, and address product friction.
+---
+
+Over the last three months, we've been developing a framework at Apollo called DX Audits to help us identify, document, report, and address product friction.
+
+Our team and company is growing quickly and it was becoming increasingly difficult to address product friction. We wanted a framework that would help us make that part of developer advocacy more repeatable, teachable, and reportable.
+
+So, with a rough outline of a framework and our eyes bright and full of hope, we embarked on a journey of experimentation that led us to some fascinating places. We cried, laughed, and cried some more, and in the end, we discovered that the fundamentals behind these audits were sound and can provide a lot of value, but we were working with the wrong separation of concerns!
+
+In this article, I'll share what worked and what didn't work in the first version, how v2 differs from v1, and then we'll look at the updated DX audit process.
+
+> If you're not familiar with the first version of the [DX Audit framework](https://www.apollographql.com/blog/community/devrel/dx-audits-a-framework-for-developer-advocacy/) or if you just want to know what the framework looks like, you can skip to the "DX Audits v2" section.
+
+## What we learned
+
+Overall the framework is solid. Adding structure around how we approach understanding developer pain points and delivering that feedback to other teams has largely impacted our dev advocacy work at Apollo.
+
+### Benefits
+
+The biggest win of the process by far was the friction logs. They have already had a significant impact on our ability to demonstrate the problems community members are facing. Other teams loved the detailed walkthroughs and additional context that we could provide with our insider knowledge. Because we were looking at developer workflows holistically, it exposed friction that otherwise was undocumented or unknown.
+
+Aside from friction logs, we also benefitted from the audit process in two other significant ways:
+
+- **Consistency and structure -** DX audits provide structure around what is otherwise an abstract part of developer advocacy. For example, our newest team member found it easier to understand how everyone approached delivering feedback because we all spoke the same language and followed the same process. On the other side, using the framework allowed us to extend that same consistency to other teams. For example, we now all deliver feedback in a unified format. A consistent method of feedback makes it easier for other teams to integrate it into their workflows.
+- **Proof of impact -** Ask any developer advocate what the most challenging part of the job is, and they'll likely say it's proving the impact they have. It's always been notoriously difficult to track the outcomes that stem from feedback. Now, we can keep track of our accomplishments in our DevRel database. Saving every friction log and action item that stems from an audit provides a direct paper trail from our work to the resulting changes made throughout the Apollo platform and the company.
+
+### Drawbacks
+
+While overall, the process was a success, there were some issues with the first version of DX audits. Navigating any new approach will bring challenges, but the three things that caused significant friction (pun 100% intended) were:
+
+- **Slow feedback loop -** I listed **consistency and structure** as benefits from DX audits, but the framework created slow feedback loops in its original form. For example, with the cycle taking place over a few months, a friction log done in week two wouldn't technically get reported on or have any action items done to improve that friction for another five weeks or more.
+- **Workload bottlenecks -** With everyone on the team going through the cycle together, we ended up with surges in activity during certain stages and lulls in others. A more concrete example is that we released very little content during the build phase, but then during the implementation phase (now called the follow up phase), we had a surge of content in response to the findings in the audits.
+- **Too much ceremony -** We were doing way too much on the reporting front. I'm generally a big believer that you can't have too much documentation. Still, the original framework caused a lot of duplicated effort around documenting and reporting on our findings to others. So we spent a lot of time figuring out the best way to organize our feedback to be respectful of everyone's time and avoid duplication of communication.
+
+## Our epiphany
+
+As I mentioned before, the framework was sound, but we used the wrong separation of concerns! The most significant issues we faced were related to timing. Forcing each use case to wait for all the others to advance to the next step in the process created a bottleneck, preventing value from being created until the very end of the process.
+
+Now, audits are scoped to an individual use case, and developer advocates move through each step independently of other use cases. This allows us to provide value in a much shorter timeframe.
+
+![Illustration showcasing each version of the audit process as a timeline. It shows the stark difference in time to receive feedback in each version of the framework. (1 week instead of 5)](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zktkbwl78e8yk17htcmr.png)
+
+## DX Audits v2
+
+The goal of a DX audit is to document, report, and address product friction by having a developer advocate experience a given developer workflow, document and report their findings, and surface actionable steps to take to reduce friction.
+
+An audit is scoped to a single use case that a developer advocate wants to experience. A use case is essentially a workflow that a developer would have to go through to complete a given task (i.e., add monitoring to a GraphQL server).
+
+Audits consist of four steps. Discover, build, report, and follow up.
+
+### Discover
+
+This step is the work before the work. Discovery is where developer advocates should gather as much context about the use case they're about to audit. Depending on what initiates the audit, you might already have enough context to move ahead. However, there may be times you want to gather more information. In those cases, some great places to get feedback are:
+
+- **Community and customers** - GitHub, forums, social media, events, surveys and forms, issues raised by solutions, support and customer success, etc.
+- **Input from stakeholders** - product updates, roadmaps, engineering timelines, etc.
+
+What makes these audits so valuable to others is that aside from identifying friction, we also use our insider knowledge to surface actionable steps we can take to remedy it. Your feedback is only as good as the context you have!
+
+> If you don't spend the time to make sure you have the full scope of the use case and have strong relationships with other teams, your feedback won't be as impactful as it could. Check out [The Developer Advocate's Guide to Getting Buy-in](https://dev.to/theworstdev/the-developer-advocates-guide-to-getting-buy-in-1ba4) to learn more about providing quality feedback.
+
+### Build
+
+During this step, you'll work through the developer workflow from the previous step and record your experience in a friction log. Generally, developer advocates build a project that allows you to experience the workflow you want to audit.
+
+What you build could be anything from an example app to working entirely within a given product UI. The important part is that you complete the workflow from start to finish with as much empathy and minimal assumptions as possible.
+
+Friction logging is an excellent opportunity to create some content as well! For example, live streaming yourself going through these workflows and open-sourcing any projects you build can be a great resource of information for developers and an opportunity to get feedback from the community!
+
+Here are some helpful best practices we've landed on for making the most out of friction logs!
+
+- **Channel your empathy** – You want to approach the workflow as a developer might. Try to make no assumptions and question if the step would be more difficult for someone without your insider knowledge.
+- **More detail is better than less** – The goal is to provide enough context about the steps you took to achieve your goal that anyone can read the document and understand or retrace your steps to reach the same outcome.
+- **Don't forget the good** – When you experience something delightful, make sure to document that and also be sure to include the positive experiences when summarizing a friction log!
+- **Consistency is key** – Everyone should be using the same template to create friction logs. Of course, DAs should have the freedom to use whatever tools allow them to be most productive, but friction logs need to be accessible and structured similarly.
+
+### Report
+
+The purpose of this step is to create a clear outline of what we see as wins and issues and provide that feedback to related decision-makers as quickly as possible.
+
+Developer advocates should use their best judgment when deciding where and when to deliver feedback from an audit. In scenarios where someone may not expect input, it's best to make sure you include the right people and that you've done enough work upfront to [get the buy-in, you'll need](https://dev.to/theworstdev/the-developer-advocates-guide-to-getting-buy-in-1ba4).
+
+Once a friction log is complete, the next step is to summarize and report your findings to involved parties. Add a detailed executive summary to the top of the friction log, including the highs and lows of the experience, any realizations or insights you uncovered.
+
+> Be sure to document possible action items decision-makers could take to address any friction points discovered and add them to the friction log!
+
+### Follow Up
+
+In this step, DAs work on the action items outlined in the friction log and track progress from any items that require cross-team collaboration.
+
+It's essential to ask action item owners for a link to track the progress of the work. Having a direct link to the work done in response to your feedback allows you to 1) make sure you follow up and nothing falls through the cracks, and 2) directly connects the audit to every Jira issue, Airtable entry, or document that resulted from your feedback.
+
+> We use Airtable and some automation to make sure we see action items through to completion.
+
+![A kanban view in Airtable that shows action items being moved through stages of completion. Each card in the "In Progess" and "Done" columns contains a link to the related work.](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w3g39bhodzv3mvzp2nsm.png)
+
+## Conclusion
+
+DX Audits provide structure and make it easier to teach, repeat, and report on a part of developer advocacy work that is difficult to quantify. Not only are the audits beneficial to the DevRel team, but many other teams at Apollo have found them valuable, and they are becoming a standard part of our collaboration process.
+
+While the initial version of DX audits was beneficial in many ways, we didn't realize those benefits until the very end of the cycle. Scoping audits down to a single-use case allows us to deliver value much faster while still maintaining enough structure to support our goals around collaboration and consistency.
