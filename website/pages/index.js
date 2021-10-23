@@ -40,9 +40,31 @@ export default function Home() {
         <hr className={styles.indexDivider} />
         <h3>If you only read one post, you should read this one</h3>
         <ContentCard
-          url="/developer-advocates-guide-to-addressing-product-friction"
-          title="The Developer Advocate's Guide to Addressing Product Friction"
-          description="Over the last three months, we've been developing a framework at Apollo called DX Audits to help us identify, document, report, and address product friction. Our team and company is growing quickly and it was becoming increasingly difficult to address product friction. We wanted a framework that would help us make that part of developer advocacy more repeatable, teachable, and reportable."
+          url="/developer-advocates-guide-to-getting-buy-in"
+          title="The Developer Advocate's Guide to Getting Buy-In"
+          description="There are many reasons that decision-makers may not act upon the feedback we deliver. Still, one thing we can always ask ourselves is, did I get enough buy-in before I asked them to commit? In this post, I'll cover what buy-in is, how it applies to developer advocacy, what skills help the most when trying to get buy-in, and the processes I use."
+        />
+        <hr className={`${styles.divider} ${styles.dividerContentCard}`} />
+        <h3>DevRel & Management</h3>
+        <div style={{ marginBottom: "32px" }}>
+          <ContentCard
+            url="/developer-advocates-guide-to-addressing-product-friction"
+            title="The Developer Advocate's Guide to Addressing Product Friction"
+            description="Over the last three months, we've been developing a framework at Apollo called DX Audits to help us identify, document, report, and address product friction. Our team and company is growing quickly and it was becoming increasingly difficult to address product friction. We wanted a framework that would help us make that part of developer advocacy more repeatable, teachable, and reportable."
+          />
+        </div>
+        <div style={{ marginBottom: "32px" }}>
+          <ContentCard
+            url="/developer-advocates-guide-to-getting-buy-in"
+            title="The Developer Advocate's Guide to Getting Buy-In"
+            description="There are many reasons that decision-makers may not act upon the feedback we deliver. Still, one thing we can always ask ourselves is, did I get enough buy-in before I asked them to commit? In this post, I'll cover what buy-in is, how it applies to developer advocacy, what skills help the most when trying to get buy-in, and the processes I use."
+          />
+        </div>
+
+        <ContentCard
+          url="/pyramid-of-challenge"
+          title="Distributing Challenge: On Building Highly Engaged Teams"
+          description="How many developers do you know who have left their job because either 1) the work is no longer challenging / there is no career growth, or 2) the work is too challenging, and they have no support? Challenge plays an essential role in our happiness."
         />
         <hr className={`${styles.divider} ${styles.dividerContentCard}`} />
         <h3>Some of my recent appearances</h3>
