@@ -40,9 +40,9 @@ export default function Home() {
         <hr className={styles.indexDivider} />
         <h3>If you only read one post, you should read this one</h3>
         <ContentCard
-          url="/social-media-is-failing-us"
-          title="Social Media is Failing Us"
-          description="Social media platforms are sacrificing usability and safety to maximize profits from engagement, also known as engagement profiteering. Engagement profiteering is a type of business model that social media companies use to generate revenue."
+          url="/developer-advocates-guide-to-addressing-product-friction"
+          title="The Developer Advocate's Guide to Addressing Product Friction"
+          description="Over the last three months, we've been developing a framework at Apollo called DX Audits to help us identify, document, report, and address product friction. Our team and company is growing quickly and it was becoming increasingly difficult to address product friction. We wanted a framework that would help us make that part of developer advocacy more repeatable, teachable, and reportable."
         />
         <hr className={`${styles.divider} ${styles.dividerContentCard}`} />
         <h3>Some of my recent appearances</h3>

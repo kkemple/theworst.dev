@@ -20,7 +20,9 @@
 
 .blurb {
   margin-bottom: 48px;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
   line-height: 1.2rem;
 }
 
@@ -32,7 +34,7 @@
   padding: 24px;
   background: var(--card-background);
   border-radius: 4px;
-  box-shadow: 2px 2px 0 var(--text-shadow-color);
+  box-shadow: 0 0 0 1px var(--link), 3px 3px 2px var(--text-shadow-color);
   margin-bottom: 48px;
 }
 
@@ -49,6 +51,7 @@
   color: var(--text-color);
   margin-bottom: 0;
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .divider {

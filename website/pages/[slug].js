@@ -11,7 +11,7 @@ import ConvertKit from "convertkit-react";
 
 import Head from "next/head";
 import Billboard from "@components/Billboard";
-import { Tweet, YouTube } from "mdx-embed";
+import { Tweet, YouTube, SoundCloud } from "mdx-embed";
 import PostLikes from "@components/PostLikes";
 import ClientOnly from "@components/ClientOnly";
 import styles from "@styles/BlogPost.module.css";
@@ -20,6 +20,7 @@ import { buildCloudinaryURL } from "@utils/cloudinary";
 const components = {
   Tweet,
   YouTube,
+  SoundCloud,
 };
 
 export default function BlogPost({ source, frontMatter }) {

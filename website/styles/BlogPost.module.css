@@ -2,6 +2,7 @@
   max-width: 720px;
   margin: 0 auto;
   padding: 48px 24px;
+  /* background-color: var(--transparent-bg); */
 }
 
 .post img {

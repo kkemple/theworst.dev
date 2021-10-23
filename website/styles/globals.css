@@ -1,14 +1,14 @@
 html,
 body {
   font-family: inter;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   margin: 0;
   padding: 0;
   transition: background-color 2s;
   --header-height: 75px;
   --small-text: 0.75rem;
-  --transparent-bg: rgba(242, 114, 173, 0.4);
+  --transparent-bg: rgba(242, 114, 173, 0.1);
   scroll-padding-top: calc(var(--header-height) + 8px);
 }
 
@@ -56,7 +56,6 @@ article p {
 
 article p,
 article blockquote {
-  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -81,12 +80,12 @@ article ol a {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
-  transition: background-image 0.3s;
+  transition: background-image 0.3s, transform 0.2s;
   background-image: linear-gradient(
     0deg,
     rgba(242, 114, 173, 0.7) 0,
-    rgba(242, 114, 173, 0.7) 30%,
-    transparent 40%,
+    rgba(242, 114, 173, 0.7) 25%,
+    transparent 35%,
     transparent
   );
 }
@@ -97,12 +96,11 @@ article ul a:hover,
 article ul a:active,
 article ol a:hover,
 article ol a:active {
-  font-weight: 600;
   background-image: linear-gradient(
     0deg,
     rgba(242, 114, 173, 1) 0,
-    rgba(242, 114, 173, 1) 30%,
-    transparent 40%,
+    rgba(242, 114, 173, 1) 25%,
+    transparent 35%,
     transparent
   );
 }
@@ -112,20 +110,20 @@ article ol a:active {
 }
 
 blockquote {
-  border-left: 6px solid var(--link);
-  padding: 24px 24px 24px 48px;
+  border-left: 4px solid var(--link);
+  padding: 8px 24px;
   margin: 0 auto;
   text-shadow: 1px 1px 0 var(--text-shadow-color);
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: 0.06rem;
-  line-height: 2.3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
   width: 100%;
-  max-width: 500px;
+  background-color: var(--transparent-bg);
+  /* max-width: 600px; */
 }
 
-article blockquote p {
-  line-height: 2.1rem;
+blockquote p {
+  line-height: 1.15rem;
 }
 
 blockquote a,
@@ -152,7 +150,8 @@ hr {
 }
 
 .app {
-  --background: #faf4f8;
+  /* --background: #faf4f8; */
+  --background: #ffffff;
   --card-background: white;
   --link: #f272ad;
   --text-color: rgba(0, 0, 0, 0.87);
@@ -160,7 +159,7 @@ hr {
   --content-billboard-bg-image: url(/hidden-leaf-village-day.gif);
   transition: background-color 0.3s;
   background-color: var(--background);
-  background-image: url("/hidden-leaf-village-symbol.png");
+  /* background-image: url("/hidden-leaf-village-symbol.png"); */
   background-size: 20%;
   color: var(--text-color);
   min-height: 100vh;
