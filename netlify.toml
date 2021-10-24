@@ -4,5 +4,5 @@
 
 [[plugins]]
   package = "netlify-plugin-cache-nextjs"
-  # The path to the build directory
-	build_dir_path = "website"
+    # The path to the build directory
+	  build_dir_path = "website"
