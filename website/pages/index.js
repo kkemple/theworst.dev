@@ -45,7 +45,7 @@ export default function Home() {
           description="This post is about how unbalanced distribution of challenge across a team can cause productivity to drop. It outlines some of the common team structures you'll encounter and provides a model for how to think about distributing challenge."
         />
         <hr className={`${styles.divider} ${styles.dividerContentCard}`} />
-        <h3>DevRel Guides</h3>
+        <h3>Guides</h3>
         <div style={{ marginBottom: "32px" }}>
           <ContentCard
             url="/developer-advocates-guide-to-addressing-product-friction"
