@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { YouTube, SoundCloud } from "mdx-embed";
+import { YouTube } from "mdx-embed";
 import styles from "@styles/index.module.css";
 import SocialIcons from "@components/SocialIcons";
 import ContentCard from "@components/ContentCard";
