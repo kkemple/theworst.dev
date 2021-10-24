@@ -61,7 +61,7 @@ export default function Home() {
           />
         </div>
         <hr className={`${styles.divider} ${styles.dividerContentCard}`} />
-        <h3>Some of my recent appearances</h3>
+        <h3>Appearances</h3>
         <div className={styles.appearances}>
           <div className={`${styles.postCard} ${styles.no_hover}`}>
             <h5>Business Insider Article</h5>
