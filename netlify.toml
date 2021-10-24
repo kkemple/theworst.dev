@@ -1,3 +1,6 @@
 [build]
   command = "cd website && npm i && npm run build && npm run export"
   publish = "website/out"
+
+[[plugins]]
+  package = "netlify-plugin-cache-nextjs"

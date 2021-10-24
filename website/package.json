@@ -30,5 +30,8 @@
     "remark-slug": "^6.0.0",
     "typeface-inter": "^3.15.1",
     "use-sound": "^2.0.1"
+  },
+  "devDependencies": {
+    "netlify-plugin-cache-nextjs": "^1.6.1"
   }
 }
