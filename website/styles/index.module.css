@@ -49,7 +49,6 @@
 
 .postCard p {
   color: var(--text-color);
-  margin-bottom: 0;
   font-size: 0.8rem;
   font-weight: 500;
 }
