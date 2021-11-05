@@ -13,21 +13,20 @@
 
 .bio {
   margin-top: 8px;
-  margin-bottom: 8px;
   color: var(--text-color);
-  opacity: 0.8;
+  margin-bottom: 24px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 500px;
 }
 
-.blurb {
-  margin-bottom: 48px;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.02rem;
-  line-height: 1.2rem;
+.bio strong {
+  color: var(--link);
 }
 
 .socials {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 
 .postCard {

@@ -11,32 +11,15 @@ export default function Home() {
         <div className={styles.intro}>
           <div className={styles.introContent}>
             <h1 className={styles.callout}>Hey, I'm Kurt.</h1>
-            <h4 className={styles.bio}>
-              developer, content creator, devrel manager & formerly incarcerated
-            </h4>
+            <p className={styles.bio}>
+              I'm a <strong>formerly incarcerated</strong> developer, content
+              creator, and <strong>developer advocate</strong>.
+            </p>
             <div className={styles.socials}>
               <SocialIcons />
             </div>
           </div>
-          <Link href="https://www.buymeacoffee.com/catcarbn">
-            <a title="Avatar by @catcarbn, https://www.buymeacoffee.com/catcarbn">
-              <img
-                className={styles.avatar}
-                src="/avatar-small.png"
-                alt="Illustrated avatar by @catcarbn on Twitter"
-              />
-            </a>
-          </Link>
         </div>
-        <p className={styles.blurb}>
-          Thanks for dropping by! Here's a little bit about what kind of content
-          you can expect from me. I care deeply about{" "}
-          <Link href="https://www.themarshallproject.org/">prison reform</Link>{" "}
-          and helping the formerly incarcerated. I also talk about{" "}
-          <Link href="https://fullstack.health/">mental health</Link>, drug
-          addiction, and neurodiversity. Oh, and once in awhile I write about
-          developer advocacy and software development!
-        </p>
         <hr className={styles.indexDivider} />
         <h3>If you only read one post, you should read this one</h3>
         <ContentCard

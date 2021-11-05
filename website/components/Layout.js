@@ -8,12 +8,12 @@ import { buildCloudinaryURL } from "@utils/cloudinary";
 export default function Layout({ darkModeActive, children }) {
   const title = "The Worst Dev - Hey, I'm Kurt!";
   const description =
-    "Thanks for dropping by! Here's a little bit about what kind of content you can expect from me. I care deeply about prison reform and helping the formerly incarcerated. I also talk about mental health, drug addiction, and neurodiversity. Oh, and once in awhile I write about developer advocacy and software development!";
+    "Formerly incarcerated developer, content creator, and developer advocate.";
 
   return (
     <div className={`${darkModeActive && "dark"} app`}>
       <Head>
-        <title>The Worst Dev</title>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={description} />
         <meta name="og:title" content={title} />
