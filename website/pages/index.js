@@ -31,6 +31,13 @@ export default function Home() {
         <h3>Guides</h3>
         <div style={{ marginBottom: "32px" }}>
           <ContentCard
+            url="/developer-advocates-guide-to-metrics-and-reporting"
+            title="The Developer Advocate's Guide to Metrics and Reporting"
+            description="As developer advocates, avoid becoming extensions of other teams by closely learning metrics: the different types you'll encounter and when to use them, which are trusted and untrusted, and how to build them effectively to support your team's goals."
+          />
+        </div>
+        <div style={{ marginBottom: "32px" }}>
+          <ContentCard
             url="/developer-advocates-guide-to-addressing-product-friction"
             title="The Developer Advocate's Guide to Addressing Product Friction"
             description="Over the last three months, we've been developing a framework at Apollo called DX Audits to help us identify, document, report, and address product friction. It was getting difficult to scale this part of developer advocacy so we came up with a framework and this post covers our experience with it and where we landed on the framework's implementation."
