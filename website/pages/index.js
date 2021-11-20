@@ -21,14 +21,16 @@ export default function Home() {
           </div>
         </div>
         <hr className={styles.indexDivider} />
-        <h3>If you only read one post, you should read this one</h3>
+        <h3 id="must-read">
+          If you only read one post, you should read this one
+        </h3>
         <ContentCard
           url="/developer-advocates-guide-to-metrics-and-reporting"
           title="The Developer Advocate's Guide to Metrics and Reporting"
           description="As developer advocates, avoid becoming extensions of other teams by closely learning metrics: the different types you'll encounter and when to use them, which are trusted and untrusted, and how to build them effectively to support your team's goals."
         />
         <hr className={`${styles.divider} ${styles.dividerContentCard}`} />
-        <h3>Guides</h3>
+        <h3 id="guides">Guides</h3>
         <div style={{ marginBottom: "32px" }}>
           <ContentCard
             url="/developer-advocates-guide-to-metrics-and-reporting"
