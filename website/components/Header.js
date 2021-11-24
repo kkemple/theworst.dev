@@ -26,7 +26,7 @@ export default function Header() {
               <Link href="/shop">Shop</Link>
             </li>
             <li>
-              <Link href="https://theworst.dev/subscribe">Newsletter</Link>
+              <Link href="https://achievements.theworst.dev">Polywork</Link>
             </li>
           </ul>
         </nav>
