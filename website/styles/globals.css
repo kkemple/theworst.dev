@@ -131,10 +131,9 @@ blockquote a:hover {
 
 code {
   font-size: 16px;
-  background-color: rgba(242, 114, 173, 0.4);
+  background-color: var(--transparent-bg);
   font-weight: 500;
   color: var(--text-color);
-  text-shadow: 1px 1px 0 var(--text-shadow-color);
   padding: 4px;
   border-radius: 4px;
 }
