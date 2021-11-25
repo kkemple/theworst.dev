@@ -59,13 +59,15 @@ export default function Garden({ posts }) {
       <div>
         <main className={styles.container}>
           <div className={styles.search}>
-            <input
-              className={styles.filter}
-              value={filter}
-              type="text"
-              onChange={handleSearch}
-              placeholder="Looking for something?"
-            />
+            <div className={styles.inputContainer}>
+              <input
+                className={styles.input}
+                value={filter}
+                type="text"
+                onChange={handleSearch}
+                placeholder="Looking for something?"
+              />
+            </div>
             <div className={styles.results} aria-live="polite">
               {filter.length ? (
                 <span>

@@ -15,7 +15,7 @@
   margin-top: 8px;
   color: var(--text-color);
   margin-bottom: 24px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   width: 100%;
   max-width: 500px;
@@ -30,11 +30,26 @@
 }
 
 .postCard {
+  padding: 3px;
+  border-radius: 6px;
+  margin-bottom: 48px;
+  background: var(--gradient-start);
+  background: -webkit-linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  background: linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+}
+
+.postCardContent {
   padding: 24px;
   background: var(--card-background);
   border-radius: 4px;
-  box-shadow: 0 0 0 1px var(--link), 3px 3px 2px var(--text-shadow-color);
-  margin-bottom: 48px;
 }
 
 .postCard a {
@@ -52,8 +67,8 @@
   font-weight: 500;
 }
 
-.divider {
-  margin-bottom: 80px;
+.sectionHeader {
+  margin-top: 64px;
 }
 
 .dividerContentCard {
@@ -70,12 +85,6 @@
   display: flex;
   align-items: center;
   margin-top: 64px;
-}
-
-.avatar {
-  width: 200px;
-  border-radius: 50%;
-  margin-left: 32px;
 }
 
 @media (max-width: 720px) {

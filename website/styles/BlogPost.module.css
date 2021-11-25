@@ -19,7 +19,7 @@
 .post h5 a {
   text-decoration: none;
   cursor: pointer;
-  color: var(--link);
+  color: var(--text-color);
 }
 
 .likeButton {

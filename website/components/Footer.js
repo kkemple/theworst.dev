@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <div className={styles.container}>
       <SocialIcons />
-      Did we just become best friends? 💖
     </div>
   );
 }

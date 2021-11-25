@@ -46,8 +46,8 @@ h2,
 h3,
 h4,
 h5,
-h5 {
-  color: #f272ad;
+h6 {
+  color: var(--text-color);
 }
 
 article p {
@@ -78,16 +78,6 @@ article ul a,
 article ol a {
   cursor: pointer;
   color: var(--text-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-image 0.3s, transform 0.2s;
-  background-image: linear-gradient(
-    0deg,
-    rgba(242, 114, 173, 0.7) 0,
-    rgba(242, 114, 173, 0.7) 25%,
-    transparent 35%,
-    transparent
-  );
 }
 
 p a:hover,
@@ -96,13 +86,22 @@ article ul a:hover,
 article ul a:active,
 article ol a:hover,
 article ol a:active {
-  background-image: linear-gradient(
-    0deg,
-    rgba(242, 114, 173, 1) 0,
-    rgba(242, 114, 173, 1) 25%,
-    transparent 35%,
-    transparent
+  background: var(--gradient-start);
+  background: -webkit-linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
   );
+  background: linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 * {
@@ -110,10 +109,9 @@ article ol a:active {
 }
 
 blockquote {
-  border-left: 4px solid var(--link);
+  border-left: 4px solid var(--gradient-end);
   padding: 8px 24px;
   margin: 0 auto;
-  /* text-shadow: 1px 1px 0 var(--text-shadow-color); */
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.02rem;
@@ -123,7 +121,7 @@ blockquote {
 }
 
 blockquote p {
-  line-height: 1.15rem;
+  line-height: 1.2rem;
 }
 
 blockquote a,
@@ -142,11 +140,10 @@ code {
 }
 
 hr {
-  height: 20px;
-  background-image: url(/shuriken.svg);
-  background-repeat: round;
-  background-size: contain;
+  height: 3px;
+  border-radius: 5px;
   border: none;
+  outline: none;
 }
 
 .app {
@@ -157,6 +154,9 @@ hr {
   --text-color: rgba(0, 0, 0, 0.87);
   --text-shadow-color: rgba(128, 6, 63, 0.2);
   --content-billboard-bg-image: url(/hidden-leaf-village-day.gif);
+  --gradient-start: #fb07a9;
+  --gradient-end: #020ded;
+  --transparent-bg: rgba(114, 191, 242, 0.1);
   transition: background-color 0.3s;
   background-color: var(--background);
   /* background-image: url("/hidden-leaf-village-symbol.png"); */
@@ -168,12 +168,13 @@ hr {
 
 .app.dark {
   /* --background: #12152f; */
-  --background: #0b0d1c;
-  --card-background: #1e2342;
+  --background: #020203;
+  --card-background: #020203;
   --text-color: #f7fafc;
   --text-shadow-color: rgba(0, 0, 0, 0.4);
-  --transparent-bg: rgba(255, 255, 255, 0.1);
   --content-billboard-bg-image: url(/hidden-leaf-village-night.gif);
+  --gradient-start: #fb07a9;
+  --gradient-end: #f7ff00;
 }
 
 .visually-hidden {
@@ -184,6 +185,29 @@ hr {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.gradient,
+hr {
+  background: var(--gradient-start);
+  background: -webkit-linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  background: linear-gradient(
+    to right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+}
+
+.gradient-text {
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 @media (max-width: 720px) {

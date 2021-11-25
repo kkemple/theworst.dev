@@ -9,9 +9,11 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Link href="/">
-        <a className={styles.logoLink}>
-          <img src="/logo.png" alt="The Worst Dev" className={styles.logo} />
-        </a>
+        <h1 className={styles.logo}>
+          <a className={styles.logoLink} title="The Worst Dev">
+            TWD
+          </a>
+        </h1>
       </Link>
       <div className={styles.navAndToggle}>
         <nav>

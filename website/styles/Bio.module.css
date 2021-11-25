@@ -1,5 +1,13 @@
 .container {
   margin-top: -18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.container hr {
+  width: 100%;
 }
 
 .bio {

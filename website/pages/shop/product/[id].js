@@ -63,56 +63,62 @@ export default function Shop({ product }) {
         <div className={styles.metadata}>
           <h1>{product.title}</h1>
           <h3>{`$${selectedVariant.price.toFixed(2)}`}</h3>
-          <div>
+          <div className={styles.options}>
             {product.variants.length > 1 && (
-              <select
-                className={styles.shopInput}
-                value={selectedVariant.id}
-                onChange={(event) =>
-                  setSelectedVariant(
-                    product.variants.find(
-                      (variant) => variant.id === event.target.value
+              <div className={styles.inputContainer}>
+                <select
+                  className={styles.shopInput}
+                  value={selectedVariant.id}
+                  onChange={(event) =>
+                    setSelectedVariant(
+                      product.variants.find(
+                        (variant) => variant.id === event.target.value
+                      )
                     )
-                  )
-                }
-              >
-                {product.variants.map((variant) => (
-                  <option
-                    key={variant.id}
-                    value={variant.id}
-                    disabled={!variant.available}
-                  >
-                    {variant.title}
-                  </option>
-                ))}
-              </select>
+                  }
+                >
+                  {product.variants.map((variant) => (
+                    <option
+                      key={variant.id}
+                      value={variant.id}
+                      disabled={!variant.available}
+                    >
+                      {variant.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
             )}
-            <input
-              className={styles.shopInput}
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={(event) => setQuantity(event.target.valueAsNumber)}
-              onBlur={(event) => {
-                const { valueAsNumber } = event.target;
-                if (valueAsNumber % 1) {
-                  setQuantity(Math.floor(valueAsNumber));
-                }
-              }}
-            />
+            <div className={styles.inputContainer}>
+              <input
+                className={styles.shopInput}
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(event) => setQuantity(event.target.valueAsNumber)}
+                onBlur={(event) => {
+                  const { valueAsNumber } = event.target;
+                  if (valueAsNumber % 1) {
+                    setQuantity(Math.floor(valueAsNumber));
+                  }
+                }}
+              />
+            </div>
           </div>
           <div className={styles.markup}>
             <Markup content={product.descriptionHtml} />
           </div>
           {/* TODO: style these */}
           {error && <div>{error.message}</div>}
-          <button
-            className={styles.buyButton}
-            disabled={loading}
-            onClick={createCheckout}
-          >
-            {loading ? "Checking out..." : "Buy now"}
-          </button>
+          <div className={styles.inputContainer}>
+            <button
+              className={styles.buyButton}
+              disabled={loading}
+              onClick={createCheckout}
+            >
+              {loading ? "Checking out..." : "Buy now"}
+            </button>
+          </div>
         </div>
       </div>
     </>
