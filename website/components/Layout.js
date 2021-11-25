@@ -20,7 +20,7 @@ export default function Layout({ darkModeActive, children }) {
         <meta
           name="og:image"
           content={`${buildCloudinaryURL(
-            "Formerly Incarcerated > Developer > Content Creator > DX Consultant"
+            "Pushing developer experience forward."
           )}`}
         />
         <meta name="twitter:card" content="summary_large_image" />
