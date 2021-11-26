@@ -35,20 +35,9 @@
   color: var(--text-color);
   border-bottom: 3px solid transparent;
 }
+
 .nav a:hover {
   border-bottom-color: var(--gradient-start);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nav a::before {
-    transition: none;
-  }
-}
-
-.nav a:hover::before,
-.nav a:active::before {
-  opacity: 1;
-  transform: translate(0, 0);
 }
 
 .logo {
@@ -75,33 +64,63 @@
   justify-content: center;
 }
 
+.menuToggle {
+  color: var(--text-color);
+  background: none;
+  border: none;
+  display: none;
+  padding: 4px;
+}
+
 @media (max-width: 720px) {
   .header {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: auto;
     position: relative;
   }
 
   .navAndToggle {
-    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    border-right: 1px solid var(--gradient-end);
+
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: var(--background);
+    padding: 24px 16px;
+
+    transition: 0.2s ease-out;
+
+    transform: translateX(-100%);
+  }
+
+  .navAndToggle.showMobileMenu {
+    transform: translateX(0);
   }
 
   .nav {
-    margin-top: 0;
+    margin: 0;
+    margin-bottom: 24px;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .nav li {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   .toggle {
-    position: absolute;
-    top: 16px;
-    right: 32px;
+    margin: 0;
+    margin-bottom: 16px;
+    justify-content: flex-end;
+  }
+
+  .menuToggle {
+    display: block;
+    font-size: 24px;
   }
 }

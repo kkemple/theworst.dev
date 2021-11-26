@@ -1,10 +1,17 @@
+import { useState } from "react";
 import Link from "next/link";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useDarkMode } from "next-dark-mode";
 import styles from "@styles/Header.module.css";
+import { RiMenuLine, RiCloseFill } from "react-icons/ri";
 
 export default function Header() {
+  const [showMenu, toggleMenu] = useState(false);
   const { darkModeActive, switchToDarkMode, switchToLightMode } = useDarkMode();
+
+  const toggle = () => {
+    toggleMenu(!showMenu);
+  };
 
   return (
     <header className={styles.header}>
@@ -15,7 +22,11 @@ export default function Header() {
           </a>
         </h1>
       </Link>
-      <div className={styles.navAndToggle}>
+      <div
+        className={`${styles.navAndToggle} ${
+          showMenu ? styles.showMobileMenu : ""
+        }`}
+      >
         <nav>
           <ul className={styles.nav}>
             <li>
@@ -43,6 +54,9 @@ export default function Header() {
           />
         </div>
       </div>
+      <button className={styles.menuToggle} onClick={toggle}>
+        {showMenu ? <RiCloseFill /> : <RiMenuLine />}
+      </button>
     </header>
   );
 }
