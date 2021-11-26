@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  circle {
+    fill: url(#paint0_linear_1079_552);
+  }
+  @media (prefers-color-scheme: dark) {
+    circle {
+      fill: url(#paint0_linear_1079_549);
+    }
+  }
+</style>
+<circle cx="32" cy="32" r="32"/>
+<defs>
+<linearGradient id="paint0_linear_1079_549" x1="-8.49249e-08" y1="32.0458" x2="64" y2="32.0458" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FB0776"/>
+<stop offset="1" stop-color="#F7FF00"/>
+</linearGradient>
+<linearGradient id="paint0_linear_1079_552" x1="-8.49249e-08" y1="32.0458" x2="64" y2="32.0458" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FB0776"/>
+<stop offset="1" stop-color="#020DED"/>
+</linearGradient>
+</defs>
+</svg>
