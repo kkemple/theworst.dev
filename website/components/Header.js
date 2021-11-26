@@ -29,16 +29,16 @@ export default function Header() {
       >
         <nav>
           <ul className={styles.nav}>
-            <li>
+            <li onClick={toggle}>
               <Link href="/content">Content</Link>
             </li>
-            <li>
+            <li onClick={toggle}>
               <Link href="/resources">Resources</Link>
             </li>
-            <li>
+            <li onClick={toggle}>
               <Link href="/shop">Shop</Link>
             </li>
-            <li>
+            <li onClick={toggle}>
               <Link href="https://achievements.theworst.dev">Polywork</Link>
             </li>
           </ul>
