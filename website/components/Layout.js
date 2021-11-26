@@ -12,8 +12,8 @@ export default function Layout({ darkModeActive, children }) {
     <div className={`${darkModeActive && "dark"} app`}>
       <Head>
         <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
         <meta name="description" content={description} />
         <meta name="og:title" content={title} />
         <meta name="og:description" content={description} />
