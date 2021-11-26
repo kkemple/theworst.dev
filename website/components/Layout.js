@@ -26,7 +26,7 @@ export default function Layout({ darkModeActive, children }) {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@theworstdev" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={"Hey, I'm Kurt!"} />
         <meta name="twitter:description" content={description} />
         <link rel="prefetch" href="/hidden-leaf-village-day.gif" />
         <link rel="prefetch" href="/hidden-leaf-village-night.gif" />
