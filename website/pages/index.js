@@ -37,9 +37,9 @@ export default function Home() {
           If you only read one post, you should read this one.
         </h3>
         <ContentCard
-          url="/developer-advocates-guide-to-metrics-and-reporting"
-          title="The Developer Advocate's Guide to Metrics and Reporting"
-          description="As developer advocates, avoid becoming extensions of other teams by closely learning metrics: the different types you'll encounter and when to use them, which are trusted and untrusted, and how to build them effectively to support your team's goals."
+          url="/pyramid-of-challenge"
+          title="Distributing Challenge: On Building Highly Engaged Teams"
+          description="How many developers do you know who have left their job because either 1) the work is no longer challenging / there is no career growth, or 2) the work is too challenging, and they have no support? Challenge plays an essential role in our happiness. However, making sure that everyone on a team is adequately challenged is a complicated task."
         />
         <h3 className={styles.sectionHeader} id="guides">
           The Developer Advocate's Guides
