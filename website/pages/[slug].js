@@ -7,15 +7,17 @@ import renderToString from "next-mdx-remote/render-to-string";
 import rehypePrism from "@mapbox/rehype-prism";
 import remarkSlug from "remark-slug";
 import remarkAutoLinkHeadings from "remark-autolink-headings";
-
 import Head from "next/head";
 import { Tweet, YouTube } from "mdx-embed";
+
 import styles from "@styles/BlogPost.module.css";
 import { buildCloudinaryURL } from "@utils/cloudinary";
+import DarkModeImage from "@components/DarkModeImage";
 
 const components = {
   Tweet,
   YouTube,
+  DarkModeImage,
 };
 
 export default function BlogPost({ source, frontMatter }) {
