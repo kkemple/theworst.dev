@@ -37,9 +37,9 @@ export default function Home() {
           If you only read one post, you should read this one.
         </h3>
         <ContentCard
-          url="/pyramid-of-challenge"
-          title="Distributing Challenge: On Building Highly Engaged Teams"
-          description="How many developers do you know who have left their job because either 1) the work is no longer challenging / there is no career growth, or 2) the work is too challenging, and they have no support? Challenge plays an essential role in our happiness. However, making sure that everyone on a team is adequately challenged is a complicated task."
+          url="/developer-experience"
+          title="Redefining Developer Experience: Why DX is the New DevRel"
+          description="There's a lot of debate about the proper terminology for what we currently refer to as DevRel. Many folks are happy with this terminology, but I and others don't think DevRel (developer relations) is a broad enough term to represent what our field has become over the last half-decade."
         />
         <h3 className={styles.sectionHeader} id="guides">
           The Developer Advocate's Guides

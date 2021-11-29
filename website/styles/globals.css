@@ -147,8 +147,8 @@ hr {
 
 .app {
   /* --background: #faf4f8; */
-  --background: #ffffff;
-  --card-background: white;
+  --background: #f7fafc;
+  --card-background: #f7fafc;
   --link: #f272ad;
   --text-color: rgba(0, 0, 0, 0.87);
   --text-shadow-color: rgba(128, 6, 63, 0.2);
@@ -166,7 +166,6 @@ hr {
 }
 
 .app.dark {
-  /* --background: #12152f; */
   --background: #020203;
   --card-background: #020203;
   --text-color: #f7fafc;
