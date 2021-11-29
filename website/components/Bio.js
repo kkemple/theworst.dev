@@ -3,22 +3,19 @@ import styles from "@styles/Bio.module.css";
 export default function Bio() {
   return (
     <div className={styles.container}>
+      <p className={styles.bio}>Kurt Kemple, Developer Experience Consultant</p>
+      <hr />
       <p className={styles.bio}>
-        Kurt Kemple, Developer Relations Manager at Apollo GraphQL
+        Kurt is a developer, content creator, and developer advocate at heart,
+        but is currently focused on helping companies understand and build out
+        successful developer experience programs.
       </p>
       <hr />
       <p className={styles.bio}>
-        Kurt is a technical writer, speaker, and software developer living in
-        Virginia Beach, VA. Currently, he works for Apollo GraphQL, as a
-        Developer Relations Manager.
-      </p>
-      <hr />
-      <p className={styles.bio}>
-        Kurt is a technical writer, speaker, and software developer living in
-        Virginia Beach, VA. He’s very passionate about the intersection of
-        technology and incarceration. Currently, he works for Apollo GraphQL, as
-        a Developer Relations Manager. When not working he can be found by the
-        ocean or relaxing with his family.
+        Kurt is a developer, content creator, and developer advocate at heart,
+        but is currently focused on helping companies understand and build out
+        successful developer experience programs. When not helping others solve
+        DX problems, he can be found on the beach or at home with his family.
       </p>
     </div>
   );

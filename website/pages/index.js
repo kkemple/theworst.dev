@@ -23,7 +23,7 @@ export default function Home() {
               developer, content creator, and{" "}
               <strong>
                 <span className="gradient gradient-text">
-                  developer advocate
+                  developer experience consultant
                 </span>
               </strong>
               .
