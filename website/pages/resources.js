@@ -47,11 +47,6 @@ export default function Resources() {
               </Link>
             </li>
             <li>
-              <Link href="https://theworst.dev/coffee">
-                <a>Schedule a Chat</a>
-              </Link>
-            </li>
-            <li>
               <Link href="https://fullstack.health/">
                 <a>Fullstack Health podcast</a>
               </Link>
