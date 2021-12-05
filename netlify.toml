@@ -1,9 +1,6 @@
 [build]
-  command = "cd website && npm i && npm run build && npm run export"
-  publish = "website/out"
+  command = "npm i && npm run build && npm run export"
+  publish = "out"
 
 [[plugins]]
   package = "netlify-plugin-cache-nextjs"
-    [plugins.inputs]
-    # The path to the build directory
-	  build_dir_path = "website"

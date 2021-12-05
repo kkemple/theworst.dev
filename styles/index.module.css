@@ -9,6 +9,7 @@
 
 .callout {
   margin-bottom: 8px;
+  display: inline-block;
 }
 
 .bio {
