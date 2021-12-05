@@ -43,30 +43,13 @@ export default function BlogPost({ source, frontMatter }) {
         <meta name="twitter:title" content={frontMatter.title} />
         <meta name="twitter:description" content={frontMatter.description} />
       </Head>
-      {/* <Billboard title={frontMatter.title} /> */}
-
       <article className={styles.post}>
         <>
           <h1 className={`gradient gradient-text`}>{frontMatter.title}</h1>
           {content}
         </>
       </article>
-      {/* <div className={styles.likeButton}>
-        <ClientOnly>
-          <PostLikes />
-        </ClientOnly>
-      </div> */}
       <hr className={styles.pageDivider} />
-      {/* <div className={styles.newsletter}>
-        <h2>Don't Miss Out</h2>
-        <p>
-          Thanks for reading <strong>"{frontMatter.title}"</strong>! Be sure to
-          sign up for my newsletter to be the first to receive my newest
-          content, interesting things I discover, and get actionable insights
-          right to your inbox!
-        </p>
-        <ConvertKit formId={2021531} />
-      </div> */}
     </>
   );
 }

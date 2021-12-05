@@ -154,7 +154,7 @@ hr {
   --text-shadow-color: rgba(128, 6, 63, 0.2);
   --content-billboard-bg-image: url(/hidden-leaf-village-day.gif);
   --gradient-start: #7317e9;
-  --gradient-end: #228771;
+  --gradient-end: #9f0000;
   --transparent-bg: rgba(114, 191, 242, 0.1);
   transition: background-color 0.3s;
   background-color: var(--background);
