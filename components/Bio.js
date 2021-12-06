@@ -21,10 +21,10 @@ export default function Bio() {
       <p className={styles.bio}>
         Kurt Kemple is founder and Principal Advisor at Forthright. He's the
         creator of The Developer Advocate's Guide series, Developer Experience
-        Audits, and the Developer Advocacy Value Cycle. Previously he lead
-        developer relations and engineering teams at top companies like Apollo,
-        AWS, and MLS. He's now focused on helping companies, teams, and
-        individuals create better developer experiences.
+        Audits, and the Developer Advocacy Value Cycle. He's lead developer
+        relations and engineering teams at companies like Apollo, AWS, and MLS
+        and is now focused on helping others create better developer
+        experiences.
       </p>
     </div>
   );
