@@ -23,8 +23,8 @@ export default function Bio() {
         creator of The Developer Advocate's Guide series, Developer Experience
         Audits, and the Developer Advocacy Value Cycle. Previously he lead
         developer relations and engineering teams at top companies like Apollo,
-        AWS, and MLS. He's now focused on helping individuals, teams, and
-        companies create better developer experiences.
+        AWS, and MLS. He's now focused on helping companies, teams, and
+        individuals create better developer experiences.
       </p>
     </div>
   );
