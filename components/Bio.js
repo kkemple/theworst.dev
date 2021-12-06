@@ -6,6 +6,7 @@ export default function Bio() {
       <p className={styles.bio}>
         Kurt Kemple, Founder and Principal Advisor at Forthright
       </p>
+      <hr />
       <p className={styles.bio}>
         Kurt Kemple is founder and Principal Advisor at Forthright where he
         helps others create better developer experiences.
