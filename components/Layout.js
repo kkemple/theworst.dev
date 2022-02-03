@@ -33,9 +33,6 @@ export default function Layout({ darkModeActive, children }) {
       </Head>
       <Header />
       <div className="content">{children}</div>
-      {/* <ClientOnly>
-        <MusicButton />
-      </ClientOnly> */}
       <Footer />
     </div>
   );
