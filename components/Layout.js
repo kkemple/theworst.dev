@@ -6,7 +6,7 @@ import { buildCloudinaryURL } from "@utils/cloudinary";
 export default function Layout({ darkModeActive, children }) {
   const title = "The Worst Dev - Hey, I'm Kurt!";
   const description =
-    "Formerly incarcerated developer, content creator, and developer advocate.";
+    "Formerly incarcerated developer, content creator, and developer experience consultant.";
 
   return (
     <div className={`${darkModeActive && "dark"} app`}>
