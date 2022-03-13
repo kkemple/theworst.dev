@@ -3,19 +3,27 @@ import styles from "@styles/Bio.module.css";
 export default function Bio() {
   return (
     <div className={styles.container}>
-      <p className={styles.bio}>Kurt Kemple, Developer Experience Consultant</p>
-      <hr />
       <p className={styles.bio}>
-        Kurt is a developer, content creator, and developer advocate at heart,
-        but is currently focused on helping companies understand and build out
-        successful developer experience programs.
+        Kurt Kemple, Founder and Principal Advisor at Forthright
       </p>
       <hr />
       <p className={styles.bio}>
-        Kurt is a developer, content creator, and developer advocate at heart,
-        but is currently focused on helping companies understand and build out
-        successful developer experience programs. When not helping others solve
-        DX problems, he can be found on the beach or at home with his family.
+        Kurt Kemple is a multidisciplinary tech leader, engineer, and teacher.
+      </p>
+      <hr />
+      <p className={styles.bio}>
+        Kurt Kemple is a multidisciplinary tech leader, engineer, and teacher.
+        He's the creator of The Developer Advocate's Guide series, Developer
+        Experience Audits, and the Developer Advocacy Value Cycle.
+      </p>
+      <hr />
+      <p className={styles.bio}>
+        Kurt Kemple is a multidisciplinary tech leader, engineer, and teacher.
+        He's the creator of The Developer Advocate's Guide series, Developer
+        Experience Audits, and the Developer Advocacy Value Cycle. He's led
+        developer relations and engineering teams at companies like Apollo, AWS,
+        and MLS and is now focused on helping others create better developer
+        experiences.
       </p>
     </div>
   );
