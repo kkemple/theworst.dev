@@ -60,6 +60,13 @@ export default function Home() {
         </div>
         <div style={{ marginBottom: "32px" }}>
           <ContentCard
+            url="/developer-advocates-guide-to-content-creation"
+            title="The Developer Advocate's Guide to Content Creation"
+            description={`Have you ever felt overwhelmed by the idea of having to create that next blog post or YouTube video? Do you find yourself unable to finish things because you're not quite sure when to call it done? Are you adjusting your outlines or talking points on the fly? Learn how to create content more effectively by doing the work before the work.`}
+          />
+        </div>
+        <div style={{ marginBottom: "32px" }}>
+          <ContentCard
             url="/developer-advocates-guide-to-getting-buy-in"
             title="The Developer Advocate's Guide to Getting Buy-In"
             description={`Getting buy-in as a developer advocate is a unique challenge. We usually are not the owners or even direct contributors to what we're trying to change. Instead, we represent this bizarre ephemeral thing called a "community." In this post, I'll cover what buy-in is, how it applies to developer advocacy, what skills help the most when trying to get buy-in, and the processes I use.`}
@@ -67,9 +74,9 @@ export default function Home() {
         </div>
         <div style={{ marginBottom: "32px" }}>
           <ContentCard
-            url="/developer-advocates-guide-to-content-creation"
-            title="The Developer Advocate's Guide to Content Creation"
-            description={`Have you ever felt overwhelmed by the idea of having to create that next blog post or YouTube video? Do you find yourself unable to finish things because you're not quite sure when to call it done? Are you adjusting your outlines or talking points on the fly? Learn how to create content more effectively by doing the work before the work.`}
+            url="/developer-advocates-guide-to-asking-for-things"
+            title="The Developer Advocate's Guide to Asking for Things"
+            description={`Whether we're trying to get buy-in internally or working on collaborations externally, we're generally in the business of asking. Learn how to get better results from your requests by rethinking the nature of relationships and following the three Rs of asking for things: Recognition, Request, and Reward.`}
           />
         </div>
         <h3 className={styles.sectionHeader}>Appearances</h3>
