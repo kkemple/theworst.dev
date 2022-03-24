@@ -59,8 +59,8 @@
 
 .content p {
   margin: 8px 0 0;
-  color: var(--text-color);
-  font-size: 0.9rem;
+  color: #b1b1b1;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.02rem;
 }
