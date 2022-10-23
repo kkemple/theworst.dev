@@ -110,8 +110,7 @@ export default function Home() {
               <p>
                 I gave a talk for{" "}
                 <a href="https://yougotthis.io/">YouGotThis Conf</a> podcast
-                where we discussed white privilege, the prison industrial
-                complex, and the issues of mediocre white men in tech.
+                where I share my methodology for asking for things.
               </p>
               <Link href="https://yougotthis.io/library/asking-for-things">
                 <a>
