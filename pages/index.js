@@ -106,6 +106,26 @@ export default function Home() {
           </div>
           <div className={styles.postCard}>
             <div className={styles.postCardContent}>
+              <h5>You Got This Conf</h5>
+              <p>
+                I gave a talk for{" "}
+                <a href="https://yougotthis.io/">YouGotThis Conf</a> podcast
+                where we discussed white privilege, the prison industrial
+                complex, and the issues of mediocre white men in tech.
+              </p>
+              <Link href="https://yougotthis.io/library/asking-for-things">
+                <a>
+                  <img
+                    width="100%"
+                    src="/yougotthis.jpg"
+                    alt="As a part of the Developer Relations industry, Kurt constantly collaborates with people and stresses on having a system to get consistent results when asking folks for things."
+                  />
+                </a>
+              </Link>
+            </div>
+          </div>
+          <div className={styles.postCard}>
+            <div className={styles.postCardContent}>
               <h5>#AntiracistEconomist Podcast</h5>
               <p>
                 I had the honor of being a guest on{" "}
