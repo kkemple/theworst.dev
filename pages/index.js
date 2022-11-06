@@ -20,7 +20,7 @@ export default function Home() {
                   formerly incarcerated
                 </span>
               </strong>{" "}
-              teach leader, engineer, teacher, and{" "}
+              tech leader, engineer, teacher, and{" "}
               <strong>
                 <span className="gradient gradient-text">
                   developer experience specialist
