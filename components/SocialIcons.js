@@ -4,14 +4,9 @@ import styles from "@styles/SocialIcons.module.css";
 export default function SocialIcons() {
   return (
     <div className={styles.socials}>
-      <Link href="https://twitter.com/theworstdev">
+      <Link href="https://twitter.com/bytes__">
         <a>
           <img src="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+VHdpdHRlciBpY29uPC90aXRsZT48cGF0aCBmaWxsPSIjODI4MDkxIiBkPSJNMjMuOTU0IDQuNTY5Yy0uODg1LjM4OS0xLjgzLjY1NC0yLjgyNS43NzUgMS4wMTQtLjYxMSAxLjc5NC0xLjU3NCAyLjE2My0yLjcyMy0uOTUxLjU1NS0yLjAwNS45NTktMy4xMjcgMS4xODQtLjg5Ni0uOTU5LTIuMTczLTEuNTU5LTMuNTkxLTEuNTU5LTIuNzE3IDAtNC45MiAyLjIwMy00LjkyIDQuOTE3IDAgLjM5LjA0NS43NjUuMTI3IDEuMTI0QzcuNjkxIDguMDk0IDQuMDY2IDYuMTMgMS42NCAzLjE2MWMtLjQyNy43MjItLjY2NiAxLjU2MS0uNjY2IDIuNDc1IDAgMS43MS44NyAzLjIxMyAyLjE4OCA0LjA5Ni0uODA3LS4wMjYtMS41NjYtLjI0OC0yLjIyOC0uNjE2di4wNjFjMCAyLjM4NSAxLjY5MyA0LjM3NCAzLjk0NiA0LjgyNy0uNDEzLjExMS0uODQ5LjE3MS0xLjI5Ni4xNzEtLjMxNCAwLS42MTUtLjAzLS45MTYtLjA4Ni42MzEgMS45NTMgMi40NDUgMy4zNzcgNC42MDQgMy40MTctMS42OCAxLjMxOS0zLjgwOSAyLjEwNS02LjEwMiAyLjEwNS0uMzkgMC0uNzc5LS4wMjMtMS4xNy0uMDY3IDIuMTg5IDEuMzk0IDQuNzY4IDIuMjA5IDcuNTU3IDIuMjA5IDkuMDU0IDAgMTMuOTk5LTcuNDk2IDEzLjk5OS0xMy45ODYgMC0uMjA5IDAtLjQyLS4wMTUtLjYzLjk2MS0uNjg5IDEuOC0xLjU2IDIuNDYtMi41NDhsLS4wNDctLjAyeiIvPjwvc3ZnPg==" />
-        </a>
-      </Link>
-      <Link href="https://twitch.tv/theworstdev">
-        <a>
-          <img src="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGl0bGU+VHdpdGNoIGljb248L3RpdGxlPjxwYXRoICBmaWxsPSIjODI4MDkxIiBkPSJNMTEuNTcxIDQuNzE0aDEuNzE1djUuMTQzSDExLjU3em00LjcxNSAwSDE4djUuMTQzaC0xLjcxNHpNNiAwTDEuNzE0IDQuMjg2djE1LjQyOGg1LjE0M1YyNGw0LjI4Ni00LjI4NmgzLjQyOEwyMi4yODYgMTJWMHptMTQuNTcxIDExLjE0M2wtMy40MjggMy40MjhoLTMuNDI5bC0zIDN2LTNINi44NTdWMS43MTRoMTMuNzE0WiIvPjwvc3ZnPgo=" />
         </a>
       </Link>
       <Link href="https://github.com/kkemple">
