@@ -17,8 +17,8 @@ export default function Header() {
     <header className={styles.header}>
       <Link href="/">
         <h1 className={styles.logo}>
-          <a className={styles.logoLink} title="The Worst Dev">
-            TWD
+          <a className={styles.logoLink} title="Bytes from the Internet">
+            bytes
           </a>
         </h1>
       </Link>
