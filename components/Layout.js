@@ -4,7 +4,7 @@ import Footer from "@components/Footer";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
 export default function Layout({ darkModeActive, children }) {
-  const title = "The Worst Dev - Hey, I'm Kurt!";
+  const title = "Bytes from the Internet - Hey, I'm Kurt!";
   const description =
     "Formerly incarcerated tech leader, engineer, teacher, and developer experience specialist.";
 
