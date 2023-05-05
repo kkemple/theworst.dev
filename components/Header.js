@@ -35,9 +35,6 @@ export default function Header() {
             <li onClick={toggle}>
               <Link href="/resources">Resources</Link>
             </li>
-            <li onClick={toggle}>
-              <Link href="https://forthright.tech">Work With Me</Link>
-            </li>
           </ul>
         </nav>
         <div className={styles.toggle}>
