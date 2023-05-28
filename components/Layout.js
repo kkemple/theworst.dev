@@ -4,7 +4,7 @@ import Footer from "@components/Footer";
 import { buildCloudinaryURL } from "@utils/cloudinary";
 
 export default function Layout({ darkModeActive, children }) {
-  const title = "Bytes from the Internet - Hey, I'm Kurt!";
+  const title = "Digital Vandal - I'm a Real Riot";
   const description =
     "Formerly incarcerated tech leader, engineer, teacher, and developer experience specialist.";
 
@@ -18,15 +18,8 @@ export default function Layout({ darkModeActive, children }) {
         <meta name="og:title" content={title} />
         <meta name="og:description" content={description} />
         <meta name="og:type" content="website" />
-        <meta
-          name="og:image"
-          content={`${buildCloudinaryURL(
-            "Pushing developer experience forward."
-          )}`}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@theworstdev" />
-        <meta name="twitter:title" content={"Hey, I'm Kurt!"} />
+        <meta name="twitter:creator" content="@_digitalvandal" />
+        <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <link rel="prefetch" href="/hidden-leaf-village-day.gif" />
         <link rel="prefetch" href="/hidden-leaf-village-night.gif" />
