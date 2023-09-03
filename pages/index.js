@@ -23,7 +23,7 @@ export default function Home() {
               tech leader, engineer, teacher, and{" "}
               <strong>
                 <span className="gradient gradient-text">
-                  platform growth specialist
+                  developer-led growth specialist
                 </span>
               </strong>
               .
