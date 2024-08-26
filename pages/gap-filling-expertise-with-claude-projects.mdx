@@ -20,7 +20,7 @@ Let's explore some scenarios where Claude Projects can provide support when cros
 **Approach**: Upload database schemas and sample queries, then instruct Claude to function as a data analyst. This setup can help you craft initial SQL queries and provide a starting point for metric analysis, which can later be refined when the data team becomes available.
 
 **Example Custom Instruction**:
-```
+```md
 You are an experienced data analyst familiar with our company's data structure and KPIs. Your task is to help create SQL queries for tracking developer engagement metrics. Use the uploaded database schemas and sample queries as references. When asked about a metric, suggest an appropriate SQL query, explain the logic behind it, and note any potential limitations or areas where the data team's input might be needed for refinement.
 ```
 
@@ -31,7 +31,7 @@ You are an experienced data analyst familiar with our company's data structure a
 **Approach**: Provide Claude with examples of previously approved content and typical feedback. Configure it to conduct preliminary reviews, identifying potential issues before human experts are engaged. This can streamline the review process and potentially reduce the workload on legal and PR teams.
 
 **Example Custom Instruction**:
-```
+```md
 You are a preliminary reviewer for our DevRel content, with a focus on identifying potential legal and PR issues. Use the uploaded examples of approved content and previous feedback as guidelines. When reviewing content:
 1. Flag any statements that might be considered misleading or unsubstantiated claims.
 2. Identify any mentions of competitors or third-party products that might require legal review.
@@ -47,7 +47,7 @@ Remember, your role is to identify issues for further review, not to make final 
 **Approach**: Upload brand guidelines and examples of approved designs. Instruct Claude to provide design-related feedback based on these parameters. While not a replacement for professional designers, this can offer initial guidance and ensure basic brand consistency.
 
 **Example Custom Instruction**:
-```
+```md
 You are a design consultant familiar with our brand guidelines and visual style. Your role is to provide initial design feedback and suggestions based on our established design principles. When presented with a design concept or question:
 1. Evaluate how well it aligns with our brand guidelines, particularly regarding color usage, typography, and overall aesthetic.
 2. Suggest improvements that would better align the design with our visual identity.
@@ -63,7 +63,7 @@ Note areas where professional design input would be particularly valuable for fu
 **Approach**: Share your content ideas, existing library, and distribution channels with Claude. Configure it to provide marketing insights, helping you structure initial campaign ideas and suggest content themes. This can serve as a starting point for when you can engage with the marketing team.
 
 **Example Custom Instruction**:
-```
+```md
 You are a marketing strategist specialized in developer-focused content. Using the uploaded content library, distribution channel information, and target audience profiles, your task is to provide initial marketing strategy advice. When presented with content ideas or campaign concepts:
 1. Suggest ways to align the content with our overall marketing objectives and developer journey stages.
 2. Recommend appropriate distribution channels and timing for different content types.
