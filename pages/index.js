@@ -37,9 +37,9 @@ export default function Home() {
           If you only read one post, you should read this one.
         </h3>
         <ContentCard
-          url="/pyramid-of-challenge"
-          title="Distributing Challenge: On Building Highly Engaged Teams"
-          description="How many developers do you know who have left their job because either 1) the work is no longer challenging / there is no career growth, or 2) the work is too challenging, and they have no support? Challenge plays an essential role in our happiness."
+          url="/funnels-or-flywheels-finding-alignment"
+          title="Funnels or Flywheels: Cross-Functional Alignment in DevRel"
+          description="In the dynamic world of Developer Relations (DevRel), success isn't just about engaging developers—it's about how well your efforts align with and amplify the work of other departments. The key to unlocking DevRel's full potential lies in seamless cross-functional alignment, regardless of whether your company uses a traditional funnel, a product-led growth (PLG) flywheel, or any other model."
         />
         <h3 className={styles.sectionHeader} id="guides">
           The Developer Advocate's Guides
