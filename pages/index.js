@@ -37,9 +37,9 @@ export default function Home() {
           If you only read one post, you should read this one.
         </h3>
         <ContentCard
-          url="/funnels-or-flywheels-finding-alignment"
-          title="Funnels or Flywheels: Cross-Functional Alignment in DevRel"
-          description="In the dynamic world of Developer Relations (DevRel), success isn't just about engaging developers—it's about how well your efforts align with and amplify the work of other departments. The key to unlocking DevRel's full potential lies in seamless cross-functional alignment, regardless of whether your company uses a traditional funnel, a product-led growth (PLG) flywheel, or any other model."
+          url="/unlocking-expert-minds-8-patterns-for-interactive-knowledge-capture"
+          title="Unlocking Expert Minds: 8 Patterns for AI-guided Knowledge Capture"
+          description="Explore 8 innovative patterns for capturing specialized knowledge through guided, interactive interviews. These approaches use dynamic questioning and real-time analysis with AI to uncover deep insights, challenge assumptions, and map complex expertise across various fields. Discover how these methods could transform our understanding and transfer of expert knowledge in the age of advanced technology."
         />
         <h3 className={styles.sectionHeader} id="guides">
           The Developer Advocate's Guides
